@@ -1,0 +1,10 @@
+{
+  // Publica o site estático gerado por "python3 build.py" (pasta dist) como Worker com arquivos estáticos.
+  "name": "engtafarelsa-site",
+  "compatibility_date": "2026-10-01",
+  "assets": {
+    "directory": "./dist",
+    "not_found_handling": "404-page",
+    "html_handling": "auto-trailing-slash"
+  }
+}

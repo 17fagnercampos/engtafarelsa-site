@@ -39,7 +39,7 @@ def ler_md(caminho):
 
 def md_html(texto):
     """Markdown do painel para HTML do site (tabelas com rolagem no celular)."""
-    h = markdown.markdown(texto or "", extensions=["tables", "sane_lists"])
+    h = markdown.markdown(texto or "", extensions=["markdown.extensions.tables", "markdown.extensions.sane_lists"])
     h = h.replace("<table>", '<div class="tabela-rolagem"><table class="tabela">').replace("</table>", "</table></div>")
     return h
 
