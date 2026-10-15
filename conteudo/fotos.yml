@@ -1,0 +1,14 @@
+# Fotos do site. Deixe "imagem" vazio para mostrar o espaço reservado.
+# Dica: envie fotos na horizontal, com cerca de 1600 px de largura (menos de 500 KB).
+inicio_tafarel: {imagem: "", descricao: "Eng. Tafarel Sá em campo"}
+sobre_retrato: {imagem: "", descricao: "Retrato do Eng. Tafarel Sá"}
+estufas: {imagem: "", descricao: "Estufa Brasil Estufas instalada"}
+tanques: {imagem: "", descricao: "Tanque revestido com geomembrana"}
+piscicultura: {imagem: "", descricao: "Viveiros de piscicultura em produção"}
+aquaponia: {imagem: "", descricao: "Sistema de aquaponia comercial"}
+hidroponia: {imagem: "", descricao: "Bancada de hidroponia Hortivinyl"}
+hidroponia_galeria_1: {imagem: "", descricao: "Hidroponia: berçário"}
+hidroponia_galeria_2: {imagem: "", descricao: "Hidroponia: crescimento"}
+hidroponia_galeria_3: {imagem: "", descricao: "Hidroponia: bancada"}
+hidroponia_galeria_4: {imagem: "", descricao: "Hidroponia: colheita"}
+traira: {imagem: "", descricao: "Criação de traíra e trairão"}

@@ -1,0 +1,276 @@
+# Painel de edição do site: https://app.pagescms.org (entre com a conta do GitHub)
+media:
+  input: fotos
+  output: /fotos
+content:
+- name: blog
+  label: Blog (artigos)
+  type: collection
+  path: conteudo/blog
+  format: yaml-frontmatter
+  filename: '{primary}.md'
+  view:
+    fields:
+    - titulo
+    - data
+    primary: titulo
+    sort:
+    - data
+    - titulo
+    default:
+      sort: data
+      order: desc
+  fields:
+  - name: titulo
+    label: Título
+    type: string
+    required: true
+  - name: descricao
+    label: Resumo para o Google (até ~160 letras)
+    type: text
+    required: true
+  - name: data
+    label: Data
+    type: date
+    options:
+      format: yyyy-MM-dd
+  - name: rascunho
+    label: Rascunho (não publicar ainda)
+    type: boolean
+    default: false
+  - name: resposta
+    label: Resposta rápida (2 a 4 frases, aparece no topo e é o que as IAs citam)
+    type: text
+  - name: foto
+    label: Foto principal
+    type: image
+  - name: foto_legenda
+    label: Legenda da foto
+    type: string
+  - name: episodio
+    label: 'Episódio do YouTube (ex.: Episódio 3 da série Água Boa Dá Lucro)'
+    type: string
+  - name: whatsapp
+    label: Botão de WhatsApp vai para
+    type: select
+    options:
+      values:
+      - value: vendas
+        label: Vendas (48) 99850-8182
+      - value: tafarel
+        label: Tafarel (51) 99936-5993
+    default: vendas
+  - name: produtos
+    label: Produtos Biotecnal citados
+    type: select
+    options:
+      multiple: true
+      values:
+      - value: oxitrat
+        label: OXITRAT
+      - value: bactrat-p
+        label: BACTRAT P
+      - value: nutrat-aqua-plus
+        label: NUTRAT AQUA PLUS
+      - value: bactrat-aquanitro
+        label: BACTRAT AQUANITRO
+  - name: perguntas
+    label: Perguntas frequentes
+    type: object
+    list: true
+    fields:
+    - name: pergunta
+      label: Pergunta
+      type: string
+    - name: resposta
+      label: Resposta
+      type: text
+  - name: fontes
+    label: Fontes (estudos e referências)
+    type: object
+    list: true
+    fields:
+    - name: texto
+      label: Referência
+      type: string
+    - name: link
+      label: Link (opcional)
+      type: string
+  - name: body
+    label: Texto do artigo
+    type: rich-text
+    options:
+      format: markdown
+- name: fotos
+  label: Fotos do site
+  type: file
+  path: conteudo/fotos.yml
+  format: yaml
+  fields:
+  - name: inicio_tafarel
+    label: Inicio tafarel
+    type: object
+    fields:
+    - name: imagem
+      label: Imagem
+      type: image
+    - name: descricao
+      label: Descrição da foto (para Google e acessibilidade)
+      type: string
+  - name: sobre_retrato
+    label: Sobre retrato
+    type: object
+    fields:
+    - name: imagem
+      label: Imagem
+      type: image
+    - name: descricao
+      label: Descrição da foto (para Google e acessibilidade)
+      type: string
+  - name: estufas
+    label: Estufas
+    type: object
+    fields:
+    - name: imagem
+      label: Imagem
+      type: image
+    - name: descricao
+      label: Descrição da foto (para Google e acessibilidade)
+      type: string
+  - name: tanques
+    label: Tanques
+    type: object
+    fields:
+    - name: imagem
+      label: Imagem
+      type: image
+    - name: descricao
+      label: Descrição da foto (para Google e acessibilidade)
+      type: string
+  - name: piscicultura
+    label: Piscicultura
+    type: object
+    fields:
+    - name: imagem
+      label: Imagem
+      type: image
+    - name: descricao
+      label: Descrição da foto (para Google e acessibilidade)
+      type: string
+  - name: aquaponia
+    label: Aquaponia
+    type: object
+    fields:
+    - name: imagem
+      label: Imagem
+      type: image
+    - name: descricao
+      label: Descrição da foto (para Google e acessibilidade)
+      type: string
+  - name: hidroponia
+    label: Hidroponia
+    type: object
+    fields:
+    - name: imagem
+      label: Imagem
+      type: image
+    - name: descricao
+      label: Descrição da foto (para Google e acessibilidade)
+      type: string
+  - name: hidroponia_galeria_1
+    label: Hidroponia galeria 1
+    type: object
+    fields:
+    - name: imagem
+      label: Imagem
+      type: image
+    - name: descricao
+      label: Descrição da foto (para Google e acessibilidade)
+      type: string
+  - name: hidroponia_galeria_2
+    label: Hidroponia galeria 2
+    type: object
+    fields:
+    - name: imagem
+      label: Imagem
+      type: image
+    - name: descricao
+      label: Descrição da foto (para Google e acessibilidade)
+      type: string
+  - name: hidroponia_galeria_3
+    label: Hidroponia galeria 3
+    type: object
+    fields:
+    - name: imagem
+      label: Imagem
+      type: image
+    - name: descricao
+      label: Descrição da foto (para Google e acessibilidade)
+      type: string
+  - name: hidroponia_galeria_4
+    label: Hidroponia galeria 4
+    type: object
+    fields:
+    - name: imagem
+      label: Imagem
+      type: image
+    - name: descricao
+      label: Descrição da foto (para Google e acessibilidade)
+      type: string
+  - name: traira
+    label: Traira
+    type: object
+    fields:
+    - name: imagem
+      label: Imagem
+      type: image
+    - name: descricao
+      label: Descrição da foto (para Google e acessibilidade)
+      type: string
+- name: sobre
+  label: Página Sobre
+  type: file
+  path: conteudo/paginas/sobre.md
+  format: yaml-frontmatter
+  fields:
+  - name: titulo
+    label: Título
+    type: string
+  - name: subtitulo
+    label: Subtítulo
+    type: text
+  - name: body
+    label: Texto
+    type: rich-text
+    options:
+      format: markdown
+- name: config
+  label: Configurações (WhatsApp, redes, Pixel)
+  type: file
+  path: conteudo/config.yml
+  format: yaml
+  fields:
+  - name: whatsapp_tafarel
+    label: WhatsApp do Tafarel (só números, com 55)
+    type: string
+  - name: whatsapp_tafarel_legivel
+    label: WhatsApp do Tafarel (como aparece)
+    type: string
+  - name: whatsapp_vendas
+    label: WhatsApp de vendas (só números, com 55)
+    type: string
+  - name: whatsapp_vendas_legivel
+    label: WhatsApp de vendas (como aparece)
+    type: string
+  - name: youtube
+    label: Canal do YouTube
+    type: string
+  - name: instagram
+    label: Instagram
+    type: string
+  - name: facebook
+    label: Página do Facebook
+    type: string
+  - name: meta_pixel_id
+    label: ID do Pixel da Meta
+    type: string

@@ -1,0 +1,32 @@
+# Eng. Tafarel Sá
+
+> Site do Eng. Tafarel Sá, engenheiro ambiental e representante técnico da Biotecnal no RS e em SC. Conteúdo sobre qualidade da água na piscicultura (oxigênio dissolvido, amônia, nitrito, pH, alcalinidade, lodo) e produtos da linha Aqua Biotecnal (Oxitrat, Bactrat P, Bactrat Aquanitro, Nutrat Aqua Plus).
+
+## Valores de referência (tilápia, viveiro escavado)
+- Oxigênio dissolvido: 3 a 6 mg/L (Diária, ao amanhecer)
+- Amônia total: abaixo de 0,5 mg/L (Diária)
+- Nitrito: abaixo de 0,5 mg/L (Semanal)
+- pH: 6 a 9; ideal 7,5 a 8,0 (Diária)
+- Alcalinidade total: acima de 50 mg/L (Semanal)
+- Temperatura: 25 a 28 °C (tilápia) (Diária)
+
+## Guias
+- [Qualidade da água na piscicultura](https://engtafarelsa.com.br/qualidade-da-agua)
+- [Oxigênio dissolvido na piscicultura: por que medir ao amanhecer](https://engtafarelsa.com.br/blog/oxigenio-dissolvido-piscicultura): O oxigênio dissolvido ideal para tilápia fica entre 3 e 6 mg/L. Meça sempre ao amanhecer: durante a noite as algas e os peixes só consomem oxigênio, então o ponto mais baixo do dia é logo antes do sol nascer. Medir ao meio-dia mostra o melhor momento do viveiro e esconde o risco.
+- [Amônia na piscicultura: valores seguros e como baixar](https://engtafarelsa.com.br/blog/amonia-na-piscicultura): Mantenha a amônia total abaixo de 0,5 mg/L. A parte tóxica é a amônia não ionizada (NH3), e ela aumenta quando o pH e a temperatura sobem, como mostrou o estudo clássico de Emerson e colegas, de 1975. Por isso a mesma leitura de amônia é mais perigosa numa tarde quente de verão do que numa manhã fria.
+- [Nitrito na piscicultura: o veneno que vem depois da amônia](https://engtafarelsa.com.br/blog/nitrito-na-piscicultura): Mantenha o nitrito abaixo de 0,5 mg/L. Ele aparece no meio do caminho entre a amônia e o nitrato: as bactérias transformam amônia em nitrito e nitrito em nitrato. Quando a segunda etapa fica para trás, o nitrito acumula. A correção passa por aeração, alcalinidade e bactérias nitrificantes.
+- [Alcalinidade e pH na piscicultura: a base que segura a água](https://engtafarelsa.com.br/blog/alcalinidade-e-ph-na-piscicultura): Mantenha a alcalinidade total acima de 50 mg/L e o pH na faixa de 6 a 9, de preferência entre 7,5 e 8,0. A alcalinidade funciona como um amortecedor: quanto maior, menos o pH oscila entre o dia e a noite. Viveiro com alcalinidade baixa tem pH instável e filtro biológico fraco.
+- [Lodo, água turva e água verde: como limpar o viveiro sem esvaziar](https://engtafarelsa.com.br/blog/lodo-e-materia-organica): O lodo do fundo é sobra de ração, fezes e algas mortas. Ao se decompor, ele consome oxigênio e libera amônia. A forma de controlar sem esvaziar o viveiro é colocar bactérias benéficas para degradar essa matéria orgânica todos os dias, como o Bactrat P aplicado junto com a ração, e manter a água circulando.
+- [Chuva forte e inversão térmica: como evitar mortalidade no viveiro](https://engtafarelsa.com.br/blog/chuva-forte-e-inversao-termica): Chuva forte e inversão térmica derrubam o oxigênio de madrugada. A chuva lava matéria orgânica para o viveiro e reduz a fotossíntese. Na inversão, a água da superfície esfria, fica mais densa e afunda, e a água do fundo, sem oxigênio e cheia de lodo, sobe. O oxigênio pode zerar em pouco tempo. A defesa é aeração pronta e oxigênio de emergência estocado antes da crise.
+- [A tilápia cresce no Brasil, e a água virou o gargalo](https://engtafarelsa.com.br/blog/tilapia-cresce-agua-e-o-gargalo): Segundo o Anuário Peixe BR 2025, a piscicultura brasileira produziu 968.745 toneladas em 2024, alta de 9,21%. A tilápia somou 662.230 toneladas, 68,36% do total, com crescimento de 14,36%. Produzir mais na mesma área significa mais ração por metro cúbico, e é a qualidade da água que decide se essa ração vira peixe ou vira amônia.
+
+## Produtos Biotecnal
+- [OXITRAT](https://engtafarelsa.com.br/biotecnal-oxitrat): Oxigênio em pó. Fonte de oxigênio e estabilizador de pH para viveiros em hipóxia, no transporte de peixes e na manutenção da qualidade da água.
+- [BACTRAT P](https://engtafarelsa.com.br/biotecnal-bactrat-p): Modulador biológico. Consórcio de Bacillus e bactéria láctica que degrada a matéria orgânica e o lodo do fundo e mantém a água estável no ciclo inteiro.
+- [NUTRAT AQUA PLUS](https://engtafarelsa.com.br/biotecnal-nutrat-aqua-plus): Bioestimulador e biossurfactante. Líquido à base de extrato de levedura que dispersa a matéria orgânica, gera microbolhas e acelera a oxidação de amônia e nitrito.
+- [BACTRAT AQUANITRO](https://engtafarelsa.com.br/biotecnal-bactrat-aquanitro): Modulador biológico nitrificante. Consórcio de bactérias nitrificantes que oxida a amônia e o nitrito em viveiros e tanques aerados.
+
+## Contato
+- WhatsApp de vendas: +5548998508182
+- YouTube: https://www.youtube.com/@engtafarelsa
+- Instagram: https://instagram.com/engtafarelsa
