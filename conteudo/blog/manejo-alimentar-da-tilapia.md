@@ -1,4 +1,5 @@
 ---
+categoria: dicas-tecnicas
 titulo: 'Manejo alimentar da tilápia: a regra dos 15 minutos e a conversão'
 descricao: Quanto e quando dar ração para tilápia, a regra dos 15 minutos, como calcular a conversão alimentar e por que ração sobrando vira amônia.
 data: '2026-10-15'

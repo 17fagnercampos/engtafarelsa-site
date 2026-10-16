@@ -145,7 +145,7 @@ MENU = [
     ("hidroponia", "Hidroponia"),
     ("estufas", "Estufas"),
     ("loja-akso", "Loja AKSO"),
-    ("blog/", "Blog"),
+    ("blog/", "Água Boa Dá Lucro"),
     ("sobre", "Sobre"),
 ]
 
@@ -947,7 +947,11 @@ def carregar_artigos():
     """Cada arquivo em conteudo/blog/*.md é um artigo. O nome do arquivo é o endereço (slug)."""
     artigos = []
     for arq in sorted((CONTEUDO / "blog").glob("*.md")):
-        d, corpo = ler_md(arq)
+        try:
+            d, corpo = ler_md(arq)
+        except Exception as erro:  # um artigo com erro não derruba o site inteiro
+            print(f"AVISO: artigo {arq.name} ignorado por erro no cabeçalho: {erro}")
+            continue
         if d.get("rascunho"):
             continue
         artigos.append({
@@ -964,6 +968,9 @@ def carregar_artigos():
             "faq": [(q.get("pergunta"), q.get("resposta")) for q in (d.get("perguntas") or []) if q.get("pergunta")],
             "fontes": [(f.get("texto"), f.get("link") or None) for f in (d.get("fontes") or []) if f.get("texto")],
             "corpo": md_html(corpo),
+            "categoria": d.get("categoria") or "dicas-tecnicas",
+            "leitura": max(1, round(len((corpo + " " + str(d.get("resposta") or "") + " " +
+                                       " ".join(str(q.get("resposta") or "") for q in (d.get("perguntas") or []))).split()) / 180)),
         })
     artigos.sort(key=lambda a: a["data"], reverse=True)
     return artigos
@@ -998,17 +1005,18 @@ def post_page(a):
     prods = "".join(
         f'<li class="oferta"><h3>{PROD[s]["nome"]}</h3><p>{PROD[s]["tipo"]}. {PROD[s]["resumo"]}</p>'
         f'<a href="{href("biotecnal-" + s, 1)}">Ver produto</a></li>' for s in a["produtos"])
-    outros = "".join(f'<li><a href="{o["slug"]}.html">{o["titulo"]}</a></li>'
-                     for o in ARTIGOS if o["slug"] != a["slug"])
+    rel = sorted((o for o in ARTIGOS if o["slug"] != a["slug"]),
+                 key=lambda o: (o["categoria"] != a["categoria"], -len(set(o["produtos"]) & set(a["produtos"]))))[:3]
+    outros = "".join(card_artigo(o, 1) for o in rel)
     fontes = "".join((f'<li><a href="{u}" target="_blank" rel="noopener">{n}</a></li>' if u else f'<li>{n}</li>')
                      for n, u in a["fontes"])
     ep = (f'<p class="post-meta">{a["ep"]} · <a href="{YOUTUBE}" target="_blank" rel="noopener">assistir no YouTube</a></p>'
           if a.get("ep") else "")
     corpo = f"""
 <article class="secao secao-branca"><div class="wrap artigo">
-  <p class="trilha"><a href="../index.html">Início</a> / <a href="index.html">Blog</a></p>
+  <p class="trilha"><a href="../index.html">Início</a> / <a href="index.html">{PORTAL}</a> / <a href="categoria/{a['categoria']}.html">{CAT.get(a['categoria'], ('Dicas técnicas',))[0]}</a></p>
   <h1>{a['titulo']}</h1>
-  <p class="post-meta">Por <a href="../sobre.html">Eng. Tafarel Sá</a> · {data_legivel(a['data'])}</p>
+  <p class="post-meta">Por <a href="../sobre.html">Eng. Tafarel Sá</a> · {data_legivel(a['data'])} · {a['leitura']} min de leitura</p>
   {ep}
   {f'<figure class="post-foto"><img src="../{a["foto"]}" alt="{html.escape(a["foto_legenda"] or a["titulo"])}" decoding="async">' + (f'<figcaption>{a["foto_legenda"]}</figcaption>' if a["foto_legenda"] else '') + '</figure>' if a["foto"] else ''}
   <div class="resposta-rapida"><p><strong>Resposta rápida:</strong> {a['resposta']}</p></div>
@@ -1027,8 +1035,10 @@ def post_page(a):
 
 <section class="secao secao-branca"><div class="wrap">
   <h2>Continue lendo</h2>
-  <ul class="lista-artigos">{outros}</ul>
+  <div class="cards">{outros}</div>
 </div></section>
+{bloco_cadastro(1)}
+{CADASTRO_JS}
 """
     ld = [
         {"@context": "https://schema.org", "@type": "BlogPosting", "headline": a["titulo"],
@@ -1047,26 +1057,6 @@ def post_page(a):
     ]
     return pagina(slug="blog/" + a["slug"], titulo=a["titulo"] + " | Eng. Tafarel Sá",
                   descricao=a["descricao"], corpo=corpo, prof=1, msg_zap=msg, ld=ld, ativo="blog/", zap_numero=numero)
-
-
-def blog_index():
-    itens = "".join(
-        f'<li><h3><a href="{a["slug"]}.html">{a["titulo"]}</a></h3><p>{a["descricao"]}</p></li>'
-        for a in ARTIGOS)
-    corpo = f"""
-<section class="cabeca-pagina"><div class="wrap">
-  <p class="trilha"><a href="../index.html">Início</a> / Blog</p>
-  <h1>Blog: água boa dá lucro</h1>
-  <p class="promessa">Guias práticos de qualidade de água na piscicultura, com valores de referência, causas e correções. Cada episódio da série no YouTube vira um artigo aqui.</p>
-  <div class="hero-acoes"><a class="botao botao-zap" href="../qualidade-da-agua.html">Começar pelo guia completo</a>
-  <a class="botao botao-linha" href="{YOUTUBE}" target="_blank" rel="noopener">Inscrever-se no YouTube</a></div>
-</div></section>
-<section class="secao"><div class="wrap"><ul class="posts">{itens}</ul></div></section>
-{bloco_youtube(1)}
-"""
-    return pagina(slug="blog/", titulo="Blog de qualidade de água na piscicultura | Eng. Tafarel Sá",
-                  descricao="Guias de oxigênio dissolvido, amônia, nitrito, alcalinidade, lodo e inversão térmica na piscicultura, pelo Eng. Tafarel Sá.",
-                  corpo=corpo, prof=1, msg_zap="Olá, Tafarel! Vim pelo blog.", ativo="blog/")
 
 
 # ================================================================ QUALIDADE DA ÁGUA + BIOTECNAL
@@ -1311,6 +1301,18 @@ def biotecnal():
   <div class="kits">{cards}</div>
 </div></section>
 
+<section class="secao"><div class="wrap cabeca-grade">
+  <div>
+    <h2>Por dentro da Biotecnal</h2>
+    <p>Indústria de biotecnologia em Toledo/PR desde 2007, com ISO 9001, ISO 14001 e registros no IBAMA, na ANVISA e no Ministério da Agricultura. A linha Aqua parte de uma ideia simples: tratar a água é tão importante quanto tratar os animais.</p>
+    <div class="hero-acoes">
+      <a class="botao botao-linha" href="{href('blog/biotecnal-quem-fabrica-a-linha-aqua', 0)}">Conhecer a Biotecnal</a>
+      <a class="botao botao-linha" href="{href('seja-revenda-biotecnal', 0)}">Seja revenda no RS e SC</a>
+    </div>
+  </div>
+  <img class="foto" src="assets/biotecnal/produtos-linha-aqua.jpg" alt="Linha Aqua Biotecnal: Nutrat Aqua Plus, Bactrat P e Oxitrat" loading="lazy" decoding="async">
+</div></section>
+
 <section class="secao"><div class="wrap">
   <h2>Linha complementar</h2>
   <p class="intro">Para clarificação, alcalinidade, algas e biosseguridade. Uso conforme orientação técnica.</p>
@@ -1359,6 +1361,7 @@ def produto_bio(p):
   <h1>{p['nome']}</h1>
   <p class="promessa">{p['resumo']}</p>
   <div class="hero-acoes">{botao_zap(f"Comprar {p['nome']}", msg, numero=ZAP_ESTUFAS)}</div>
+  {f'<img class="produto-img" src="assets/biotecnal/{p["slug"]}.jpg" alt="Embalagem do {p["nome"]} da Biotecnal" decoding="async">' if (RAIZ / "assets" / "biotecnal" / (p["slug"] + ".jpg")).exists() else ""}
 </div></section>
 
 <section class="secao"><div class="wrap duas-colunas">
@@ -1868,6 +1871,223 @@ def projeto():
                   corpo=corpo, msg_zap="Olá, Tafarel! Vim pelo site.", ativo="projeto")
 
 
+# ---------------------------------------------------------------- portal Água Boa Dá Lucro
+PORTAL = "Água Boa Dá Lucro"
+CATEGORIAS = [
+    ("dicas-tecnicas", "Dicas técnicas", "Oxigênio, amônia, nitrito, pH, lodo, alimentação e manejo, explicados com estudo e com o que eu vejo no campo."),
+    ("produtos", "Produtos Biotecnal", "Como e quando usar cada produto da linha Aqua, com dose da ficha técnica e protocolo."),
+    ("cases", "Cases", "Resultados reais de produtores que trataram a água: o problema, o protocolo e os números."),
+    ("por-dentro-da-biotecnal", "Por dentro da Biotecnal", "A fábrica, as certificações, a pesquisa e as pessoas por trás da linha Aqua."),
+    ("mercado", "Mercado e tendências", "Números da piscicultura no Brasil e no Sul, preços, mercado e o que muda para o produtor."),
+    ("vida-no-campo", "Vida no campo", "Histórias de produtores, eventos, dias de campo e o dia a dia da piscicultura."),
+]
+CAT = {s: (n, d) for s, n, d in CATEGORIAS}
+
+AREAS_ATUACAO = ["Piscicultor", "Carcinicultor (camarão)", "Pesque-pague", "Aquaponia", "Alevinocultor",
+                 "Técnico, zootecnista ou engenheiro de pesca", "Veterinário", "Agrônomo",
+                 "Cooperativa ou associação", "Revenda agropecuária", "Emater ou prefeitura",
+                 "Indústria de ração ou frigorífico", "Estudante ou professor", "Outro"]
+UFS = ["RS", "SC", "PR", "SP", "MG", "MS", "MT", "GO", "DF", "RJ", "ES", "BA", "SE", "AL", "PE", "PB", "RN",
+       "CE", "PI", "MA", "PA", "AP", "AM", "RR", "RO", "AC", "TO"]
+INTERESSES = ["Qualidade da água", "Produtos Biotecnal", "Cursos", "Novos vídeos", "Ser revenda Biotecnal"]
+
+
+def card_artigo(a, prof):
+    nome_cat = CAT.get(a["categoria"], ("", ""))[0]
+    foto = a["foto"]
+    if not foto:  # sem foto própria: usa a embalagem do primeiro produto Biotecnal citado
+        for pr in a["produtos"]:
+            if (RAIZ / "assets" / "biotecnal" / f"{pr}.jpg").exists():
+                foto = f"assets/biotecnal/{pr}.jpg"
+                break
+    img = (f'<img src="{"../" * prof}{foto}" alt="" loading="lazy" decoding="async">' if foto
+           else f'<span class="card-sem-foto" aria-hidden="true">{nome_cat}</span>')
+    return (f'<article class="card-post"><a class="card-link" href="{href("blog/" + a["slug"], prof)}">'
+            f'<div class="card-img">{img}</div>'
+            f'<div class="card-txt"><p class="card-cat">{nome_cat} · {a["leitura"]} min de leitura</p>'
+            f'<h3>{a["titulo"]}</h3><p>{a["descricao"]}</p></div></a></article>')
+
+
+def bloco_cadastro(prof=0, titulo="Receba o Água Boa Dá Lucro no WhatsApp", intro=None):
+    intro = intro or ("Um conteúdo por semana sobre qualidade de água, os episódios novos do canal e avisos de "
+                      "cursos e dias de campo. Escolha o seu perfil para receber o que interessa a você.")
+    areas = "".join(f'<option>{x}</option>' for x in AREAS_ATUACAO)
+    ufs = "".join(f'<option{" selected" if u == "RS" else ""}>{u}</option>' for u in UFS)
+    ints = "".join(f'<label class="p-chip"><input type="checkbox" name="cad-int" value="{x}"><span>{x}</span></label>' for x in INTERESSES)
+    return f"""<section class="secao secao-cadastro" id="cadastro"><div class="wrap cad-grade">
+  <div>
+    <p class="card-cat">{PORTAL}</p>
+    <h2>{titulo}</h2>
+    <p>{intro}</p>
+    <p class="nota-afiliado">Você entra na lista do Eng. Tafarel Sá. Para sair, é só responder "sair". Nada fica salvo neste site.</p>
+  </div>
+  <form class="calc cad-form" data-zap="{ZAP}" novalidate onsubmit="return false">
+    <label for="cad-nome">Seu nome</label><input id="cad-nome" autocomplete="name">
+    <div class="p-duas">
+      <div class="p-campo"><label for="cad-area">Área de atuação</label><select id="cad-area"><option value="">Escolha</option>{areas}</select></div>
+      <div class="p-campo"><label for="cad-uf">Estado</label><select id="cad-uf">{ufs}</select></div>
+    </div>
+    <label for="cad-cidade">Cidade</label><input id="cad-cidade" autocomplete="address-level2">
+    <label for="cad-prod">O que você produz ou faz? (opcional)</label><input id="cad-prod" placeholder="ex.: tilápia, 3 viveiros de 2.000 m²">
+    <fieldset class="p-campo"><legend>Quero receber sobre</legend><div class="p-chips">{ints}</div></fieldset>
+    <a class="botao botao-zap cad-enviar" href="#" target="_blank" rel="noopener">{ICONE_ZAP}Quero receber no WhatsApp</a>
+  </form>
+</div></section>"""
+
+
+CADASTRO_JS = r"""
+<script>
+(function(){
+  document.querySelectorAll('.cad-form').forEach(function(f){
+    var b=f.querySelector('.cad-enviar');
+    function v(id){var e=f.querySelector('#'+id);return e&&e.value.trim();}
+    function montar(){
+      var ints=[].slice.call(f.querySelectorAll('input[name=cad-int]:checked')).map(function(i){return i.value;});
+      var l=['Olá, Tafarel! Quero receber o Água Boa Dá Lucro.',''];
+      if(v('cad-nome')) l.push('• Nome: '+v('cad-nome'));
+      if(v('cad-area')) l.push('• Área de atuação: '+v('cad-area'));
+      l.push('• Cidade/UF: '+[v('cad-cidade'),v('cad-uf')].filter(Boolean).join('/'));
+      if(v('cad-prod')) l.push('• O que faço: '+v('cad-prod'));
+      if(ints.length) l.push('• Quero receber: '+ints.join(', '));
+      b.href='https://wa.me/'+f.getAttribute('data-zap')+'?text='+encodeURIComponent(l.join('\n'));
+    }
+    f.addEventListener('input',montar); f.addEventListener('change',montar); montar();
+  });
+})();
+</script>"""
+
+
+def portal_index():
+    destaque = ARTIGOS[0]
+    resto = ARTIGOS[1:]
+    chips = "".join(f'<a class="cat-chip" href="{href("blog/categoria/" + s, 1)}">{n}</a>' for s, n, _ in CATEGORIAS)
+    secoes = ""
+    for s, n, d in CATEGORIAS:
+        lista = [a for a in resto if a["categoria"] == s][:6]
+        if not lista:
+            continue
+        secoes += f"""<section class="secao"><div class="wrap">
+  <div class="sec-topo"><h2>{n}</h2><a href="{href("blog/categoria/" + s, 1)}">Ver tudo</a></div>
+  <p class="intro">{d}</p>
+  <div class="cards">{"".join(card_artigo(a, 1) for a in lista)}</div>
+</div></section>"""
+    corpo = f"""
+<section class="portal-hero"><div class="wrap portal-grade">
+  <div>
+    <p class="trilha"><a href="../index.html">Início</a> / {PORTAL}</p>
+    <h1>{PORTAL}</h1>
+    <p class="promessa">O portal de qualidade de água na piscicultura do Eng. Tafarel Sá, com a tecnologia da Biotecnal. Dicas técnicas, produtos, cases e mercado, para a ração virar peixe e não prejuízo.</p>
+    <nav class="cat-chips" aria-label="Categorias">{chips}</nav>
+  </div>
+  <img class="portal-img" src="../assets/biotecnal/produtos-linha-aqua.jpg" alt="Linha Aqua Biotecnal: Nutrat Aqua Plus, Bactrat P e Oxitrat" decoding="async">
+</div></section>
+
+<section class="secao"><div class="wrap">
+  <p class="card-cat">Em destaque</p>
+  <div class="destaque">{card_artigo(destaque, 1)}</div>
+</div></section>
+{secoes}
+{bloco_cadastro(1)}
+{bloco_youtube(1)}
+<section class="secao"><div class="wrap">
+  <div class="sec-topo"><h2>Ferramentas grátis</h2></div>
+  <ul class="ofertas">
+    <li class="oferta"><h3>Diagnóstico da água</h3><p>Digite oxigênio, pH, amônia e nitrito e veja o que está fora da faixa, com a amônia tóxica calculada.</p><a href="../calculadora.html#diagnostico">Fazer o diagnóstico</a></li>
+    <li class="oferta"><h3>Calculadora de doses</h3><p>Doses de manutenção da linha Aqua pela área do viveiro e pela ração do dia.</p><a href="../calculadora.html">Calcular</a></li>
+    <li class="oferta"><h3>Valores de referência</h3><p>A tabela de oxigênio, amônia, nitrito, pH, alcalinidade e temperatura para tilápia.</p><a href="../qualidade-da-agua.html">Ver a tabela</a></li>
+  </ul>
+</div></section>
+{CADASTRO_JS}
+"""
+    ld = {"@context": "https://schema.org", "@type": "Blog", "name": PORTAL, "url": DOMINIO + "/blog/",
+          "inLanguage": "pt-BR", "author": {"@id": DOMINIO + "/#tafarel"},
+          "blogPost": [{"@type": "BlogPosting", "headline": a["titulo"], "url": f"{DOMINIO}/blog/{a['slug']}"} for a in ARTIGOS]}
+    return pagina(slug="blog/", titulo=f"{PORTAL}: portal de qualidade de água na piscicultura | Eng. Tafarel Sá",
+                  descricao="Dicas técnicas, produtos Biotecnal, cases e mercado da piscicultura. O portal Água Boa Dá Lucro do Eng. Tafarel Sá, com a tecnologia da Biotecnal.",
+                  corpo=corpo, prof=1, msg_zap="Olá, Tafarel! Vim pelo portal Água Boa Dá Lucro.", ativo="blog/", ld=ld)
+
+
+def categoria_page(s, n, d):
+    lista = [a for a in ARTIGOS if a["categoria"] == s]
+    chips = "".join(f'<a class="cat-chip{" ativo" if c == s else ""}" href="{href("blog/categoria/" + c, 2)}">{nn}</a>' for c, nn, _ in CATEGORIAS)
+    if lista:
+        conteudo = f'<div class="cards">{"".join(card_artigo(a, 2) for a in lista)}</div>'
+    elif s == "cases":
+        msg = "Olá, Tafarel! Usei a linha Biotecnal e quero contar o meu resultado para virar um case no Água Boa Dá Lucro."
+        conteudo = f"""<div class="resposta-rapida"><p><strong>Os primeiros cases estão sendo preparados.</strong> Usou a linha Aqua e mediu o antes e o depois? Seu resultado pode virar um case aqui, com o seu nome e a sua propriedade, se você quiser.</p></div>
+<div class="hero-acoes">{botao_zap("Quero contar o meu resultado", msg)}</div>"""
+    else:
+        conteudo = '<p class="intro">Os primeiros conteúdos desta seção estão sendo preparados. Cadastre-se abaixo para ser avisado.</p>'
+    corpo = f"""
+<section class="cabeca-pagina"><div class="wrap">
+  <p class="trilha"><a href="../../index.html">Início</a> / <a href="../index.html">{PORTAL}</a> / {n}</p>
+  <h1>{n}</h1>
+  <p class="promessa">{d}</p>
+  <nav class="cat-chips" aria-label="Categorias">{chips}</nav>
+</div></section>
+<section class="secao"><div class="wrap">{conteudo}</div></section>
+{bloco_cadastro(2)}
+{CADASTRO_JS}
+"""
+    return pagina(slug=f"blog/categoria/{s}", titulo=f"{n} | {PORTAL} | Eng. Tafarel Sá", descricao=d,
+                  corpo=corpo, prof=2, msg_zap="Olá, Tafarel! Vim pelo portal Água Boa Dá Lucro.", ativo="blog/")
+
+
+def cadastro_page():
+    corpo = f"""
+<section class="cabeca-pagina"><div class="wrap">
+  <p class="trilha"><a href="index.html">Início</a> / Cadastro</p>
+  <h1>Receba o {PORTAL}</h1>
+  <p class="promessa">Conteúdo de qualidade de água direto no seu WhatsApp, separado pelo seu perfil.</p>
+</div></section>
+{bloco_cadastro(0, titulo="Seu cadastro em 30 segundos")}
+{CADASTRO_JS}
+"""
+    return pagina(slug="cadastro", titulo=f"Receba o {PORTAL} no WhatsApp | Eng. Tafarel Sá",
+                  descricao="Cadastre-se para receber dicas de qualidade de água, episódios novos e avisos de cursos e dias de campo pelo WhatsApp.",
+                  corpo=corpo, msg_zap="Olá, Tafarel! Quero receber o Água Boa Dá Lucro.", ativo="blog/")
+
+
+def revenda_page():
+    msg = ("Olá, Tafarel! Tenho interesse em revender a linha Biotecnal.\n• Empresa: __\n• Tipo: agropecuária / cooperativa / técnico\n"
+           "• Cidade/UF: __\n• Atendo produtores de: __")
+    faq = [
+        ("Quem pode revender a linha Aqua Biotecnal?",
+         "Agropecuárias, cooperativas, associações de produtores e técnicos que atendem piscicultores no Rio Grande do Sul e em Santa Catarina."),
+        ("Preciso entender de qualidade de água?",
+         "Ajuda, mas não é obrigatório. O suporte técnico e os protocolos ficam comigo, e o conteúdo do Água Boa Dá Lucro serve de material para os seus clientes."),
+        ("Como funciona o pedido?",
+         "As condições comerciais, o pedido mínimo e o frete são combinados direto, conforme a sua região e o volume."),
+    ]
+    corpo = f"""
+<section class="cabeca-pagina"><div class="wrap cabeca-grade">
+  <div>
+    <p class="trilha"><a href="index.html">Início</a> / <a href="{href('biotecnal', 0)}">Biotecnal</a> / Seja revenda</p>
+    <h1>Seja revenda Biotecnal no RS e em SC</h1>
+    <p class="promessa">Para agropecuárias, cooperativas e técnicos que atendem piscicultores. Produto de fábrica certificada, suporte técnico de engenheiro e conteúdo pronto para os seus clientes.</p>
+    <div class="hero-acoes">{botao_zap("Quero ser revenda", msg)}</div>
+  </div>
+  <img class="foto" src="assets/biotecnal/produtos-linha-aqua.jpg" alt="Linha Aqua Biotecnal" decoding="async">
+</div></section>
+<section class="secao"><div class="wrap">
+  <h2>O que a revenda recebe</h2>
+  <ul class="ofertas">
+    <li class="oferta"><h3>Linha Aqua completa</h3><p>Bactrat P, Nutrat Aqua Plus, Oxitrat e Bactrat Aquanitro, fabricados em Toledo/PR por indústria com ISO 9001 e ISO 14001.</p><a href="{href('biotecnal', 0)}">Ver produtos</a></li>
+    <li class="oferta"><h3>Suporte técnico</h3><p>Seu cliente com problema de água? Eu ajudo a montar o protocolo a partir das medições.</p><a href="{href('calculadora', 0)}#diagnostico">Ver o diagnóstico</a></li>
+    <li class="oferta"><h3>Conteúdo que vende</h3><p>Os artigos e vídeos do Água Boa Dá Lucro explicam o problema e o produto. Você compartilha com os seus clientes.</p><a href="{href('blog/', 0)}">Ver o portal</a></li>
+  </ul>
+</div></section>
+<section class="secao secao-branca"><div class="wrap">
+  <h2>Perguntas comuns</h2>
+  {perguntas(faq)}
+</div></section>
+{chamada("Vamos conversar sobre a sua região?", "Me conte onde você atua e quantos piscicultores atende. Eu respondo pessoalmente.", "Quero ser revenda", msg)}
+"""
+    return pagina(slug="seja-revenda-biotecnal", titulo="Seja revenda Biotecnal no RS e SC | Eng. Tafarel Sá",
+                  descricao="Agropecuárias, cooperativas e técnicos: revenda a linha Aqua Biotecnal no Rio Grande do Sul e em Santa Catarina, com suporte técnico e conteúdo pronto.",
+                  corpo=corpo, msg_zap=msg, ld=faq_ld(faq), ativo="biotecnal")
+
+
 # ---------------------------------------------------------------- build
 def main():
     if DIST.exists():
@@ -1892,13 +2112,18 @@ def main():
         "traira-e-trairao.html": traira(),
         "projeto.html": projeto(),
         "sobre.html": sobre(),
-        "blog/index.html": blog_index(),
+        "blog/index.html": portal_index(),
+        "cadastro.html": cadastro_page(),
+        "seja-revenda-biotecnal.html": revenda_page(),
         "404.html": nao_encontrada(),
     }
     for p in BIO_PRODUTOS:
         paginas[f"biotecnal-{p['slug']}.html"] = produto_bio(p)
     for a in ARTIGOS:
         paginas[f"blog/{a['slug']}.html"] = post_page(a)
+    (DIST / "blog" / "categoria").mkdir(parents=True, exist_ok=True)
+    for c, n, d in CATEGORIAS:
+        paginas[f"blog/categoria/{c}.html"] = categoria_page(c, n, d)
     for nome, conteudo in paginas.items():
         (DIST / nome).write_text(conteudo, encoding="utf-8")
 
@@ -1922,6 +2147,9 @@ def main():
     linhas += ["", "## Guias", f"- [Qualidade da água na piscicultura]({DOMINIO}/qualidade-da-agua)"]
     linhas += [f"- [{a['titulo']}]({DOMINIO}/blog/{a['slug']}): {a['resposta']}" for a in ARTIGOS]
     linhas += ["", "## Outras páginas",
+               f"- [Portal Água Boa Dá Lucro]({DOMINIO}/blog/): dicas técnicas, produtos Biotecnal, cases, por dentro da Biotecnal e mercado da piscicultura.",
+               f"- [Seja revenda Biotecnal no RS e SC]({DOMINIO}/seja-revenda-biotecnal): para agropecuárias, cooperativas e técnicos.",
+               f"- [Cadastro]({DOMINIO}/cadastro): receber o Água Boa Dá Lucro pelo WhatsApp.",
                f"- [Criação de traíra e trairão]({DOMINIO}/traira-e-trairao): condicionamento alimentar, berçário e manejo para pesca esportiva e pesque-pague.",
                f"- [Curso Aquaponia Comercial]({DOMINIO}/cursos): Método AquaHortis, online e presencial.",
                f"- [Calculadora e diagnóstico da água]({DOMINIO}/calculadora): doses Biotecnal pela ração e diagnóstico com cálculo de amônia tóxica."]

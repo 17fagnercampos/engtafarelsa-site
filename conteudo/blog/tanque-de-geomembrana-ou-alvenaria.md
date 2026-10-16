@@ -1,4 +1,5 @@
 ---
+categoria: dicas-tecnicas
 titulo: 'Tanque de geomembrana ou de alvenaria: como decidir'
 descricao: Os dois seguram água. A diferença está no custo, no prazo, na manutenção e no que acontece se o terreno se mexer.
 data: '2026-10-14'

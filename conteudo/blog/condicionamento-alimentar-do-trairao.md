@@ -1,4 +1,5 @@
 ---
+categoria: dicas-tecnicas
 titulo: 'Trairão e traíra na ração: o condicionamento alimentar'
 descricao: Traíra e trairão são carnívoros e não aceitam ração de primeira. Um estudo mostrou que o condicionamento alimentar levou a sobrevivência dos alevinos de 27,5% para 96,7%.
 data: '2026-10-15'

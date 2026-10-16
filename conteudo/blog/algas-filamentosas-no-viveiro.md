@@ -1,4 +1,5 @@
 ---
+categoria: dicas-tecnicas
 titulo: "Algas filamentosas no viveiro: como prevenir e controlar"
 descricao: Por que o limo e as plantas submersas tomam conta do viveiro, como
   evitar no preparo e como controlar com o peixe dentro, inclusive com carpa

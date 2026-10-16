@@ -1,4 +1,5 @@
 ---
+categoria: dicas-tecnicas
 titulo: 'Tilápia em tanque-rede pequeno no clima do Sul: o que o estudo mostrou'
 descricao: 'Dois casos reais de tilápia em tanques-rede de 1 m³ na região de Curitiba: o que deu lucro, o que deu prejuízo e o que isso ensina para o RS e SC.'
 data: '2026-10-15'

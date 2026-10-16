@@ -1,4 +1,5 @@
 ---
+categoria: dicas-tecnicas
 titulo: 'Chuva forte e inversão térmica: como evitar mortalidade no viveiro'
 descricao: Por que chuva forte e inversão térmica derrubam o oxigênio de madrugada e matam lotes inteiros, e como se preparar antes da crise.
 data: '2026-10-15'

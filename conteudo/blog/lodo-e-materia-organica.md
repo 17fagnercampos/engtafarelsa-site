@@ -1,4 +1,5 @@
 ---
+categoria: dicas-tecnicas
 titulo: 'Lodo, água turva e água verde: como limpar o viveiro sem esvaziar'
 descricao: Como o lodo e a matéria orgânica viram amônia e falta de oxigênio, o que a cor da água diz sobre o viveiro e como usar bactérias benéficas para limpar.
 data: '2026-10-15'

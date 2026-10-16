@@ -1,4 +1,5 @@
 ---
+categoria: dicas-tecnicas
 titulo: Temperatura da água e crescimento da tilápia no Sul
 descricao: Por que a tilápia quase para de crescer no inverno gaúcho, a faixa de temperatura ideal e por que o calor dobra o consumo de oxigênio do viveiro.
 data: '2026-10-15'

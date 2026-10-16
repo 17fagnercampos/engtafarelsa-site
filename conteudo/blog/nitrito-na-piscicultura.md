@@ -1,4 +1,5 @@
 ---
+categoria: dicas-tecnicas
 titulo: 'Nitrito na piscicultura: o veneno que vem depois da amônia'
 descricao: Por que o nitrito sobe depois da amônia, qual o limite para tilápia e como corrigir com bactérias nitrificantes, aeração e alcalinidade.
 data: '2026-10-15'

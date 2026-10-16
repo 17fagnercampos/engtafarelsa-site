@@ -4,7 +4,7 @@ media:
   output: /fotos
 content:
 - name: blog
-  label: Blog (artigos)
+  label: Água Boa Dá Lucro (artigos)
   type: collection
   path: conteudo/blog
   format: yaml-frontmatter
@@ -25,6 +25,24 @@ content:
     label: Título
     type: string
     required: true
+  - name: categoria
+    label: Categoria do portal Água Boa Dá Lucro
+    type: select
+    default: dicas-tecnicas
+    options:
+      values:
+      - value: dicas-tecnicas
+        label: Dicas técnicas
+      - value: produtos
+        label: Produtos Biotecnal
+      - value: cases
+        label: Cases
+      - value: por-dentro-da-biotecnal
+        label: Por dentro da Biotecnal
+      - value: mercado
+        label: Mercado e tendências
+      - value: vida-no-campo
+        label: Vida no campo
   - name: descricao
     label: Resumo para o Google (até ~160 letras)
     type: text

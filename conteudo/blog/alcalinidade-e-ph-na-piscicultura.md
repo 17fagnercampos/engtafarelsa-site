@@ -1,4 +1,5 @@
 ---
+categoria: dicas-tecnicas
 titulo: 'Alcalinidade e pH na piscicultura: a base que segura a água'
 descricao: 'Alcalinidade acima de 50 mg/L e pH entre 7,5 e 8,0: por que o pH oscila no viveiro, como a alcalinidade segura essa variação e como corrigir.'
 data: '2026-10-15'

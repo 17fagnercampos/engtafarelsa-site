@@ -1,4 +1,5 @@
 ---
+categoria: dicas-tecnicas
 titulo: 'Amônia na piscicultura: valores seguros e como baixar'
 descricao: 'Amônia total abaixo de 0,5 mg/L: entenda por que o pH e a temperatura deixam a amônia mais tóxica, de onde ela vem e como baixar sem trocar a água.'
 data: '2026-10-15'

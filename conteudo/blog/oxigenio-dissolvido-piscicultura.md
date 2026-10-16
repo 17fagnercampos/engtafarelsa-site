@@ -1,4 +1,5 @@
 ---
+categoria: dicas-tecnicas
 titulo: 'Oxigênio dissolvido na piscicultura: por que medir ao amanhecer'
 descricao: Qual o oxigênio ideal para tilápia, por que ele cai de madrugada e o que fazer quando fica abaixo de 3 mg/L. Guia do Eng. Tafarel Sá.
 data: '2026-10-15'

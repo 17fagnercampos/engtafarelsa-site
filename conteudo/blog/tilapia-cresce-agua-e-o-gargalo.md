@@ -1,4 +1,5 @@
 ---
+categoria: mercado
 titulo: A tilápia cresce no Brasil, e a água virou o gargalo
 descricao: O Brasil produziu 968,7 mil toneladas de peixe de cultivo em 2024, e a tilápia foi 68% disso. Com mais densidade, a qualidade da água passou a definir o lucro.
 data: '2026-10-15'
