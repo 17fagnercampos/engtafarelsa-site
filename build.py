@@ -271,7 +271,7 @@ def pagina(*, slug, titulo, descricao, corpo, prof=0, msg_zap, ld=None, ativo=No
       <h3>Contato</h3>
       <ul>
         <li><a href="{zap_link('Olá, Tafarel! Vim pelo site.')}" target="_blank" rel="noopener">WhatsApp {ZAP_LEGIVEL}</a></li>
-        <li><a href="{zap_link('Olá! Vim pelo site do Eng. Tafarel e quero orçamento de estufa.', ZAP_ESTUFAS)}" target="_blank" rel="noopener">Vendas: {ZAP_ESTUFAS_LEGIVEL}</a></li>
+        <li><a href="{zap_link('Olá! Vim pelo site do Eng. Tafarel e quero orçamento de estufa.', ZAP_ESTUFAS)}" target="_blank" rel="noopener">Estufas: {ZAP_ESTUFAS_LEGIVEL}</a></li>
         <li><a href="{YOUTUBE}" target="_blank" rel="noopener">YouTube Engenheiro Tafarel Sá</a></li>
         <li><a href="{INSTAGRAM}" target="_blank" rel="noopener">Instagram @engtafarelsa</a></li>
       </ul>
@@ -662,10 +662,10 @@ def tanques():
             ("Quanto tempo dura a geomembrana?",
              f"{pend('Confirmar vida útil e garantia Geotop por espessura')} A durabilidade depende do material, da instalação e da exposição ao sol."),
         ],
-        msg="Olá! Vim pelo site do Eng. Tafarel e quero orçamento de tanque com geomembrana. Medidas aproximadas: __ x __ m, profundidade __ m.",
+        msg="Olá, Tafarel! Vim pelo site e quero orçamento de tanque com geomembrana. Medidas aproximadas: __ x __ m, profundidade __ m.",
         chamada_titulo="Mande as medidas do seu tanque.",
-        chamada_texto="Mande as medidas e a cidade. O orçamento sai pelo WhatsApp de vendas.",
-        numero=ZAP_ESTUFAS,
+        chamada_texto="Mande as medidas e a cidade. Eu respondo pessoalmente com o orçamento.",
+        numero=ZAP,
     )
 
 
@@ -1181,7 +1181,7 @@ def caixa_autor(prof=0):
 </aside>"""
 
 
-MSG_BIO = "Olá! Vim pelo site do Eng. Tafarel e quero um protocolo Biotecnal para a minha água. Problema: __. Área do viveiro: __ m²."
+MSG_BIO = "Olá, Tafarel! Vim pelo site e quero um protocolo Biotecnal para a minha água. Problema: __. Área do viveiro: __ m²."
 
 
 def qualidade_agua():
@@ -1208,7 +1208,7 @@ def qualidade_agua():
   <div class="resposta-rapida"><p><strong>Resumo:</strong> meça oxigênio, pH e temperatura todos os dias, amônia e nitrito com frequência e alcalinidade toda semana. Mantenha o oxigênio entre 3 e 6 mg/L, a amônia e o nitrito abaixo de 0,5 mg/L e a alcalinidade acima de 50 mg/L. Quando algum número sair da faixa, corrija a causa antes que vire mortalidade.</p></div>
   <div class="hero-acoes">
     <a class="botao botao-zap" href="{href('calculadora', 0)}#diagnostico">Fazer o diagnóstico da minha água</a>
-    {botao_zap("Pedir protocolo no WhatsApp", MSG_BIO, extra="botao-linha", numero=ZAP_ESTUFAS)}
+    {botao_zap("Pedir protocolo no WhatsApp", MSG_BIO, extra="botao-linha", numero=ZAP)}
   </div>
 </div></section>
 
@@ -1253,7 +1253,7 @@ def qualidade_agua():
   {perguntas(faq)}
   {caixa_autor(0)}
 </div></section>
-{chamada("Sua água está fora da faixa?", "Mande as medições e a área do viveiro. Eu monto o protocolo Biotecnal para o seu caso.", "Pedir protocolo no WhatsApp", MSG_BIO, ZAP_ESTUFAS)}
+{chamada("Sua água está fora da faixa?", "Mande as medições e a área do viveiro. Eu monto o protocolo Biotecnal para o seu caso.", "Pedir protocolo no WhatsApp", MSG_BIO, ZAP)}
 """
     ld = [faq_ld(faq), {
         "@context": "https://schema.org", "@type": "Article",
@@ -1263,7 +1263,7 @@ def qualidade_agua():
     return pagina(slug="qualidade-da-agua",
                   titulo="Qualidade da água na piscicultura: valores ideais e como corrigir | Eng. Tafarel Sá",
                   descricao="Oxigênio, amônia, nitrito, pH e alcalinidade: valores de referência para tilápia, como medir e como corrigir com produtos Biotecnal. Guia do Eng. Tafarel Sá.",
-                  corpo=corpo, msg_zap=MSG_BIO, ld=ld, ativo="qualidade-da-agua", zap_numero=ZAP_ESTUFAS)
+                  corpo=corpo, msg_zap=MSG_BIO, ld=ld, ativo="qualidade-da-agua", zap_numero=ZAP)
 
 
 
@@ -1275,7 +1275,7 @@ def biotecnal():
         for p in BIO_PRODUTOS)
     comp = "".join(
         f'<li class="oferta"><h3>{n}</h3><p><strong>{t}.</strong> {d}</p>'
-        f'<a href="{zap_link("Olá! Vim pelo site do Eng. Tafarel e quero saber sobre o " + n + " da Biotecnal.", ZAP_ESTUFAS)}" target="_blank" rel="noopener">Perguntar</a></li>'
+        f'<a href="{zap_link("Olá, Tafarel! Vim pelo site e quero saber sobre o " + n + " da Biotecnal.", ZAP)}" target="_blank" rel="noopener">Perguntar</a></li>'
         for n, t, d in BIO_LINHA_COMPLEMENTAR)
     faq = [
         ("O que é a Biotecnal?",
@@ -1293,7 +1293,7 @@ def biotecnal():
   <h1>Linha Aqua Biotecnal</h1>
   <p class="promessa">Biotecnologia para água de piscicultura: bactérias benéficas, bioestimulador e oxigênio em pó para prevenir e resolver amônia, nitrito, lodo e falta de oxigênio. Representante técnico no RS e em SC.</p>
   <div class="hero-acoes">
-    {botao_zap("Pedir protocolo para o meu viveiro", MSG_BIO, numero=ZAP_ESTUFAS)}
+    {botao_zap("Pedir protocolo para o meu viveiro", MSG_BIO, numero=ZAP)}
     <a class="botao botao-linha" href="{href('calculadora', 0)}">Calcular as doses de manutenção</a>
   </div>
 </div></section>
@@ -1342,7 +1342,7 @@ def biotecnal():
   {perguntas(faq)}
   {caixa_autor(0)}
 </div></section>
-{chamada("Vamos tratar a sua água?", "Mande as medições e o problema. O protocolo sai pelo WhatsApp.", "Pedir protocolo no WhatsApp", MSG_BIO, ZAP_ESTUFAS)}
+{chamada("Vamos tratar a sua água?", "Mande as medições e o problema. O protocolo sai pelo WhatsApp.", "Pedir protocolo no WhatsApp", MSG_BIO, ZAP)}
 """
     ld = [faq_ld(faq), {
         "@context": "https://schema.org", "@type": "ItemList", "name": "Linha Aqua Biotecnal",
@@ -1351,10 +1351,10 @@ def biotecnal():
     return pagina(slug="biotecnal",
                   titulo="Biotecnal Linha Aqua: Oxitrat, Bactrat P, Nutrat Aqua Plus | Representante RS e SC",
                   descricao="Produtos Biotecnal para qualidade de água na piscicultura: Oxitrat (oxigênio em pó), Bactrat P, Bactrat Aquanitro e Nutrat Aqua Plus. Protocolo e venda com o Eng. Tafarel Sá, representante no RS e SC.",
-                  corpo=corpo, msg_zap=MSG_BIO, ld=ld, ativo="biotecnal", zap_numero=ZAP_ESTUFAS)
+                  corpo=corpo, msg_zap=MSG_BIO, ld=ld, ativo="biotecnal", zap_numero=ZAP)
 
 def produto_bio(p):
-    msg = f"Olá! Vim pelo site do Eng. Tafarel e quero comprar {p['nome']} da Biotecnal. Área do viveiro: __ m². Problema: __."
+    msg = f"Olá, Tafarel! Vim pelo site e quero comprar {p['nome']} da Biotecnal. Área do viveiro: __ m². Problema: __."
     artigos_rel = [a for a in ARTIGOS if p["slug"] in a.get("produtos", [])]
     rel = "".join(f'<li><a href="{href("blog/" + a["slug"], 0)}">{a["titulo"]}</a></li>' for a in artigos_rel)
     faq = [
@@ -1368,7 +1368,7 @@ def produto_bio(p):
   <p class="tipo">{p['tipo']}</p>
   <h1>{p['nome']}</h1>
   <p class="promessa">{p['resumo']}</p>
-  <div class="hero-acoes">{botao_zap(f"Comprar {p['nome']}", msg, numero=ZAP_ESTUFAS)}</div>
+  <div class="hero-acoes">{botao_zap(f"Comprar {p['nome']}", msg, numero=ZAP)}</div>
   {f'<img class="produto-img" src="assets/biotecnal/{p["slug"]}.jpg" alt="Embalagem do {p["nome"]} da Biotecnal" decoding="async">' if (RAIZ / "assets" / "biotecnal" / (p["slug"] + ".jpg")).exists() else ""}
 </div></section>
 
@@ -1400,7 +1400,7 @@ def produto_bio(p):
   <h2>Perguntas comuns</h2>
   {perguntas(faq)}
 </div></section>
-{chamada(f"Quer {p['nome']} com o protocolo certo?", "Mande a área do viveiro e as últimas medições. Eu indico a dose e a forma de aplicar.", f"Comprar {p['nome']}", msg, ZAP_ESTUFAS)}
+{chamada(f"Quer {p['nome']} com o protocolo certo?", "Mande a área do viveiro e as últimas medições. Eu indico a dose e a forma de aplicar.", f"Comprar {p['nome']}", msg, ZAP)}
 """
     ld = [faq_ld(faq), {
         "@context": "https://schema.org", "@type": "Product", "name": p["nome"],
@@ -1410,7 +1410,7 @@ def produto_bio(p):
     return pagina(slug="biotecnal-" + p["slug"],
                   titulo=f"{p['nome']} Biotecnal: {p['tipo'].lower()} para piscicultura | Eng. Tafarel Sá",
                   descricao=f"{p['nome']} da Biotecnal: {p['resumo']} Dose, apresentações e onde comprar no RS e SC.",
-                  corpo=corpo, msg_zap=msg, ld=ld, ativo="biotecnal", zap_numero=ZAP_ESTUFAS)
+                  corpo=corpo, msg_zap=msg, ld=ld, ativo="biotecnal", zap_numero=ZAP)
 
 
 CALC_JS = r"""
@@ -1439,7 +1439,7 @@ CALC_JS = r"""
     var box = document.getElementById('r-prob');
     box.hidden = !ind;
     box.querySelector('span').textContent = ind;
-    var msg = 'Olá! Usei a calculadora do site do Eng. Tafarel. Viveiro de ' + fmt(area, 0) + ' m², ' + fmt(prof) +
+    var msg = 'Olá, Tafarel! Usei a calculadora do site. Viveiro de ' + fmt(area, 0) + ' m², ' + fmt(prof) +
       ' m de profundidade (' + fmt(vol, 0) + ' m³), ' + fmt(racao) + ' kg de ração por dia.' +
       (prob ? ' Problema: ' + prob + '.' : '') + ' Quero o protocolo Biotecnal.';
     document.getElementById('r-zap').href = 'https://wa.me/' + f.getAttribute('data-zap') + '?text=' + encodeURIComponent(msg);
@@ -1489,7 +1489,7 @@ DIAG_JS = r"""
     var p=Object.keys(prod), h='<ul class="d-lista">'+L.join('')+'</ul>';
     if(p.length) h+='<div class="resposta-rapida"><p><strong>Produtos Biotecnal para esse quadro:</strong> '+p.join(', ')+'. A dose depende do volume e da biomassa: eu monto o protocolo com você.</p></div>';
     out.innerHTML=h;
-    btn.href='https://wa.me/'+btn.getAttribute('data-num')+'?text='+encodeURIComponent('Olá! Fiz o diagnóstico da água no site do Eng. Tafarel. Meus números: '+res.join('; ')+'. Quero o protocolo Biotecnal.');
+    btn.href='https://wa.me/'+btn.getAttribute('data-num')+'?text='+encodeURIComponent('Olá, Tafarel! Fiz o diagnóstico da água no site. Meus números: '+res.join('; ')+'. Quero o protocolo Biotecnal.');
     btn.hidden=false;
   }
   f.addEventListener('submit',calc);
@@ -1515,7 +1515,7 @@ def bloco_diagnostico():
     </form>
     <div class="calc-resultado" aria-live="polite">
       <div id="diag-res"><p>O resultado aparece aqui. Sem medidor? Veja os <a href="loja-akso.html">kits AKSO</a>.</p></div>
-      <a id="diag-zap" class="botao botao-zap" href="#" data-num="{ZAP_ESTUFAS}" target="_blank" rel="noopener" hidden>{ICONE_ZAP}Enviar o diagnóstico e pedir o protocolo</a>
+      <a id="diag-zap" class="botao botao-zap" href="#" data-num="{ZAP}" target="_blank" rel="noopener" hidden>{ICONE_ZAP}Enviar o diagnóstico e pedir o protocolo</a>
     </div>
   </div>
 </div></section>{DIAG_JS}"""
@@ -1533,7 +1533,7 @@ def calculadora():
 </div></section>
 
 <section class="secao"><div class="wrap calc-grade">
-  <form id="calc" class="calc" data-zap="{ZAP_ESTUFAS}" novalidate>
+  <form id="calc" class="calc" data-zap="{ZAP}" novalidate>
     <label for="area">Área de lâmina d'água (m²)</label>
     <input id="area" name="area" inputmode="decimal" value="5000">
     <label for="prof">Profundidade média (m)</label>
@@ -1568,7 +1568,7 @@ def calculadora():
     return pagina(slug="calculadora",
                   titulo="Calculadora de manejo e diagnóstico da água para piscicultura | Eng. Tafarel Sá",
                   descricao="Calcule as doses de manutenção Biotecnal pela área e pela ração, e faça o diagnóstico da água: oxigênio, pH, amônia tóxica (NH3), nitrito e alcalinidade.",
-                  corpo=corpo, msg_zap=MSG_BIO, ativo="calculadora", zap_numero=ZAP_ESTUFAS,
+                  corpo=corpo, msg_zap=MSG_BIO, ativo="calculadora", zap_numero=ZAP,
                   ld={"@context": "https://schema.org", "@type": "WebApplication", "name": "Calculadora de manejo e diagnóstico da água",
                       "applicationCategory": "UtilitiesApplication", "operatingSystem": "Web", "inLanguage": "pt-BR",
                       "offers": {"@type": "Offer", "price": "0", "priceCurrency": "BRL"},
@@ -1734,7 +1734,7 @@ def cursos():
 # Cada tipo: rótulo, descrição, para qual WhatsApp vai (venda = Brasil, consultoria = Tafarel), perguntas.
 # Pergunta: (id, rótulo, tipo, opções ou placeholder)
 PROJETO_TIPOS = [
-    ("agua", "Água do viveiro", "Amônia, oxigênio, lodo, mortalidade. Protocolo Biotecnal.", "venda", [
+    ("agua", "Água do viveiro", "Amônia, oxigênio, lodo, mortalidade. Protocolo Biotecnal.", "consultoria", [
         ("area", "Área de lâmina d'água (m²)", "texto", "ex.: 5000"),
         ("especie", "Peixe", "opcoes", ["Tilápia", "Peixe nativo", "Traíra/trairão", "Outro"]),
         ("problema", "O que está acontecendo?", "opcoes", ["Amônia ou nitrito alto", "Oxigênio baixo / peixe boquejando", "Lodo, água turva ou verde demais", "Mortalidade", "Só quero prevenir"]),
@@ -1749,7 +1749,7 @@ PROJETO_TIPOS = [
         ("plantas", "Quantas plantas quer produzir?", "opcoes", ["Até 30 (casa)", "30 a 200", "200 a 1.000", "Mais de 1.000"]),
         ("objetivo", "Para quê?", "opcoes", ["Consumo próprio", "Vender a produção", "Escola ou projeto"]),
     ]),
-    ("tanque", "Tanque de geomembrana", "Viveiro, reservatório ou revestimento de tanque que perde água.", "venda", [
+    ("tanque", "Tanque de geomembrana", "Viveiro, reservatório ou revestimento de tanque que perde água.", "consultoria", [
         ("medidas", "Medidas (comprimento x largura x profundidade)", "texto", "ex.: 20 x 10 x 1,5 m"),
         ("uso", "Uso", "opcoes", ["Peixe", "Reservatório de água", "Efluente/lagoa", "Outro"]),
         ("existe", "O tanque já está escavado?", "opcoes", ["Sim", "Não", "Existe e perde água"]),
@@ -1823,7 +1823,7 @@ def projeto():
         cfg[t] = {"rotulo": rot, "numero": numero,
                   "saudacao": ("Olá! Vim pelo site do Eng. Tafarel e quero contar meu projeto." if canal == "venda"
                                else "Olá, Tafarel! Vim pelo site e quero contar meu projeto."), "perguntas": [[p[0], p[1]] for p in perguntas],
-                  "destino": ("Vai para o WhatsApp de vendas " + ZAP_ESTUFAS_LEGIVEL) if canal == "venda"
+                  "destino": ("Vai para o WhatsApp de vendas de estufas " + ZAP_ESTUFAS_LEGIVEL) if canal == "venda"
                   else ("Vai direto para o WhatsApp do Tafarel " + ZAP_LEGIVEL)}
         cards += (f'<label class="p-card"><input type="radio" name="tipo" value="{t}">'
                   f'<span><strong>{rot}</strong><small>{desc}</small></span></label>')
@@ -2164,7 +2164,7 @@ def main():
     linhas += ["", "## Produtos Biotecnal"]
     linhas += [f"- [{p['nome']}]({DOMINIO}/biotecnal-{p['slug']}): {p['tipo']}. {p['resumo']}" for p in BIO_PRODUTOS]
     linhas += ["", "## Contato", f"- Contar um projeto (formulário que gera a mensagem de WhatsApp): {DOMINIO}/projeto",
-               f"- WhatsApp do Tafarel (consultoria e cursos): +{ZAP}", f"- WhatsApp de vendas (estufas, hidroponia, tanques, Biotecnal): +{ZAP_ESTUFAS}", f"- YouTube: {YOUTUBE}", f"- Instagram: {INSTAGRAM}"]
+               f"- WhatsApp do Tafarel (Biotecnal, Água Boa Dá Lucro, consultoria, tanques e cursos): +{ZAP}", f"- WhatsApp de vendas de estufas e hidroponia (Brasil Estufas): +{ZAP_ESTUFAS}", f"- YouTube: {YOUTUBE}", f"- Instagram: {INSTAGRAM}"]
     (DIST / "llms.txt").write_text("\n".join(linhas) + "\n", encoding="utf-8")
 
     itens = "".join(
