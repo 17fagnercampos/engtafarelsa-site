@@ -1052,9 +1052,18 @@ def data_legivel(iso):
 def post_page(a):
     numero = ZAP  # tudo no portal Água Boa Dá Lucro vai para o WhatsApp do Tafarel
     msg = f"Olá, Tafarel! Li no Água Boa Dá Lucro o artigo \"{a['titulo']}\" e quero conversar sobre o meu caso."
-    prods = "".join(
-        f'<li class="oferta"><h3>{PROD[s]["nome"]}</h3><p>{PROD[s]["tipo"]}. {PROD[s]["resumo"]}</p>'
-        f'<a href="{href("biotecnal-" + s, 1)}">Ver produto</a></li>' for s in a["produtos"])
+    def rotulo(s):
+        img = RAIZ / "assets" / "biotecnal" / f"{s}.jpg"
+        foto = (f'<img src="../assets/biotecnal/{s}.jpg" alt="Rótulo do {PROD[s]["nome"]} da Biotecnal" loading="lazy" decoding="async">'
+                if img.exists() else f'<span class="rotulo-sem-foto" aria-hidden="true">{PROD[s]["nome"]}</span>')
+        msg_p = f"Olá, Tafarel! Li o artigo \"{a['titulo']}\" e quero saber sobre o {PROD[s]['nome']}."
+        return (f'<article class="rotulo"><a class="rotulo-img" href="{href("biotecnal-" + s, 1)}">{foto}</a>'
+                f'<div class="rotulo-txt"><p class="card-cat">{PROD[s]["tipo"]}</p><h3>{PROD[s]["nome"]}</h3>'
+                f'<p>{PROD[s]["resumo"]}</p>'
+                f'<p class="rotulo-acoes"><a href="{href("biotecnal-" + s, 1)}">Ver ficha</a>'
+                f'<a href="{zap_link(msg_p, ZAP)}" target="_blank" rel="noopener">Pedir no WhatsApp</a></p></div></article>')
+    prods = "".join(rotulo(s) for s in a["produtos"])
+    titulo_prods = "Produtos usados neste case" if a["categoria"] == "cases" else "Produtos citados"
     rel = sorted((o for o in ARTIGOS if o["slug"] != a["slug"]),
                  key=lambda o: (o["categoria"] != a["categoria"], -len(set(o["produtos"]) & set(a["produtos"]))))[:3]
     outros = "".join(card_artigo(o, 1) for o in rel)
@@ -1079,8 +1088,8 @@ def post_page(a):
 </div></article>
 
 {f'''<section class="secao"><div class="wrap">
-  <h2>Produtos citados</h2>
-  <ul class="ofertas">{prods}</ul>
+  <h2>{titulo_prods}</h2>
+  <div class="rotulos">{prods}</div>
 </div></section>''' if prods else ''}
 
 <section class="secao secao-branca"><div class="wrap">

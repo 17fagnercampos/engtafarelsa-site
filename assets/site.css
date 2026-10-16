@@ -573,3 +573,16 @@ h1, h2 { letter-spacing: -.01em; }
 .botao-zap:hover, .topo-cta:hover { box-shadow: 0 8px 22px rgba(224, 118, 31, .38); }
 .card-post { box-shadow: 0 1px 0 rgba(12, 20, 22, .04), 0 8px 24px rgba(12, 20, 22, .06); }
 .cartao-autor { background: radial-gradient(120% 80% at 100% 100%, #1d5a60 0, var(--agua) 45%, var(--manta) 100%); }
+
+/* Rótulos dos produtos citados nos artigos */
+.rotulos { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+.rotulo { background: var(--papel); border: 1px solid var(--linha); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column;
+  box-shadow: 0 8px 24px rgba(12, 20, 22, .06); }
+.rotulo-img { display: block; background: #eef3f4; }
+.rotulo-img img { width: 100%; aspect-ratio: 4 / 3; height: auto; object-fit: cover; display: block; }
+.rotulo-sem-foto { aspect-ratio: 4 / 3; display: flex; align-items: center; justify-content: center; font-family: var(--fonte-titulo); font-weight: 800; font-size: 1.6rem; color: var(--agua); }
+.rotulo-txt { padding: 16px 18px 18px; display: flex; flex-direction: column; flex: 1; }
+.rotulo-txt h3 { margin: 0 0 6px; font-size: 1.3rem; }
+.rotulo-txt p { margin: 0 0 12px; color: var(--texto-suave); }
+.rotulo-acoes { margin-top: auto !important; display: flex; gap: 16px; flex-wrap: wrap; }
+.rotulo-acoes a { font-weight: 700; }
