@@ -14,7 +14,7 @@ produtos:
   - bactrat-p
 perguntas:
   - pergunta: Qual a dose do Nutrat Aqua Plus para amônia alta?
-    resposta: A dose regular é de 1 mL por kg de ração fornecida por dia, com mínimo de 50 mL por dia. Em água muito ruim pode ser indicada uma dose de choque, definida a partir das medições.
+    resposta: Na manutenção, 500 a 1.000 mL por hectare por semana. Com amônia e nitrito altos, 1 L por hectare durante uma semana ou até regularizar, sempre com as medições acompanhando.
   - pergunta: Posso subir o pH para resolver a amônia?
     resposta: Com cuidado. Com pH mais alto, uma parte maior da amônia fica na forma tóxica. O ajuste precisa ser feito com orientação técnica.
   - pergunta: Quanto tempo leva para a amônia baixar?
@@ -33,8 +33,8 @@ Amônia é número. Sem medir amônia total, pH e temperatura, não dá para sab
 ## Os 4 passos do Guia Prático da Biotecnal
 
 1. **Ajuste do pH.** O guia indica levar o pH para uma faixa alcalina, sem exagerar, porque pH alto demais cria outros problemas. Lembre que com pH alto uma parte maior da amônia fica na forma tóxica, como mostrou o estudo de Emerson e colegas. Esse ajuste é sempre com orientação técnica.
-2. **Nutrat Aqua Plus.** As microbolhas que ele forma ajudam o oxigênio a chegar a toda a coluna d'água, e a amônia é oxidada e volatilizada. Dose regular: 1 mL por kg de ração por dia, mínimo de 50 mL por dia, diluído em pelo menos 10 L de água e aplicado perto dos aeradores. Veja o [NUTRAT AQUA PLUS](../biotecnal-nutrat-aqua-plus.html).
-3. **Aeração constante.** Mantenha a aeração ligada para volatilizar a amônia e repor oxigênio. O [OXITRAT](../biotecnal-oxitrat.html) complementa essa etapa. Manutenção: 5 kg por hectare por semana. Hipóxia e emergência: 10 kg por hectare a cada 4 horas, até o oxigênio voltar.
+2. **Nutrat Aqua Plus.** As microbolhas que ele forma ajudam o oxigênio a chegar a toda a coluna d'água, e a amônia é oxidada e volatilizada. Manutenção: 500 a 1.000 mL por hectare por semana. Com amônia alta: 1 L por hectare durante uma semana ou até regularizar. Diluir em água e aplicar perto dos aeradores. Veja o [NUTRAT AQUA PLUS](../biotecnal-nutrat-aqua-plus.html).
+3. **Aeração constante.** Mantenha a aeração ligada para volatilizar a amônia e repor oxigênio. O [OXITRAT](../biotecnal-oxitrat.html) complementa essa etapa. Dose: 0,25 a 1,0 g por m³, conforme a demanda de oxigênio; manutenção de 0,5 g por m³ ao dia.
 4. **Bactrat P depois dos ajustes.** Com a amônia sob controle, o [BACTRAT P](../biotecnal-bactrat-p.html) todo dia decompõe a matéria orgânica e impede o acúmulo do que vira amônia, mantendo os níveis baixos a longo prazo.
 
 ## O que não fazer

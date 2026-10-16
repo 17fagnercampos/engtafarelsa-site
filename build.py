@@ -1133,7 +1133,7 @@ BIO_PRODUTOS = [
      "ativo": "Percarbonato de sódio, bicarbonato de sódio e agente potencializador",
      "acao": "Libera oxigênio de forma gradual por toda a coluna d'água, do fundo à superfície, e ajusta alcalinidade e pH.",
      "indicacao": ["Hipóxia e oxigênio emergencial", "Madrugadas críticas, chuva forte e inversão térmica", "Oxigênio no transporte de peixes", "Manutenção da qualidade da água"],
-     "dose": "Manutenção: 5 kg por hectare de lâmina d'água por semana, a lanço sobre todo o viveiro. Hipóxia e emergência: 10 kg por hectare a cada 4 horas, até o oxigênio voltar. No transporte, a dose sai da biomassa transportada.",
+     "dose": "0,25 a 1,0 g por m³ de água, conforme a demanda de oxigênio e a biomassa. Manutenção: 0,5 g por m³ ao dia, a lanço (num viveiro de 1 ha com 1,5 m de profundidade, cerca de 7,5 kg por dia). No transporte, a dose sai da biomassa transportada.",
      "apresentacao": "Blister metálico de 1 kg e baldes de 3, 5, 10 e 20 kg", "validade": "24 meses",
      "registro": "Uso profissional, industrial (CRQ/PR 09.200.672)",
      "dica": "A asfixia em massa acontece de madrugada, quando não dá tempo de comprar. O Oxitrat tem que estar estocado no barracão antes da crise."},
@@ -1151,7 +1151,7 @@ BIO_PRODUTOS = [
      "ativo": "Extrato de levedura Saccharomyces cerevisiae livre de células, fitotensoativo e adjuvantes",
      "acao": "Reduz a tensão superficial da água, o que forma microbolhas e melhora a entrada de oxigênio. Também estimula a microbiota benéfica a decompor a matéria orgânica.",
      "indicacao": ["Amônia e nitrito altos", "Oxigênio baixo", "Carga orgânica elevada", "Água verde (eutrofização)"],
-     "dose": "1 mL por kg de ração fornecida por dia, com mínimo de 50 mL por dia em viveiros com pouca ração. Diluir em pelo menos 10 L de água e aplicar perto dos aeradores. Pode ser aplicado uma vez por semana somando a dose dos 7 dias.",
+     "dose": "Manutenção em tanques escavados: 500 a 1.000 mL por hectare de lâmina d'água (ou por 10.000 m³), uma vez por semana. Amônia e nitrito altos, carga orgânica elevada ou eutrofização: 1 L por hectare, durante uma semana ou até regularizar. Diluir em água e aplicar perto dos aeradores.",
      "apresentacao": "Frasco de 1 L, galão de 5 L e bombona de 20 L", "validade": "18 meses",
      "registro": "Resolução Conama nº 463/2014",
      "dica": "Dilua sempre em água e aplique perto dos aeradores. Dose grande de uma vez pode soltar matéria orgânica do fundo: divida em aplicações menores."},
@@ -1518,13 +1518,13 @@ CALC_JS = r"""
     var vol = area * prof;
     var ha = area / 10000;
     var bactrat = racao * 0.2;               // g/dia (0,2 g por kg de ração)
-    var nut = Math.max(racao * 1, racao ? 50 : 0); // mL/dia (1 mL/kg de ração, mínimo 50 mL)
-    var oxi = ha * 5; // kg/semana (manutenção)
+    var nutMin = ha * 500, nutMax = ha * 1000; // mL/semana (500 a 1.000 mL por ha, ficha set/26)
+    var oxi = vol * 0.5 / 1000; // kg/dia (0,5 g por m³ ao dia, ficha set/26)
     var aquanitro = area / 1000 * 500;       // g/semana
     document.getElementById('r-vol').textContent = fmt(vol, 0) + ' m³';
     document.getElementById('r-bac').textContent = racao ? fmt(bactrat) + ' g por dia' : 'informe a ração diária';
-    document.getElementById('r-nut').textContent = racao ? fmt(nut, 0) + ' mL por dia (' + fmt(nut * 7 / 1000, 1) + ' L por semana)' : 'informe a ração diária';
-    document.getElementById('r-oxi').textContent = (oxi >= 1 ? fmt(oxi) + ' kg' : fmt(oxi * 1000, 0) + ' g') + ' por semana';
+    document.getElementById('r-nut').textContent = area ? fmt(nutMin, 0) + ' a ' + fmt(nutMax, 0) + ' mL por semana' : 'informe a área';
+    document.getElementById('r-oxi').textContent = vol ? (oxi >= 1 ? fmt(oxi) + ' kg' : fmt(oxi * 1000, 0) + ' g') + ' por dia' : 'informe área e profundidade';
     document.getElementById('r-aqn').textContent = (aquanitro >= 1000 ? fmt(aquanitro / 1000) + ' kg' : fmt(aquanitro, 0) + ' g') + ' por semana';
     var ind = f.problema.selectedOptions[0].getAttribute('data-ind') || '';
     var box = document.getElementById('r-prob');
@@ -1638,7 +1638,7 @@ def calculadora():
     <p class="calc-vol">Volume de água: <strong id="r-vol"></strong></p>
     <dl class="ficha">
       <dt>{link_prod('bactrat-p')} · prevenção de amônia e lodo</dt><dd id="r-bac"></dd>
-      <dt>{link_prod('nutrat-aqua-plus')} · dose regular</dt><dd id="r-nut"></dd>
+      <dt>{link_prod('nutrat-aqua-plus')} · manutenção</dt><dd id="r-nut"></dd>
       <dt>{link_prod('oxitrat')} · manutenção</dt><dd id="r-oxi"></dd>
       <dt>{link_prod('bactrat-aquanitro')} · manutenção</dt><dd id="r-aqn"></dd>
     </dl>

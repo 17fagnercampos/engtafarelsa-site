@@ -75,4 +75,4 @@ Anote ração e mortalidade toda semana. Conversão piorando sem mudar a ração
 
 ## Ração e água andam juntas
 
-As doses da linha Biotecnal são calculadas pela ração do dia, justamente porque a ração é a carga que entra na água. O [BACTRAT P](../biotecnal-bactrat-p.html) vai a 0,2 g por kg de ração por dia e o [NUTRAT AQUA PLUS](../biotecnal-nutrat-aqua-plus.html) a 1 mL por kg de ração por dia. A [calculadora](../calculadora.html) faz a conta para o seu viveiro.
+A dose do [BACTRAT P](../biotecnal-bactrat-p.html) é calculada pela ração do dia, justamente porque a ração é a carga que entra na água: 0,2 g por kg de ração por dia. O [NUTRAT AQUA PLUS](../biotecnal-nutrat-aqua-plus.html) vai pela área: 500 a 1.000 mL por hectare por semana. A [calculadora](../calculadora.html) faz a conta para o seu viveiro.
