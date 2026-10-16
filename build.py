@@ -536,7 +536,7 @@ def home():
     </div>
     <nav class="cat-chips" aria-label="Categorias">{"".join(f'<a class="cat-chip" href="{href("blog/categoria/" + c, 0)}">{n}</a>' for c, n, _ in CATEGORIAS)}</nav>
   </div>
-  <div class="hero-destaque"><p class="card-cat">Em destaque</p>{card_artigo(ARTIGOS[0], 0)}</div>
+  <div class="hero-destaque"><p class="card-cat">Em destaque</p>{card_artigo(ARTIGOS[0], 0, 2)}</div>
 </div></section>
 
 <section class="secao"><div class="wrap">
@@ -1991,7 +1991,7 @@ UFS = ["RS", "SC", "PR", "SP", "MG", "MS", "MT", "GO", "DF", "RJ", "ES", "BA", "
 INTERESSES = ["Qualidade da água", "Produtos Biotecnal", "Cursos", "Novos vídeos", "Ser revenda Biotecnal"]
 
 
-def card_artigo(a, prof):
+def card_artigo(a, prof, nivel=3):
     nome_cat = CAT.get(a["categoria"], ("", ""))[0]
     foto = a["foto"]
     if not foto:  # sem foto própria: usa a embalagem do primeiro produto Biotecnal citado
@@ -2004,7 +2004,7 @@ def card_artigo(a, prof):
     return (f'<article class="card-post"><a class="card-link" href="{href("blog/" + a["slug"], prof)}">'
             f'<div class="card-img">{img}</div>'
             f'<div class="card-txt"><p class="card-cat">{nome_cat} · {a["leitura"]} min de leitura</p>'
-            f'<h3>{a["titulo"]}</h3><p>{a["descricao"]}</p></div></a></article>')
+            f'<h{nivel}>{a["titulo"]}</h{nivel}><p>{a["descricao"]}</p></div></a></article>')
 
 
 def bloco_cadastro(prof=0, titulo="Receba o Água Boa Dá Lucro no WhatsApp", intro=None):
@@ -2083,7 +2083,7 @@ def portal_index():
 
 <section class="secao"><div class="wrap">
   <p class="card-cat">Em destaque</p>
-  <div class="destaque">{card_artigo(destaque, 1)}</div>
+  <div class="destaque">{card_artigo(destaque, 1, 2)}</div>
 </div></section>
 {secoes}
 {bloco_cadastro(1)}
@@ -2110,7 +2110,7 @@ def categoria_page(s, n, d):
     lista = [a for a in ARTIGOS if a["categoria"] == s]
     chips = "".join(f'<a class="cat-chip{" ativo" if c == s else ""}" href="{href("blog/categoria/" + c, 2)}">{nn}</a>' for c, nn, _ in CATEGORIAS)
     if lista:
-        conteudo = f'<div class="cards">{"".join(card_artigo(a, 2) for a in lista)}</div>'
+        conteudo = f'<div class="cards">{"".join(card_artigo(a, 2, 2) for a in lista)}</div>'
     elif s == "cases":
         msg = "Olá, Tafarel! Usei a linha Biotecnal e quero contar o meu resultado para virar um case no Água Boa Dá Lucro."
         conteudo = f"""<div class="resposta-rapida"><p><strong>Os primeiros cases estão sendo preparados.</strong> Usou a linha Aqua e mediu o antes e o depois? Seu resultado pode virar um case aqui, com o seu nome e a sua propriedade, se você quiser.</p></div>

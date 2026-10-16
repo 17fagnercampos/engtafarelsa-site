@@ -533,14 +533,15 @@ img.foto { width: 100%; height: auto; border-radius: var(--raio); object-fit: co
 .card-img img { width: 100%; height: 100%; object-fit: cover; }
 .card-sem-foto { display: flex; align-items: flex-end; height: 100%; padding: 14px; color: #fff; font-family: var(--fonte-titulo); font-weight: 800; font-size: 1.3rem; background: linear-gradient(135deg, var(--agua), var(--manta)); }
 .card-txt { padding: 14px 16px 18px; }
-.card-txt h3 { font-size: 1.25rem; margin-bottom: 6px; }
+.card-txt h2, .card-txt h3 { font-size: 1.25rem; margin-bottom: 6px; }
 .card-txt p { margin: 0; color: var(--texto-suave); font-size: .95rem; }
-.card-cat { font-size: .82rem; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; color: var(--folha); margin: 0 0 6px; }
+.card-cat { font-size: .82rem; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; color: var(--agua); margin: 0 0 6px; }
 .portal-hero .card-cat { color: var(--lona); }
+.portal-hero .card-post .card-cat { color: var(--agua); }
 .destaque .card-link { grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); }
 @media (max-width: 760px) { .destaque .card-link { grid-template-columns: 1fr; } }
 .destaque .card-img { aspect-ratio: auto; min-height: 240px; }
-.destaque h3 { font-size: clamp(1.5rem, 3vw, 2.1rem); }
+.destaque h2, .destaque h3 { font-size: clamp(1.5rem, 3vw, 2.1rem); }
 .secao-cadastro { background: var(--agua-clara); }
 .cad-grade { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); gap: clamp(20px, 4vw, 48px); align-items: start; }
 @media (max-width: 860px) { .cad-grade { grid-template-columns: 1fr; } }
@@ -550,7 +551,7 @@ img.foto { width: 100%; height: auto; border-radius: var(--raio); object-fit: co
 .menu a.menu-destaque { background: var(--agua); color: #fff; font-weight: 700; }
 .menu a.menu-destaque:hover, .menu a.menu-destaque[aria-current="page"] { background: var(--manta); color: #fff; }
 .hero-destaque .card-post { border-color: transparent; }
-.hero-destaque .card-txt h3 { color: var(--manta); }
+.hero-destaque .card-txt h2, .hero-destaque .card-txt h3 { color: var(--manta); }
 .home-portal h1 { font-size: clamp(2.6rem, 7vw, 5rem); }
 
 /* Biotecnal: selos e portfólio */
