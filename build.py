@@ -206,6 +206,22 @@ def pixel_html():
 
 
 
+_PALAVRAS_SOLTAS = {"para", "e", "de", "do", "da", "dos", "das", "no", "na", "com", "o", "a", "em", "por"}
+
+
+def titulo_tag(t, limite=65):
+    """Título curto para o Google/Bing (até ~65 caracteres). O título completo continua no og:title."""
+    if len(t) <= limite:
+        return t
+    base = t.rsplit(" | ", 1)[0] if t.endswith("| Eng. Tafarel Sá") else t
+    if len(base) <= 70:  # sem o sufixo, aceita até 70 (limite do Bing) para não cortar a frase
+        return base
+    palavras = base.split()
+    while palavras and (len(" ".join(palavras)) > limite or palavras[-1].lower() in _PALAVRAS_SOLTAS):
+        palavras.pop()
+    return " ".join(palavras).rstrip(":,;-–")
+
+
 def pagina(*, slug, titulo, descricao, corpo, prof=0, msg_zap, ld=None, ativo=None, zap_numero=None):
     canonico = DOMINIO + "/" + (slug.removesuffix("index") if slug else "")
     css = "../" * prof + "assets/site.css"
@@ -221,7 +237,7 @@ def pagina(*, slug, titulo, descricao, corpo, prof=0, msg_zap, ld=None, ativo=No
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{html.escape(titulo)}</title>
+<title>{html.escape(titulo_tag(titulo))}</title>
 <meta name="description" content="{html.escape(descricao)}">
 <link rel="canonical" href="{canonico}">
 <meta property="og:type" content="website">
@@ -600,7 +616,7 @@ def home():
         },
         faq_ld(FAQ_HOME),
     ]
-    return pagina(slug="", titulo="Eng. Tafarel Sá | Qualidade da água na piscicultura e Biotecnal no RS e SC",
+    return pagina(slug="", titulo="Piscicultura e qualidade da água no RS e SC | Eng. Tafarel Sá",
                   descricao="Qualidade da água na piscicultura: oxigênio, amônia, nitrito e lodo. Produtos Biotecnal com protocolo do Eng. Tafarel Sá, representante no RS e SC. Consultoria, aquaponia, hidroponia e estufas.",
                   corpo=corpo, msg_zap=msg, ld=ld)
 
@@ -1934,7 +1950,7 @@ def card_artigo(a, prof):
             if (RAIZ / "assets" / "biotecnal" / f"{pr}.jpg").exists():
                 foto = f"assets/biotecnal/{pr}.jpg"
                 break
-    img = (f'<img src="{"../" * prof}{foto}" alt="" loading="lazy" decoding="async">' if foto
+    img = (f'<img src="{"../" * prof}{foto}" alt="{html.escape(a.get("foto_legenda") or a["titulo"])}" loading="lazy" decoding="async">' if foto
            else f'<span class="card-sem-foto" aria-hidden="true">{nome_cat}</span>')
     return (f'<article class="card-post"><a class="card-link" href="{href("blog/" + a["slug"], prof)}">'
             f'<div class="card-img">{img}</div>'
