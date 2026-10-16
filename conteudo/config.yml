@@ -1,9 +1,7 @@
-# Configurações gerais do site. Edite pelo painel (Pages CMS) ou aqui mesmo.
 whatsapp_tafarel: "5551999365993"
-whatsapp_tafarel_legivel: "(51) 99936-5993"
+whatsapp_tafarel_legivel: (51) 99936-5993
 whatsapp_vendas: "5548998508182"
-whatsapp_vendas_legivel: "(48) 99850-8182"
-youtube: "https://www.youtube.com/@engtafarelsa"
-instagram: "https://instagram.com/engtafarelsa"
-facebook: ""
-meta_pixel_id: ""
+whatsapp_vendas_legivel: (48) 99850-8182
+youtube: https://www.youtube.com/@engtafarelsa
+instagram: https://instagram.com/engtafarelsa
+facebook: https://www.facebook.com/engtafarelsa
