@@ -57,7 +57,7 @@ As aplicações começaram em 30/09 e seguiram até 06/10, sempre acompanhadas d
 - **Bicarbonato de sódio:** 42 kg no lote, para segurar a alcalinidade que as bactérias consomem. Ela caiu de 150 para 80 ppm e voltou para 100 ppm.
 - **Sal comum sem iodo:** 400 kg no lote, para proteger os peixes do nitrito enquanto o tratamento agia.
 
-No preparo da água também foram usados 2 kg de cal virgem e 270 g de DB Aqua+.
+No preparo da água também foram usados 2 kg de cal virgem.
 
 ## O resultado
 
