@@ -1143,7 +1143,7 @@ BIO_PRODUTOS = [
      "acao": "As bactérias benéficas consomem o lodo e os resíduos orgânicos, o que evita a formação de amônia e reduz a necessidade de renovar água.",
      "indicacao": ["Excesso de lodo no fundo", "Água turva", "Água verde (eutrofização)", "Prevenção de amônia ao longo do ciclo"],
      "dose": "0,2 g por kg de ração fornecida ao viveiro, diariamente, a lanço sobre a maior área possível.",
-     "apresentacao": "Baldes de 2 e 10 kg e pouch de 1 e 2,5 kg, com copos dosadores de 5 g e 30 g", "validade": "18 meses",
+     "apresentacao": "Baldes de 2 kg e 10 kg (em pacotes de 1 kg) e pouch de 1 kg e 2,5 kg, com copos dosadores de 5 g e 30 g", "validade": "18 meses",
      "registro": "Cadastrado no MAPA sob o nº 341/13 SEFIP/DDA/SFA-PR",
      "dica": "Deixe o aerador ligado pelo menos 2 horas antes e 2 horas depois da aplicação."},
     {"slug": "nutrat-aqua-plus", "nome": "NUTRAT AQUA PLUS", "tipo": "Bioestimulador e biossurfactante",
@@ -1164,15 +1164,46 @@ BIO_PRODUTOS = [
      "apresentacao": "Baldes de 2 kg e 30 kg", "validade": "18 meses",
      "registro": "Ibama Portaria nº 241; Resolução Conama nº 463",
      "dica": "Bactéria nitrificante precisa de oxigênio e alcalinidade para trabalhar. Sem aeração, o produto não rende."},
+    {"slug": "bactrat-aquatech", "nome": "BACTRAT AQUATECH", "tipo": "Modulador biológico de lodo",
+     "resumo": "Consórcio de microrganismos e enzimas que estabiliza o lodo e o sedimento de tanques escavados, viveiros sem geomembrana e sistemas de recirculação.",
+     "ativo": "Bacillus spp. selecionados, actinomicetos e bactérias oxidantes de enxofre, com enzimas hidrolíticas; mais de 1 bilhão de microrganismos por grama",
+     "acao": "As enzimas quebram a matéria orgânica acumulada no fundo e as bactérias consomem o que sobra. O lodo para de crescer e o fundo deixa de soltar gases.",
+     "indicacao": ["Tanque escavado com muito lodo", "Viveiro sem geomembrana", "Recirculação (RAS) e reprodutores com carga orgânica alta", "Cheiro de ovo podre no fundo (gás sulfídrico)"],
+     "dose": "Aclimatação: 50 g por 1.000 m² por semana, nas 2 primeiras semanas. Manutenção: 5 g por saca de 25 kg de ração. Choque: 100 g por 1.000 m² e depois 0,5 g por kg de ração por 10 dias. A lanço, de manhã e com aeração, nas zonas de maior acúmulo de lodo.",
+     "apresentacao": "Baldes de 2 kg e 10 kg e bombona de 30 kg", "validade": "18 meses",
+     "registro": "Ficha técnica Biotecnal Agro (setembro de 2026)",
+     "dica": "Aplique onde o lodo se acumula: perto do comedouro e do dreno. O aerador ligado é o que leva o oxigênio para as bactérias trabalharem no fundo."},
+    {"slug": "bioflow-aqua", "nome": "BIOFLOW AQUA", "tipo": "Floculante e adensador de bioflocos",
+     "resumo": "Floculante à base de lignossulfonatos que clarifica a água e adensa os flocos microbianos em sistemas de bioflocos (BFT).",
+     "ativo": "Lignossulfonatos, adjuvantes e veículo; sólidos entre 6% e 9%",
+     "acao": "Junta as partículas em suspensão em flocos maiores, que descem para o fundo. A água clareia e, no bioflocos, os flocos ficam mais firmes e fáceis de controlar.",
+     "indicacao": ["Água turva por sólidos em suspensão", "Bioflocos com flocos soltos ou excesso de sólidos", "Clarificação antes de despesca ou transferência"],
+     "dose": "Definida pelo técnico responsável: na clarificação, pela turbidez e pelos sólidos suspensos totais; nos bioflocos, pelos sólidos sedimentáveis medidos em cone Imhoff.",
+     "apresentacao": "Galão de 5 kg, bombona de 25 kg e contentor IBC de 1.100 kg", "validade": "24 meses",
+     "registro": "Anvisa INF-022/2016 e Resolução Conama nº 463/2014",
+     "dica": "No bioflocos, meça os sólidos sedimentáveis no cone Imhoff antes de aplicar. A dose sai desse número, não do olho."},
 ]
 
 BIO_LINHA_COMPLEMENTAR = [
-    ("Bioflow Aqua", "Floculante", "Clarifica a água sedimentando os sólidos em suspensão e adensa os flocos em sistemas de bioflocos."),
-    ("Bicarbonato de sódio", "Alcalinizante", "Grau alimentício, 99% de pureza. Corrige a alcalinidade e estabiliza o pH."),
-    ("Algitrat", "Controle de algas", "Sulfato de cobre a 25% para algas e cianofíceas. Uso só com orientação técnica."),
-    ("Aqua-Clean", "Saneante", "Peróxido de hidrogênio com prata. Remove biofilme de tubulações e equipamentos."),
-    ("Bacsteril", "Desinfetante", "Amplo espectro para instalações, tanques, veículos e utensílios. 1 L rende 2.000 L."),
-    ("TCCA e Tiossulfato", "Desinfecção e neutralização", "Cloro de liberação gradual e o neutralizador de cloro residual antes do povoamento."),
+    ("Bicarbonato de sódio", "Alcalinizante", "Grau alimentício, origem mineral, pureza mínima de 99%. Corrige a alcalinidade e estabiliza o pH do viveiro. Saco de 25 kg."),
+    ("Algitrat", "Controle de algas", "Sulfato de cobre a 25% para algas e cianofíceas, até 3 mL por m³. Cobre é sensível em água de baixa alcalinidade: só com orientação técnica."),
+    ("Bacsteril", "Desinfetante", "Quaternário de amônio de amplo espectro para instalações, tanques, veículos e utensílios. 1 L rende 2.000 L de solução."),
+    ("Aqua-Clean", "Saneante e removedor de biofilme", "Peróxido de hidrogênio a 50% com prata. Remove biofilme de tubulações e desinfeta sistemas de água. Registro Anvisa."),
+    ("Sanibel e Clim 90 (TCCA)", "Desinfecção com cloro", "Ácido tricloroisocianúrico com 90% de cloro ativo, em tabletes de 20 g e 200 g, para reservatórios, tanques e caixas d'água."),
+    ("Tiossulfato de sódio", "Neutralizador de cloro", "Elimina o cloro residual antes do povoamento: 5 mg de tiossulfato para cada mg de cloro livre."),
+]
+
+# Portfólio completo Biotecnal Agro (Fichas Técnicas, setembro de 2026)
+BIO_DIVISOES = [
+    ("Sanidade e ambiência", "Moduladores biológicos que estabilizam camas e dejetos e reduzem amônia, moscas e patógenos nas criações.",
+     [("Bactrat BC", "bovinos de corte em confinamento"), ("Bactrat BL", "bovinos de leite em Compost Barn e Free Stall"),
+      ("Bactrat AP", "aves de postura"), ("Bactrat S", "suinocultura, todas as fases"), ("Bactrat CA", "camas de equinos, ovinos e caprinos")]),
+    ("Resíduos e efluentes", "Bioestimuladores, enzimas e adsorventes para estações de tratamento, biodigestores e compostagem.",
+     [("Enzipro WP", "lagoas e biorreatores"), ("Enzipro Anaero", "biodigestores e reatores anaeróbios"),
+      ("Nutrat S", "efluentes com óleos e gorduras"), ("Nutrat HB", "metais pesados e efluentes tóxicos"),
+      ("Bactrat Compostrat", "compostagem de resíduos e carcaças")]),
+    ("Água potável e de processo", "Coagulante, sequestrante e corretivos para estações de tratamento de água e efluentes.",
+     [("Organotrat 100", "coagulante orgânico de origem vegetal"), ("Econox", "sequestrante e anti-incrustante para água potável")]),
 ]
 
 # Matriz problema → solução. Só as indicações "altamente indicado" da base técnica.
@@ -1181,8 +1212,8 @@ MATRIZ = [
     ("Nitrito alto", "nitrito-na-piscicultura", ["bactrat-aquanitro", "nutrat-aqua-plus"]),
     ("Oxigênio baixo ao amanhecer", "oxigenio-dissolvido-piscicultura", ["oxitrat", "nutrat-aqua-plus"]),
     ("Peixe boquejando ou morrendo", "chuva-forte-e-inversao-termica", ["oxitrat"]),
-    ("Excesso de lodo no fundo", "lodo-e-materia-organica", ["bactrat-p"]),
-    ("Água turva", "lodo-e-materia-organica", ["bactrat-p"]),
+    ("Excesso de lodo no fundo", "lodo-e-materia-organica", ["bactrat-p", "bactrat-aquatech"]),
+    ("Água turva", "lodo-e-materia-organica", ["bactrat-p", "bioflow-aqua"]),
     ("Água verde demais", "lodo-e-materia-organica", ["bactrat-p", "nutrat-aqua-plus"]),
 ]
 
@@ -1319,6 +1350,11 @@ def biotecnal():
         f'<li class="oferta"><h3>{n}</h3><p><strong>{t}.</strong> {d}</p>'
         f'<a href="{zap_link("Olá, Tafarel! Vim pelo site e quero saber sobre o " + n + " da Biotecnal.", ZAP)}" target="_blank" rel="noopener">Perguntar</a></li>'
         for n, t, d in BIO_LINHA_COMPLEMENTAR)
+    divs = "".join(
+        f'<article class="divisao"><h3>{n}</h3><p>{d}</p><ul>'
+        + "".join(f"<li><strong>{pn}</strong>: {pu}</li>" for pn, pu in itens)
+        + f'</ul><a href="{zap_link("Olá, Tafarel! Vim pelo site e quero saber sobre a linha " + n.lower() + " da Biotecnal.", ZAP)}" target="_blank" rel="noopener">Perguntar sobre esta linha</a></article>'
+        for n, d, itens in BIO_DIVISOES)
     faq = [
         ("O que é a Biotecnal?",
          "Uma indústria de biotecnologia de Toledo/PR, ativa desde 2007, que fabrica produtos biológicos e químicos para aquicultura, produção animal e tratamento de água e efluentes."),
@@ -1332,8 +1368,8 @@ def biotecnal():
     corpo = f"""
 <section class="cabeca-pagina"><div class="wrap">
   <p class="trilha"><a href="index.html">Início</a> / Biotecnal</p>
-  <h1>Linha Aqua Biotecnal</h1>
-  <p class="promessa">Biotecnologia para água de piscicultura: bactérias benéficas, bioestimulador e oxigênio em pó para prevenir e resolver amônia, nitrito, lodo e falta de oxigênio. Representante técnico no RS e em SC.</p>
+  <h1>Biotecnal no RS e em SC</h1>
+  <p class="promessa">Biotecnologia para a água da piscicultura: bactérias benéficas, bioestimulador, floculante e oxigênio em pó para prevenir e resolver amônia, nitrito, lodo e falta de oxigênio. E o portfólio completo Biotecnal Agro para criação animal e efluentes. Representante técnico no RS e em SC.</p>
   <div class="hero-acoes">
     {botao_zap("Pedir protocolo para o meu viveiro", MSG_BIO, numero=ZAP)}
     <a class="botao botao-linha" href="{href('calculadora', 0)}">Calcular as doses de manutenção</a>
@@ -1347,14 +1383,20 @@ def biotecnal():
 </div></section>
 
 <section class="secao secao-branca"><div class="wrap">
-  <h2>Produtos principais</h2>
+  <h2>Linha Aqua: aquicultura</h2>
   <div class="kits">{cards}</div>
 </div></section>
 
 <section class="secao"><div class="wrap cabeca-grade">
   <div>
     <h2>Por dentro da Biotecnal</h2>
-    <p>Indústria de biotecnologia em Toledo/PR desde 2007, com ISO 9001, ISO 14001 e registros no IBAMA, na ANVISA e no Ministério da Agricultura. A linha Aqua parte de uma ideia simples: tratar a água é tão importante quanto tratar os animais.</p>
+    <p>Indústria de biotecnologia em Toledo/PR desde 2007, com registros no IBAMA, na ANVISA e no Ministério da Agricultura. A linha Aqua parte de uma ideia simples: tratar a água é tão importante quanto tratar os animais.</p>
+    <ul class="selos">
+      <li><strong>ISO 9001:2015</strong><span>Gestão da qualidade</span></li>
+      <li><strong>ISO 14001</strong><span>Gestão ambiental</span></li>
+      <li><strong>CRQ 9ª Região</strong><span>Responsável técnico (ART)</span></li>
+      <li><strong>Licença sanitária</strong><span>Em dia</span></li>
+    </ul>
     <div class="hero-acoes">
       <a class="botao botao-linha" href="{href('blog/biotecnal-quem-fabrica-a-linha-aqua', 0)}">Conhecer a Biotecnal</a>
       <a class="botao botao-linha" href="{href('seja-revenda-biotecnal', 0)}">Seja revenda no RS e SC</a>
@@ -1364,9 +1406,16 @@ def biotecnal():
 </div></section>
 
 <section class="secao"><div class="wrap">
-  <h2>Linha complementar</h2>
-  <p class="intro">Para clarificação, alcalinidade, algas e biosseguridade. Uso conforme orientação técnica.</p>
+  <h2>Qualidade de água e biosseguridade</h2>
+  <p class="intro">Alcalinidade, algas, desinfecção e cloro. Uso conforme orientação técnica.</p>
   <ul class="ofertas">{comp}</ul>
+</div></section>
+
+<section class="secao secao-branca" id="portfolio"><div class="wrap">
+  <h2>Portfólio completo Biotecnal Agro</h2>
+  <p class="intro">Além da aquicultura, a Biotecnal tem linhas para criação animal, efluentes e tratamento de água. Também atendo essas linhas no RS e em SC.</p>
+  <div class="divisoes">{divs}</div>
+  <p class="nota-afiliado">Fonte: Fichas Técnicas Biotecnal Agro, setembro de 2026. Dose e aplicação definidas com o técnico para cada caso.</p>
 </div></section>
 
 <section class="secao secao-escura"><div class="wrap">
@@ -1391,8 +1440,8 @@ def biotecnal():
         "itemListElement": [{"@type": "ListItem", "position": i + 1, "url": f"{DOMINIO}/biotecnal-{p['slug']}", "name": p["nome"]}
                             for i, p in enumerate(BIO_PRODUTOS)]}]
     return pagina(slug="biotecnal",
-                  titulo="Biotecnal Linha Aqua: Oxitrat, Bactrat P, Nutrat Aqua Plus | Representante RS e SC",
-                  descricao="Produtos Biotecnal para qualidade de água na piscicultura: Oxitrat (oxigênio em pó), Bactrat P, Bactrat Aquanitro e Nutrat Aqua Plus. Protocolo e venda com o Eng. Tafarel Sá, representante no RS e SC.",
+                  titulo="Biotecnal no RS e SC: linha Aqua e portfólio Biotecnal Agro",
+                  descricao="Produtos Biotecnal para piscicultura: Oxitrat, Bactrat P, Bactrat Aquanitro, Bactrat Aquatech, Bioflow Aqua e Nutrat Aqua Plus, mais as linhas de criação animal e efluentes. Protocolo e venda com o Eng. Tafarel Sá, representante no RS e SC.",
                   corpo=corpo, msg_zap=MSG_BIO, ld=ld, ativo="biotecnal", zap_numero=ZAP)
 
 def produto_bio(p):
@@ -1432,7 +1481,7 @@ def produto_bio(p):
       <dt>Registro</dt><dd>{p['registro']}</dd>
       <dt>Fabricante</dt><dd>Biotecnal Ltda., Toledo/PR</dd>
     </dl>
-    <p class="nota-afiliado">Doses do Guia Prático Aquicultura de Resultado e das fichas técnicas Biotecnal. Protocolo de choque só com diagnóstico da água.</p>
+    <p class="nota-afiliado">Doses do Guia Prático Aquicultura de Resultado e das Fichas Técnicas Biotecnal Agro (setembro de 2026). Protocolo de choque só com diagnóstico da água.</p>
   </div>
 </div></section>
 

@@ -552,3 +552,14 @@ img.foto { width: 100%; height: auto; border-radius: var(--raio); object-fit: co
 .hero-destaque .card-post { border-color: transparent; }
 .hero-destaque .card-txt h3 { color: var(--manta); }
 .home-portal h1 { font-size: clamp(2.6rem, 7vw, 5rem); }
+
+/* Biotecnal: selos e portfólio */
+.selos { list-style: none; padding: 0; margin: 20px 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; }
+.selos li { border: 1px solid var(--linha); background: #fff; border-radius: var(--raio); padding: 10px 14px; display: flex; flex-direction: column; }
+.selos strong { font-family: var(--fonte-titulo); color: var(--agua); font-size: 1.05rem; }
+.selos span { color: var(--texto-suave); font-size: .9rem; }
+.divisoes { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+.divisao { border: 1px solid var(--linha); border-top: 4px solid var(--agua); border-radius: var(--raio); padding: 20px; background: var(--papel); display: flex; flex-direction: column; }
+.divisao ul { padding-left: 18px; margin: 8px 0 16px; }
+.divisao li { margin-bottom: 6px; }
+.divisao a { margin-top: auto; font-weight: 700; }

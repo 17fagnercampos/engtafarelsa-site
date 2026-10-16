@@ -82,6 +82,10 @@ content:
         label: NUTRAT AQUA PLUS
       - value: bactrat-aquanitro
         label: BACTRAT AQUANITRO
+      - value: bactrat-aquatech
+        label: BACTRAT AQUATECH
+      - value: bioflow-aqua
+        label: BIOFLOW AQUA
   - name: perguntas
     label: Perguntas frequentes
     type: object
