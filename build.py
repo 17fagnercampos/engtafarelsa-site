@@ -119,6 +119,14 @@ def foto_slot(slot, provisorio, prof=0, classe="foto-provisoria"):
             f'loading="lazy" decoding="async">')
 
 
+CARTAO_AUTOR = (
+    '<span class="cartao-mono" aria-hidden="true">TS</span>'
+    '<span class="cartao-nome">Eng. Tafarel Sá</span>'
+    '<span class="cartao-cargo">Engenheiro · Benfica AgroEngenharia</span>'
+    '<span class="cartao-local">Triunfo/RS · @engtafarelsa</span>'
+)
+
+
 def zap_link(msg, numero=None):
     return f"https://wa.me/{numero or ZAP}?text={quote(msg)}"
 
@@ -221,6 +229,12 @@ def pagina(*, slug, titulo, descricao, corpo, prof=0, msg_zap, ld=None, ativo=No
 <meta property="og:title" content="{html.escape(titulo)}">
 <meta property="og:description" content="{html.escape(descricao)}">
 <meta property="og:url" content="{canonico}">
+<meta property="og:site_name" content="Eng. Tafarel Sá">
+<meta property="og:image" content="{DOMINIO}/assets/og-capa.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Eng. Tafarel Sá: qualidade da água na piscicultura">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#1b2321">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -532,15 +546,27 @@ def home():
 
 {bloco_youtube(0)}
 
-<section class="secao secao-branca"><div class="wrap assina">
-  {foto_slot("inicio_tafarel", "Foto do Tafarel em campo<br>(substituir)")}
+<section class="secao secao-branca" id="quem-assina"><div class="wrap assina">
+  <div class="assina-lado">
+    {foto_slot("inicio_tafarel", CARTAO_AUTOR, classe="cartao-autor")}
+    <ul class="assina-fatos">
+      <li><strong>Desde 2020</strong><span>Benfica AgroEngenharia</span></li>
+      <li><strong>RS e SC</strong><span>Representante Biotecnal</span></li>
+      <li><strong>4 marcas</strong><span>de fabricante, com procedência</span></li>
+    </ul>
+  </div>
   <div>
-    <h2>Quem assina o projeto</h2>
-    <p>Sou engenheiro e responsável técnico pela Benfica AgroEngenharia, empresa de engenharia com sede em Triunfo/RS desde 2020.</p>
+    <p class="sobretitulo">Quem assina o projeto</p>
+    <h2>Eng. Tafarel Sá</h2>
+    <p class="assina-lead">Sou engenheiro e responsável técnico pela Benfica AgroEngenharia, empresa de engenharia com sede em Triunfo/RS desde 2020.</p>
     <p>Represento a Brasil Estufas, a Biotecnal e a Geotop, vendo a linha de hidroponia Hortivinyl e indico os equipamentos AKSO. Isso quer dizer material de fabricante, com procedência, e alguém que responde por ele depois da entrega.</p>
-    <p>Pela Benfica, já atendemos empresas como:</p>
+    <p>No canal, apresento a série <a href="{href('blog/', 0)}">Água Boa Dá Lucro</a>: manejo da água explicado com números, para o produtor decidir com segurança.</p>
+    <p class="assina-clientes-titulo">Pela Benfica, já atendemos empresas como:</p>
     <ul class="clientes">{"".join(f"<li>{c}</li>" for c in clientes)}</ul>
-    <p style="margin-top:20px"><a href="{href('sobre', 0)}">Conheça minha trajetória</a></p>
+    <div class="assina-acoes">
+      {botao_zap("Falar com o Tafarel", "Olá, Tafarel! Vi o seu site e quero conversar sobre um projeto.")}
+      <a class="botao botao-linha" href="{href('sobre', 0)}">Conheça minha trajetória</a>
+    </div>
   </div>
 </div></section>
 
