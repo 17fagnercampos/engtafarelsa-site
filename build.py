@@ -251,7 +251,7 @@ def pagina(*, slug, titulo, descricao, corpo, prof=0, msg_zap, ld=None, ativo=No
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Eng. Tafarel Sá: qualidade da água na piscicultura">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#1b2321">
+<meta name="theme-color" content="#0c1416">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,700..800&family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">

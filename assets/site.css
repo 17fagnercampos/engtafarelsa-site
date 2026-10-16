@@ -1,18 +1,18 @@
-/* Eng. Tafarel Sá — site de vendas
-   Paleta: água de viveiro, manta de geomembrana, lona amarela de campo. */
+/* Eng. Tafarel Sá — site de vendas */
 :root {
-  --agua: #0f4c45;
-  --agua-clara: #d8e6e1;
-  --manta: #1b2321;
-  --campo: #f3f5f1;
-  --papel: #ffffff;
-  --lona: #f2b705;
-  --lona-escura: #c99500;
+  /* Paleta "Premium noturno": água funda, creme e o laranja da Biotecnal só onde se clica. */
+  --agua: #0b3a40;
+  --agua-clara: #e7e1d6;
+  --manta: #0c1416;
+  --campo: #f6f2ea;
+  --papel: #fbf8f2;
+  --lona: #e0761f;
+  --lona-escura: #f08a3a;
   --folha: #3e7a3a;
-  --texto: #1e2623;
-  --texto-suave: #4d5a56;
-  --linha: #c9d3cf;
-  --pendente: #fff1c2;
+  --texto: #1a1f1f;
+  --texto-suave: #4f5654;
+  --linha: #d9d1c3;
+  --pendente: #fbe3cc;
 
   --fonte-titulo: "Archivo", "Arial Narrow", system-ui, sans-serif;
   --fonte-texto: "Atkinson Hyperlegible", system-ui, sans-serif;
@@ -432,7 +432,7 @@ p { margin: 0 0 1em; max-width: var(--medida); }
 @media (max-width: 820px) { .calc-grade { grid-template-columns: 1fr; } }
 .calc { display: grid; gap: 6px; background: var(--papel); border: 1px solid var(--linha); padding: 22px; border-radius: var(--raio); }
 .calc label { font-weight: 700; margin-top: 10px; }
-.calc input, .calc select { font: inherit; padding: 12px; border: 1px solid var(--linha); border-radius: var(--raio); background: #fff; color: var(--texto); width: 100%; }
+.calc input, .calc select { font: inherit; padding: 12px; border: 1px solid var(--linha); border-radius: var(--raio); background: var(--papel); color: var(--texto); width: 100%; }
 .calc-resultado { display: grid; gap: 14px; }
 .calc-vol { font-size: 1.3rem; margin: 0; }
 .artigo ol, .artigo ul { max-width: var(--medida); }
@@ -491,7 +491,7 @@ legend.p-passo { padding: 0; }
 .p-grupo[hidden], #p-comum[hidden] { display: none; }
 .p-campo { display: grid; gap: 6px; }
 .p-campo > label, .p-campo legend { font-weight: 700; padding: 0; }
-.p-campo input, .p-campo textarea { font: inherit; padding: 12px; border: 1px solid var(--linha); border-radius: var(--raio); background: #fff; color: var(--texto); width: 100%; }
+.p-campo input, .p-campo textarea { font: inherit; padding: 12px; border: 1px solid var(--linha); border-radius: var(--raio); background: var(--papel); color: var(--texto); width: 100%; }
 .p-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
 .p-chip { cursor: pointer; position: relative; }
 .p-chip span { display: inline-block; padding: 10px 14px; border: 1.5px solid var(--linha); border-radius: 999px; background: var(--papel); min-height: 44px; }
@@ -556,7 +556,7 @@ img.foto { width: 100%; height: auto; border-radius: var(--raio); object-fit: co
 
 /* Biotecnal: selos e portfólio */
 .selos { list-style: none; padding: 0; margin: 20px 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; }
-.selos li { border: 1px solid var(--linha); background: #fff; border-radius: var(--raio); padding: 10px 14px; display: flex; flex-direction: column; }
+.selos li { border: 1px solid var(--linha); background: var(--papel); border-radius: var(--raio); padding: 10px 14px; display: flex; flex-direction: column; }
 .selos strong { font-family: var(--fonte-titulo); color: var(--agua); font-size: 1.05rem; }
 .selos span { color: var(--texto-suave); font-size: .9rem; }
 .divisoes { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
@@ -564,3 +564,12 @@ img.foto { width: 100%; height: auto; border-radius: var(--raio); object-fit: co
 .divisao ul { padding-left: 18px; margin: 8px 0 16px; }
 .divisao li { margin-bottom: 6px; }
 .divisao a { margin-top: auto; font-weight: 700; }
+
+/* Acabamento premium */
+.botao, .topo-cta, .cat-chip { border-radius: 999px; }
+.portal-hero, .secao-escura { background: radial-gradient(120% 120% at 85% 0%, #123a40 0, var(--manta) 60%); }
+h1, h2 { letter-spacing: -.01em; }
+.botao-zap, .topo-cta { box-shadow: 0 6px 18px rgba(224, 118, 31, .28); }
+.botao-zap:hover, .topo-cta:hover { box-shadow: 0 8px 22px rgba(224, 118, 31, .38); }
+.card-post { box-shadow: 0 1px 0 rgba(12, 20, 22, .04), 0 8px 24px rgba(12, 20, 22, .06); }
+.cartao-autor { background: radial-gradient(120% 80% at 100% 100%, #1d5a60 0, var(--agua) 45%, var(--manta) 100%); }
