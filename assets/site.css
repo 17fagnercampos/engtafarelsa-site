@@ -588,7 +588,7 @@ h1, h2 { letter-spacing: -.01em; }
 .rotulo-acoes a { font-weight: 700; }
 
 /* Galeria de fotos nos artigos */
-.galeria { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin: 20px 0 28px; }
+.galeria { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin: 20px 0 28px; }
 .galeria figure { margin: 0; }
 .galeria img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 10px; display: block; }
 .galeria figcaption { font-size: .9rem; color: var(--texto-suave); margin-top: 6px; }

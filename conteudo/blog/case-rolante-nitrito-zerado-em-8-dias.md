@@ -80,11 +80,12 @@ No preparo da água também foram usados 2 kg de cal virgem.
 | 06/10 | — | 4,00 | 90 |
 | 07/10, 6h22 | **0,00** | **0,00** | 100 |
 
-### Antes e depois, no teste de nitrito
+### Antes e depois, nos testes de nitrito e amônia
 
 <div class="galeria">
 <figure><img src="../fotos/cases/rolante-teste-nitrito-pico.jpg" alt="Teste colorimétrico de nitrito com cor vermelha forte, acima da última faixa da cartela" loading="lazy"><figcaption><strong>No pico:</strong> a amostra ficou mais escura que a última cor da cartela (2,8 ppm).</figcaption></figure>
 <figure><img src="../fotos/cases/rolante-teste-nitrito-depois.jpg" alt="Tubos de teste de nitrito quase transparentes depois do tratamento" loading="lazy"><figcaption><strong>Depois do protocolo:</strong> os tubos de nitrito (circulados) quase transparentes, na faixa ideal da cartela.</figcaption></figure>
+<figure><img src="../fotos/cases/rolante-teste-amonia-zerada.jpg" alt="Tubo de teste de amônia amarelo-claro, indicando amônia zerada" loading="lazy"><figcaption><strong>Amônia zerada:</strong> o tubo do teste de amônia, amarelo-claro, na mesma coleta.</figcaption></figure>
 </div>
 
 A **amônia respondeu primeiro**: caiu para 0,25 mg/L em 02/10 e zerou em 04/10. O **nitrito resistiu mais**. Ficou em 5 mg/L até 05/10, caiu para 4 mg/L em 06/10 e **zerou na manhã de 07/10, no 8º dia de tratamento**.
