@@ -10,7 +10,7 @@ resposta: Algas filamentosas (o limo) crescem quando a água fica transparente e
   início do ciclo, não usar adubo fosfatado e não construir viveiro raso. Com o
   peixe dentro, o controle combina remoção com rede, tratamento por partes e
   peixes herbívoros como a carpa capim, sempre com aeração de reserva.
-whatsapp: vendas
+whatsapp: tafarel
 produtos:
   - oxitrat
   - bactrat-p
