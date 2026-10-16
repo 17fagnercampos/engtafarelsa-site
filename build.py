@@ -1015,7 +1015,7 @@ def carregar_artigos():
             "foto": (d.get("foto") or "").lstrip("/"),
             "foto_legenda": d.get("foto_legenda") or "",
             "whatsapp": d.get("whatsapp") or "vendas",
-            "produtos": [p for p in (d.get("produtos") or []) if p in PROD],
+            "produtos": [p for p in (d.get("produtos") or []) if p in PROD or p in ROTULO_EXTRA],
             "faq": [(q.get("pergunta"), q.get("resposta")) for q in (d.get("perguntas") or []) if q.get("pergunta")],
             "fontes": [(f.get("texto"), f.get("link") or None) for f in (d.get("fontes") or []) if f.get("texto")],
             "corpo": md_html(corpo),
@@ -1053,14 +1053,16 @@ def post_page(a):
     numero = ZAP  # tudo no portal Água Boa Dá Lucro vai para o WhatsApp do Tafarel
     msg = f"Olá, Tafarel! Li no Água Boa Dá Lucro o artigo \"{a['titulo']}\" e quero conversar sobre o meu caso."
     def rotulo(s):
+        info = PROD.get(s) or ROTULO_EXTRA[s]
+        link = href("biotecnal-" + s, 1) if s in PROD else href("biotecnal", 1) + "#qualidade-agua"
         img = RAIZ / "assets" / "biotecnal" / f"{s}.jpg"
-        foto = (f'<img src="../assets/biotecnal/{s}.jpg" alt="Rótulo do {PROD[s]["nome"]} da Biotecnal" loading="lazy" decoding="async">'
-                if img.exists() else f'<span class="rotulo-sem-foto" aria-hidden="true">{PROD[s]["nome"]}</span>')
-        msg_p = f"Olá, Tafarel! Li o artigo \"{a['titulo']}\" e quero saber sobre o {PROD[s]['nome']}."
-        return (f'<article class="rotulo"><a class="rotulo-img" href="{href("biotecnal-" + s, 1)}">{foto}</a>'
-                f'<div class="rotulo-txt"><p class="card-cat">{PROD[s]["tipo"]}</p><h3>{PROD[s]["nome"]}</h3>'
-                f'<p>{PROD[s]["resumo"]}</p>'
-                f'<p class="rotulo-acoes"><a href="{href("biotecnal-" + s, 1)}">Ver ficha</a>'
+        foto = (f'<img src="../assets/biotecnal/{s}.jpg" alt="Embalagem do {info["nome"]} da Biotecnal" loading="lazy" decoding="async">'
+                if img.exists() else f'<span class="rotulo-sem-foto" aria-hidden="true">{info["nome"]}</span>')
+        msg_p = f"Olá, Tafarel! Li o artigo \"{a['titulo']}\" e quero saber sobre o {info['nome']}."
+        return (f'<article class="rotulo"><a class="rotulo-img" href="{link}">{foto}</a>'
+                f'<div class="rotulo-txt"><p class="card-cat">{info["tipo"]}</p><h3>{info["nome"]}</h3>'
+                f'<p>{info["resumo"]}</p>'
+                f'<p class="rotulo-acoes"><a href="{link}">Ver ficha</a>'
                 f'<a href="{zap_link(msg_p, ZAP)}" target="_blank" rel="noopener">Pedir no WhatsApp</a></p></div></article>')
     prods = "".join(rotulo(s) for s in a["produtos"])
     titulo_prods = "Produtos usados neste case" if a["categoria"] == "cases" else "Produtos citados"
@@ -1227,6 +1229,12 @@ MATRIZ = [
 ]
 
 PROD = {p["slug"]: p for p in BIO_PRODUTOS}
+# Insumos sem página própria que podem aparecer como rótulo nos artigos e cases
+ROTULO_EXTRA = {
+    "bicarbonato-de-sodio": {"nome": "BICARBONATO DE SÓDIO", "tipo": "Insumo alcalinizante",
+        "resumo": "Grau alimentício, origem mineral, pureza mínima de 99%. Eleva e estabiliza a alcalinidade e o pH da água de cultivo. Saco de 25 kg.",
+    },
+}
 ARTIGOS = carregar_artigos()
 
 
@@ -1414,7 +1422,7 @@ def biotecnal():
   <img class="foto" src="assets/biotecnal/produtos-linha-aqua.jpg" alt="Linha Aqua Biotecnal: Nutrat Aqua Plus, Bactrat P e Oxitrat" loading="lazy" decoding="async">
 </div></section>
 
-<section class="secao"><div class="wrap">
+<section class="secao" id="qualidade-agua"><div class="wrap">
   <h2>Qualidade de água e biosseguridade</h2>
   <p class="intro">Alcalinidade, algas, desinfecção e cloro. Uso conforme orientação técnica.</p>
   <ul class="ofertas">{comp}</ul>

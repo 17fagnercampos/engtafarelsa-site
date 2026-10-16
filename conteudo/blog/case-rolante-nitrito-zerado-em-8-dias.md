@@ -10,6 +10,7 @@ foto_legenda: "Amônia e nitrito no Tanque 01, de 25/09 a 07/10/2026. A faixa cl
 produtos:
   - bactrat-p
   - nutrat-aqua-plus
+  - bicarbonato-de-sodio
 perguntas:
   - pergunta: Por que o nitrito sobe tanto em tanque novo?
     resposta: "Em sistema novo ainda não existe uma população grande de bactérias nitrificantes. A ração vira amônia, a primeira etapa de bactérias transforma a amônia em nitrito, mas a segunda etapa, que transforma nitrito em nitrato, demora mais para se formar. Por isso o nitrito acumula depois da amônia."

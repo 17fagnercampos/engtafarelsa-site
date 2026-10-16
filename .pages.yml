@@ -86,6 +86,8 @@ content:
         label: BACTRAT AQUATECH
       - value: bioflow-aqua
         label: BIOFLOW AQUA
+      - value: bicarbonato-de-sodio
+        label: BICARBONATO DE SÓDIO
   - name: perguntas
     label: Perguntas frequentes
     type: object
