@@ -5,8 +5,8 @@ descricao: "Alevinagem em sistema fechado, dentro de estufa, com tanque de geome
 data: 2026-10-16
 rascunho: false
 resposta: "Num tanque de 600 m³ com 40 mil alevinos em Rolante/RS, o nitrito chegou a 5 mg/L e a amônia a 1 mg/L na primeira semana do lote. Com o protocolo Biotecnal (Bactrat P, Enzipro Nitro e Nutrat Aqua Plus, com bicarbonato e sal no manejo), a amônia zerou em 4 dias e o nitrito zerou na manhã do 8º dia de tratamento. O oxigênio ficou entre 7 e 9,5 mg/L o tempo todo."
-foto: /fotos/cases/rolante-amonia-nitrito.png
-foto_legenda: "Amônia e nitrito no Tanque 01, de 25/09 a 07/10/2026. A faixa clara marca o período do protocolo Biotecnal."
+foto: /fotos/cases/rolante-estufa-produtos-biotecnal.jpg
+foto_legenda: "Tanque 01 em Rolante/RS: estufa, geomembrana e aeração por mangueiras porosas, com Enzipro Nitro, Nutrat Aqua Plus e Bactrat P usados no protocolo."
 produtos:
   - bactrat-p
   - nutrat-aqua-plus
@@ -61,6 +61,8 @@ As aplicações começaram em 30/09 e seguiram até 06/10, sempre acompanhadas d
 No preparo da água também foram usados 2 kg de cal virgem.
 
 ## O resultado
+
+![Gráfico de amônia e nitrito no Tanque 01, de 25/09 a 07/10/2026, com a faixa do protocolo Biotecnal](../fotos/cases/rolante-amonia-nitrito.png)
 
 | Data | Amônia (mg/L) | Nitrito (mg/L) | Alcalinidade (ppm) |
 |---|---|---|---|

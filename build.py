@@ -1023,7 +1023,7 @@ def carregar_artigos():
             "leitura": max(1, round(len((corpo + " " + str(d.get("resposta") or "") + " " +
                                        " ".join(str(q.get("resposta") or "") for q in (d.get("perguntas") or []))).split()) / 180)),
         })
-    artigos.sort(key=lambda a: a["data"], reverse=True)
+    artigos.sort(key=lambda a: (a["data"], a["categoria"] == "cases"), reverse=True)  # no mesmo dia, case vem primeiro
     return artigos
 
 
