@@ -111,7 +111,7 @@ p { margin: 0 0 1em; max-width: var(--medida); }
 
 .menu-botao { display: none; }
 
-@media (max-width: 1180px) {
+@media (max-width: 1365px) {
   .menu-botao {
     display: inline-flex; align-items: center; gap: 6px;
     background: none; border: 1px solid var(--linha); border-radius: var(--raio);
@@ -443,7 +443,7 @@ p { margin: 0 0 1em; max-width: var(--medida); }
 .topo-cta:hover { background: var(--lona-escura); color: var(--manta); }
 .menu-botao { order: 3; }
 .menu { order: 4; }
-@media (min-width: 1181px) { .topo-cta { order: 5; margin-left: 8px; } }
+@media (min-width: 1366px) { .topo-cta { order: 5; margin-left: 8px; } }
 @media (max-width: 400px) { .topo-cta { padding: 8px 10px; font-size: .88rem; } .marca small { display: none; } }
 
 /* Contar meu projeto */
@@ -475,7 +475,7 @@ legend.p-passo { padding: 0; }
 @media (max-width: 860px) { .p-resumo { position: static; } }
 .p-msg { white-space: pre-wrap; font-family: var(--fonte-texto); font-size: .95rem; background: #e7f3ec; border-radius: 8px; padding: 14px; margin: 0; max-height: 360px; overflow: auto; }
 #p-enviar[aria-disabled="true"] { opacity: .45; cursor: not-allowed; }
-@media (min-width: 1181px) { .menu { margin-left: auto; } .menu a { padding: 8px 7px; font-size: .9rem; } }
+@media (min-width: 1366px) { .menu { margin-left: auto; } .menu a { padding: 8px 7px; font-size: .9rem; } }
 .marca { white-space: nowrap; }
 @media (max-width: 439px) { .marca { white-space: normal; line-height: 1.05; } }
 @media (max-width: 860px) {
@@ -520,3 +520,8 @@ img.foto { width: 100%; height: auto; border-radius: var(--raio); object-fit: co
 .cad-form .p-chips { margin-bottom: 8px; }
 .cad-form .p-chip input:checked + span { background: var(--agua); border-color: var(--agua); }
 .produto-img { max-width: 420px; width: 100%; height: auto; border-radius: 8px; margin-top: 24px; }
+.menu a.menu-destaque { background: var(--agua); color: #fff; font-weight: 700; }
+.menu a.menu-destaque:hover, .menu a.menu-destaque[aria-current="page"] { background: var(--manta); color: #fff; }
+.hero-destaque .card-post { border-color: transparent; }
+.hero-destaque .card-txt h3 { color: var(--manta); }
+.home-portal h1 { font-size: clamp(2.6rem, 7vw, 5rem); }

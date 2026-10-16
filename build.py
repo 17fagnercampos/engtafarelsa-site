@@ -137,15 +137,14 @@ def botao_zap(texto, msg, extra="", numero=None):
 
 # ---------------------------------------------------------------- navegação
 MENU = [
+    ("blog/", "Água Boa Dá Lucro"),
     ("qualidade-da-agua", "Qualidade da água"),
     ("biotecnal", "Biotecnal"),
-    ("calculadora", "Calculadora"),
     ("piscicultura", "Piscicultura"),
     ("aquaponia-comercial", "Aquaponia"),
     ("hidroponia", "Hidroponia"),
     ("estufas", "Estufas"),
     ("loja-akso", "Loja AKSO"),
-    ("blog/", "Água Boa Dá Lucro"),
     ("sobre", "Sobre"),
 ]
 
@@ -203,7 +202,7 @@ def pagina(*, slug, titulo, descricao, corpo, prof=0, msg_zap, ld=None, ativo=No
     canonico = DOMINIO + "/" + (slug.removesuffix("index") if slug else "")
     css = "../" * prof + "assets/site.css"
     itens_menu = "".join(
-        f'<a href="{href(a, prof)}"{" aria-current=\"page\"" if a == ativo else ""}>{n}</a>'
+        f'<a href="{href(a, prof)}"{" class=\"menu-destaque\"" if a == "blog/" else ""}{" aria-current=\"page\"" if a == ativo else ""}>{n}</a>'
         for a, n in MENU
     )
     ld_html = ""
@@ -496,24 +495,34 @@ def home():
                 "Colégio São Luís Guanella"]
     msg = "Olá, Tafarel! Vim pelo site e quero conversar sobre o meu projeto."
     corpo = f"""
-<section class="hero"><div class="wrap">
-  <div class="hero-texto">
-    <h1>Água boa dá lucro.</h1>
-    <p>Sou o Eng. Tafarel Sá, representante técnico da Biotecnal no RS e em SC. Ajudo piscicultores a medir e corrigir oxigênio, amônia, nitrito e lodo, para a ração virar peixe e não prejuízo.</p>
+<section class="portal-hero home-portal"><div class="wrap portal-grade">
+  <div>
+    <p class="card-cat">Portal de qualidade de água na piscicultura</p>
+    <h1>Água Boa Dá Lucro</h1>
+    <p class="promessa">Guias práticos, produtos Biotecnal, cases e mercado, com o Eng. Tafarel Sá. Para a ração virar peixe e não prejuízo.</p>
     <div class="hero-acoes">
-      <a class="botao botao-zap" href="{href('projeto', 0)}">Contar meu projeto</a>
-      <a class="botao botao-linha" href="{href('calculadora', 0)}#diagnostico">Fazer o diagnóstico da água</a>
+      <a class="botao botao-zap" href="{href('blog/', 0)}">Ler os guias</a>
+      <a class="botao botao-linha botao-claro" href="#cadastro">Receber no WhatsApp</a>
     </div>
-    <p class="hero-nota">Benfica AgroEngenharia · Triunfo/RS · YouTube Engenheiro Tafarel Sá</p>
+    <nav class="cat-chips" aria-label="Categorias">{"".join(f'<a class="cat-chip" href="{href("blog/categoria/" + c, 0)}">{n}</a>' for c, n, _ in CATEGORIAS)}</nav>
   </div>
-  {CORTE_SVG}
+  <div class="hero-destaque"><p class="card-cat">Em destaque</p>{card_artigo(ARTIGOS[0], 0)}</div>
+</div></section>
+
+<section class="secao"><div class="wrap">
+  <div class="sec-topo"><h2>Últimos conteúdos</h2><a href="{href('blog/', 0)}">Ver todos</a></div>
+  <div class="cards">{"".join(card_artigo(a, 0) for a in ARTIGOS[1:7])}</div>
 </div></section>
 
 <section class="secao"><div class="wrap">
   <h2>Qual é o problema da sua água?</h2>
   <p class="intro">Escolha o que você está vendo no viveiro. Cada linha leva para o guia e para o produto que resolve.</p>
   {tabela_matriz(0)}
+  <p style="margin-top:20px"><a class="botao botao-linha" href="{href('calculadora', 0)}#diagnostico">Fazer o diagnóstico da água</a> <a class="botao botao-linha" href="{href('projeto', 0)}">Contar meu projeto</a></p>
 </div></section>
+
+{bloco_cadastro(0)}
+{CADASTRO_JS}
 
 <section class="secao" id="o-que-eu-faco"><div class="wrap">
   <h2>O que eu faço</h2>
@@ -999,9 +1008,8 @@ def data_legivel(iso):
 
 
 def post_page(a):
-    numero = ZAP if a["whatsapp"] == "tafarel" else ZAP_ESTUFAS
-    msg = (f"Olá, Tafarel! Li o artigo \"{a['titulo']}\" e quero conversar sobre o meu caso." if a["whatsapp"] == "tafarel"
-           else f"Olá! Li o artigo \"{a['titulo']}\" no site do Eng. Tafarel e quero ajuda com o meu caso.")
+    numero = ZAP  # tudo no portal Água Boa Dá Lucro vai para o WhatsApp do Tafarel
+    msg = f"Olá, Tafarel! Li no Água Boa Dá Lucro o artigo \"{a['titulo']}\" e quero conversar sobre o meu caso."
     prods = "".join(
         f'<li class="oferta"><h3>{PROD[s]["nome"]}</h3><p>{PROD[s]["tipo"]}. {PROD[s]["resumo"]}</p>'
         f'<a href="{href("biotecnal-" + s, 1)}">Ver produto</a></li>' for s in a["produtos"])

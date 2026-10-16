@@ -68,16 +68,6 @@ content:
   - name: episodio
     label: 'Episódio do YouTube (ex.: Episódio 3 da série Água Boa Dá Lucro)'
     type: string
-  - name: whatsapp
-    label: Botão de WhatsApp vai para
-    type: select
-    options:
-      values:
-      - value: vendas
-        label: Vendas (48) 99850-8182
-      - value: tafarel
-        label: Tafarel (51) 99936-5993
-    default: vendas
   - name: produtos
     label: Produtos Biotecnal citados
     type: select
