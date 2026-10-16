@@ -1,31 +1,39 @@
 ---
-titulo: 'Algas filamentosas no viveiro: como prevenir e controlar'
-descricao: Por que o limo e as plantas submersas tomam conta do viveiro, como evitar no preparo e como controlar com o peixe dentro, inclusive com carpa capim.
-data: '2026-10-15'
-resposta: Algas filamentosas (o limo) crescem quando a água fica transparente e a luz chega ao fundo. A prevenção é deixar a água verde de microalgas logo no início do ciclo, não usar adubo fosfatado e não construir viveiro raso. Com o peixe dentro, o controle combina remoção com rede, tratamento por partes e peixes herbívoros como a carpa capim, sempre com aeração de reserva.
-episodio: ''
-foto: ''
-foto_legenda: ''
+titulo: "(verdes)Algas filamentosas no viveiro: como prevenir e controlar"
+descricao: Por que o limo e as plantas submersas tomam conta do viveiro, como
+  evitar no preparo e como controlar com o peixe dentro, inclusive com carpa
+  capim.
+data: 2026-10-15
+rascunho: false
+resposta: Algas filamentosas (o limo) crescem quando a água fica transparente e
+  a luz chega ao fundo. A prevenção é deixar a água verde de microalgas logo no
+  início do ciclo, não usar adubo fosfatado e não construir viveiro raso. Com o
+  peixe dentro, o controle combina remoção com rede, tratamento por partes e
+  peixes herbívoros como a carpa capim, sempre com aeração de reserva.
 whatsapp: vendas
 produtos:
-- oxitrat
-- bactrat-p
+  - oxitrat
+  - bactrat-p
 perguntas:
-- pergunta: Por que o viveiro fica cheio de limo?
-  resposta: Porque a água está transparente e a luz chega ao fundo, geralmente com fósforo sobrando e margens rasas.
-- pergunta: Quantas carpas capim colocar por hectare?
-  resposta: 'Em geral 50 a 200 carpas de 25 a 30 cm por hectare, ajustando pela área infestada: 5 a 25 g de carpa por m² coberto de plantas.'
-- pergunta: Posso tratar o viveiro inteiro com sulfato de cobre de uma vez?
-  resposta: Não. A morte das algas consome oxigênio. Trate cerca de 20% da área por dia, com aeração pronta e dose calculada pela alcalinidade, com orientação técnica.
+  - pergunta: Por que o viveiro fica cheio de limo?
+    resposta: Porque a água está transparente e a luz chega ao fundo, geralmente com
+      fósforo sobrando e margens rasas.
+  - pergunta: Quantas carpas capim colocar por hectare?
+    resposta: "Em geral 50 a 200 carpas de 25 a 30 cm por hectare, ajustando pela
+      área infestada: 5 a 25 g de carpa por m² coberto de plantas."
+  - pergunta: Posso tratar o viveiro inteiro com sulfato de cobre de uma vez?
+    resposta: Não. A morte das algas consome oxigênio. Trate cerca de 20% da área
+      por dia, com aeração pronta e dose calculada pela alcalinidade, com
+      orientação técnica.
 fontes:
-- texto: 'Kubitza, F. (2021). Algas filamentosas: como prevenir ou controlar. Revista da ABCC, ano XXIII, nº 3, p. 35–37'
-  link: ''
-- texto: Boyd, C. E.; Tucker, C. S. (1998). Pond Aquaculture Water Quality Management. Kluwer Academic Publishers
-  link: ''
-- texto: 'Biotecnal (2025): Guia Prático Aquicultura de Resultado e boletins técnicos da linha Aqua'
-  link: https://www.biotecnal.ind.br
+  - texto: "Kubitza, F. (2021). Algas filamentosas: como prevenir ou controlar.
+      Revista da ABCC, ano XXIII, nº 3, p. 35–37"
+  - texto: Boyd, C. E.; Tucker, C. S. (1998). Pond Aquaculture Water Quality
+      Management. Kluwer Academic Publishers
+  - texto: "Biotecnal (2025): Guia Prático Aquicultura de Resultado e boletins
+      técnicos da linha Aqua"
+    link: https://www.biotecnal.ind.br
 ---
-
 ## Por que o limo toma conta
 
 O pesquisador Fernando Kubitza, na Revista da ABCC (2021), aponta três causas principais:
@@ -56,11 +64,13 @@ O problema não é só estético. À noite, a massa de algas consome oxigênio; 
 
 A carpa capim come algas filamentosas e plantas submersas tenras e não se reproduz em viveiro. Os números do artigo de Kubitza:
 
+
 | Referência | Valor |
-| --- | --- |
+| -------------------------- | ----------------------------------------------------- |
 | Tamanho eficiente | acima de 20 cm |
 | Estocagem usual | 50 a 200 carpas de 25 a 30 cm por hectare |
 | Pelo tamanho da infestação | 5 a 25 g de carpa por m² de área coberta por plantas |
 | Consumo diário | 30 a 45% do peso corporal em plantas (carpas maiores) |
+
 
 Comece pela biomassa de carpa, e não pelo número de peixes, e ajuste pela observação: se o limo não recua, coloque mais.
