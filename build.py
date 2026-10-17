@@ -2299,6 +2299,20 @@ def main():
         "<description>Qualidade da água na piscicultura</description><language>pt-BR</language>"
         + itens + "</channel></rss>", encoding="utf-8")
 
+    # Links curtos para YouTube, Instagram e anúncios (Cloudflare lê o _redirects)
+    from urllib.parse import quote as _q
+    zap_yt = "https://wa.me/" + ZAP + "?text=" + _q("Olá, Tafarel! Vim pelo YouTube.")
+    curtos = [
+        ("/yt", "/?utm_source=youtube"),
+        ("/zap", zap_yt),
+        ("/whatsapp", zap_yt),
+        ("/insta", "/?utm_source=instagram"),
+        ("/face", "/?utm_source=facebook"),
+        ("/biotecnal-yt", "/biotecnal?utm_source=youtube"),
+        ("/calculadora-yt", "/calculadora?utm_source=youtube"),
+        ("/cadastro-yt", "/cadastro?utm_source=youtube"),
+    ]
+    (DIST / "_redirects").write_text("".join(f"{a} {b} 302\n" for a, b in curtos), encoding="utf-8")
     (DIST / "robots.txt").write_text(
         "".join(f"User-agent: {b}\nAllow: /\n\n" for b in ["*", "GPTBot", "OAI-SearchBot", "ChatGPT-User", "ClaudeBot", "Claude-User", "PerplexityBot", "Google-Extended", "Bingbot"]) + f"Sitemap: {DOMINIO}/sitemap.xml\n", encoding="utf-8")
     print(f"{len(paginas)} páginas geradas em {DIST}")
