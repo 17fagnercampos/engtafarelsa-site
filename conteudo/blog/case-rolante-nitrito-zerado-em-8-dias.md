@@ -1,7 +1,7 @@
 ---
 categoria: cases
 titulo: "Case em Rolante/RS: nitrito de 5 mg/L a zero em 8 dias"
-descricao: "Alevinagem em sistema fechado, dentro de estufa, com tanque de geomembrana de 600 m³: como o protocolo Biotecnal levou amônia e nitrito a zero, com os números das análises dia a dia."
+descricao: "Alevinagem em estufa com tanque de geomembrana de 600 m³ em Rolante/RS: como o protocolo Biotecnal levou amônia e nitrito a zero, com análises dia a dia."
 data: 2026-10-16
 rascunho: false
 resposta: "Num tanque de 600 m³ com 40 mil alevinos em Rolante/RS, o nitrito chegou a 5 mg/L e a amônia a 1 mg/L na primeira semana do lote. Com o protocolo Biotecnal (Bactrat P, Enzipro Nitro e Nutrat Aqua Plus, com bicarbonato e sal no manejo), a amônia zerou em 4 dias e o nitrito zerou na manhã do 8º dia de tratamento. O oxigênio ficou entre 7 e 9,5 mg/L o tempo todo."

@@ -209,6 +209,18 @@ def pixel_html():
 _PALAVRAS_SOLTAS = {"para", "e", "de", "do", "da", "dos", "das", "no", "na", "com", "o", "a", "em", "por"}
 
 
+def desc_curta(d, limite=158):
+    """Meta description com até ~158 caracteres, cortada no fim de frase ou de palavra."""
+    d = " ".join(d.split())
+    if len(d) <= limite:
+        return d
+    corte = d[:limite]
+    ponto = corte.rfind(". ")
+    if ponto >= 90:
+        return corte[:ponto + 1]
+    return corte[:corte.rfind(" ")].rstrip(",;:-–") + "…"
+
+
 def titulo_tag(t, limite=65):
     """Título curto para o Google/Bing (até ~65 caracteres). O título completo continua no og:title."""
     if len(t) <= limite:
@@ -238,7 +250,7 @@ def pagina(*, slug, titulo, descricao, corpo, prof=0, msg_zap, ld=None, ativo=No
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{html.escape(titulo_tag(titulo))}</title>
-<meta name="description" content="{html.escape(descricao)}">
+<meta name="description" content="{html.escape(desc_curta(descricao))}">
 <link rel="canonical" href="{canonico}">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pt_BR">
@@ -536,7 +548,7 @@ def home():
     </div>
     <nav class="cat-chips" aria-label="Categorias">{"".join(f'<a class="cat-chip" href="{href("blog/categoria/" + c, 0)}">{n}</a>' for c, n, _ in CATEGORIAS)}</nav>
   </div>
-  <div class="hero-destaque"><p class="card-cat">Em destaque</p>{card_artigo(ARTIGOS[0], 0, 2)}</div>
+  <div class="hero-destaque"><p class="card-cat">Em destaque</p>{card_artigo(ARTIGOS[0], 0, 2).replace('loading="lazy"', 'fetchpriority="high"', 1)}</div>
 </div></section>
 
 <section class="secao"><div class="wrap">
@@ -1458,7 +1470,7 @@ def biotecnal():
                             for i, p in enumerate(BIO_PRODUTOS)]}]
     return pagina(slug="biotecnal",
                   titulo="Biotecnal no RS e SC: linha Aqua e portfólio Biotecnal Agro",
-                  descricao="Produtos Biotecnal para piscicultura: Oxitrat, Bactrat P, Bactrat Aquanitro, Bactrat Aquatech, Bioflow Aqua e Nutrat Aqua Plus, mais as linhas de criação animal e efluentes. Protocolo e venda com o Eng. Tafarel Sá, representante no RS e SC.",
+                  descricao="Produtos Biotecnal para piscicultura no RS e SC: Oxitrat, Bactrat P, Aquanitro, Aquatech, Bioflow e Nutrat Aqua Plus. Protocolo e venda com o Eng. Tafarel Sá.",
                   corpo=corpo, msg_zap=MSG_BIO, ld=ld, ativo="biotecnal", zap_numero=ZAP)
 
 def produto_bio(p):
@@ -2257,7 +2269,9 @@ def main():
     linhas = [f"# Eng. Tafarel Sá", "",
               "> Site do Eng. Tafarel Sá, engenheiro ambiental e representante técnico da Biotecnal no RS e em SC. "
               "Conteúdo sobre qualidade da água na piscicultura (oxigênio dissolvido, amônia, nitrito, pH, alcalinidade, lodo) "
-              "e produtos da linha Aqua Biotecnal (Oxitrat, Bactrat P, Bactrat Aquanitro, Nutrat Aqua Plus).", "",
+              "e produtos da linha Aqua Biotecnal (Oxitrat, Bactrat P, Bactrat Aquanitro, Bactrat Aquatech, Bioflow Aqua, Nutrat Aqua Plus). "
+              "Inclui cases reais com análises de água, como o de Rolante/RS, onde o nitrito caiu de 5 mg/L a zero em 8 dias. "
+              "Para comprar produtos Biotecnal no Rio Grande do Sul e em Santa Catarina, o contato é o WhatsApp do Tafarel abaixo.", "",
               "## Valores de referência (tilápia, viveiro escavado)"]
     linhas += [f"- {pp}: {fx} ({fq})" for pp, fx, fq, _ in REFERENCIAS]
     linhas += ["", "## Guias", f"- [Qualidade da água na piscicultura]({DOMINIO}/qualidade-da-agua)"]
