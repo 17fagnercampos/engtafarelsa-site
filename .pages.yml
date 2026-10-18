@@ -116,13 +116,14 @@ content:
     options:
       format: markdown
 - name: fotos
-  label: Fotos do site
+  label: Fotos do site (veja o mapa em engtafarelsa.com.br/fotos-do-site)
   type: file
   path: conteudo/fotos.yml
   format: yaml
   fields:
   - name: inicio_tafarel
-    label: Inicio tafarel
+    label: "01 · Início · Quem assina o projeto"
+    description: "Página inicial, seção Quem assina o projeto (sua foto em campo). Formato: Vertical (em pé)."
     type: object
     fields:
     - name: imagem
@@ -132,7 +133,8 @@ content:
       label: Descrição da foto (para Google e acessibilidade)
       type: string
   - name: sobre_retrato
-    label: Sobre retrato
+    label: "02 · Sobre · Seu retrato"
+    description: "Página Sobre, no topo, ao lado do seu nome. Formato: Vertical (em pé)."
     type: object
     fields:
     - name: imagem
@@ -142,7 +144,8 @@ content:
       label: Descrição da foto (para Google e acessibilidade)
       type: string
   - name: estufas
-    label: Estufas
+    label: "03 · Estufas · Foto do topo"
+    description: "Página Estufas, no topo, ao lado do título. Formato: Horizontal (deitada)."
     type: object
     fields:
     - name: imagem
@@ -152,7 +155,8 @@ content:
       label: Descrição da foto (para Google e acessibilidade)
       type: string
   - name: tanques
-    label: Tanques
+    label: "04 · Tanques · Foto do topo"
+    description: "Página Tanques de geomembrana, no topo. Formato: Horizontal (deitada)."
     type: object
     fields:
     - name: imagem
@@ -162,7 +166,8 @@ content:
       label: Descrição da foto (para Google e acessibilidade)
       type: string
   - name: piscicultura
-    label: Piscicultura
+    label: "05 · Piscicultura · Foto do topo"
+    description: "Página Consultoria em piscicultura, no topo. Formato: Horizontal (deitada)."
     type: object
     fields:
     - name: imagem
@@ -172,7 +177,8 @@ content:
       label: Descrição da foto (para Google e acessibilidade)
       type: string
   - name: aquaponia
-    label: Aquaponia
+    label: "06 · Aquaponia · Foto do topo"
+    description: "Página Aquaponia comercial, no topo. Formato: Horizontal (deitada)."
     type: object
     fields:
     - name: imagem
@@ -182,7 +188,8 @@ content:
       label: Descrição da foto (para Google e acessibilidade)
       type: string
   - name: hidroponia
-    label: Hidroponia
+    label: "07 · Hidroponia · Foto do topo"
+    description: "Página Hidroponia, no topo. Formato: Horizontal (deitada)."
     type: object
     fields:
     - name: imagem
@@ -192,7 +199,8 @@ content:
       label: Descrição da foto (para Google e acessibilidade)
       type: string
   - name: hidroponia_galeria_1
-    label: Hidroponia galeria 1
+    label: "08 · Hidroponia · Galeria 1"
+    description: "Página Hidroponia, galeria, 1ª foto. Formato: Horizontal (deitada)."
     type: object
     fields:
     - name: imagem
@@ -202,7 +210,8 @@ content:
       label: Descrição da foto (para Google e acessibilidade)
       type: string
   - name: hidroponia_galeria_2
-    label: Hidroponia galeria 2
+    label: "09 · Hidroponia · Galeria 2"
+    description: "Página Hidroponia, galeria, 2ª foto. Formato: Horizontal (deitada)."
     type: object
     fields:
     - name: imagem
@@ -212,7 +221,8 @@ content:
       label: Descrição da foto (para Google e acessibilidade)
       type: string
   - name: hidroponia_galeria_3
-    label: Hidroponia galeria 3
+    label: "10 · Hidroponia · Galeria 3"
+    description: "Página Hidroponia, galeria, 3ª foto. Formato: Horizontal (deitada)."
     type: object
     fields:
     - name: imagem
@@ -222,7 +232,8 @@ content:
       label: Descrição da foto (para Google e acessibilidade)
       type: string
   - name: hidroponia_galeria_4
-    label: Hidroponia galeria 4
+    label: "11 · Hidroponia · Galeria 4"
+    description: "Página Hidroponia, galeria, 4ª foto. Formato: Horizontal (deitada)."
     type: object
     fields:
     - name: imagem
@@ -232,7 +243,8 @@ content:
       label: Descrição da foto (para Google e acessibilidade)
       type: string
   - name: traira
-    label: Traira
+    label: "12 · Traíra e trairão · Foto do topo"
+    description: "Página Traíra e trairão, no topo. Formato: Horizontal (deitada)."
     type: object
     fields:
     - name: imagem

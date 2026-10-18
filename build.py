@@ -108,12 +108,32 @@ def foto(nome, alt, prof=0, classe="foto"):
             f'loading="lazy" decoding="async">')
 
 
+# Mapa das fotos editáveis: número, nome no painel, página, lugar e formato
+FOTO_SLOTS = [
+    ("inicio_tafarel", "Início · Quem assina o projeto", "", "Página inicial, seção \"Quem assina o projeto\" (sua foto em campo)", "Vertical (em pé)"),
+    ("sobre_retrato", "Sobre · Seu retrato", "sobre", "Página Sobre, no topo, ao lado do seu nome", "Vertical (em pé)"),
+    ("estufas", "Estufas · Foto do topo", "estufas", "Página Estufas, no topo, ao lado do título", "Horizontal (deitada)"),
+    ("tanques", "Tanques · Foto do topo", "tanques-de-geomembrana", "Página Tanques de geomembrana, no topo", "Horizontal (deitada)"),
+    ("piscicultura", "Piscicultura · Foto do topo", "piscicultura", "Página Consultoria em piscicultura, no topo", "Horizontal (deitada)"),
+    ("aquaponia", "Aquaponia · Foto do topo", "aquaponia-comercial", "Página Aquaponia comercial, no topo", "Horizontal (deitada)"),
+    ("hidroponia", "Hidroponia · Foto do topo", "hidroponia", "Página Hidroponia, no topo", "Horizontal (deitada)"),
+    ("hidroponia_galeria_1", "Hidroponia · Galeria 1", "hidroponia", "Página Hidroponia, galeria, 1ª foto", "Horizontal (deitada)"),
+    ("hidroponia_galeria_2", "Hidroponia · Galeria 2", "hidroponia", "Página Hidroponia, galeria, 2ª foto", "Horizontal (deitada)"),
+    ("hidroponia_galeria_3", "Hidroponia · Galeria 3", "hidroponia", "Página Hidroponia, galeria, 3ª foto", "Horizontal (deitada)"),
+    ("hidroponia_galeria_4", "Hidroponia · Galeria 4", "hidroponia", "Página Hidroponia, galeria, 4ª foto", "Horizontal (deitada)"),
+    ("traira", "Traíra e trairão · Foto do topo", "traira-e-trairao", "Página Traíra e trairão, no topo", "Horizontal (deitada)"),
+]
+SLOT_NUM = {k: i + 1 for i, (k, *_r) in enumerate(FOTO_SLOTS)}
+SLOT_NOME = {k: n for k, n, *_r in FOTO_SLOTS}
+
+
 def foto_slot(slot, provisorio, prof=0, classe="foto-provisoria"):
     """Foto editável pelo painel (conteudo/fotos.yml). Sem imagem: mostra o espaço reservado."""
     f = FOTOS.get(slot) or {}
     img = (f.get("imagem") or "").lstrip("/")
     if not img:
-        return f'<div class="{classe}">{provisorio}</div>'
+        etiqueta = (f'<span class="foto-etiqueta">Foto {SLOT_NUM[slot]:02d} · {SLOT_NOME[slot]}</span>' if slot in SLOT_NUM and "foto-provisoria" in classe else "")
+        return f'<div class="{classe}">{provisorio}{etiqueta}</div>'
     extra = " foto-larga" if "foto-larga" in classe else ""
     return (f'<img class="foto{extra}" src="{"../" * prof}{img}" alt="{html.escape(f.get("descricao") or "")}" '
             f'loading="lazy" decoding="async">')
@@ -989,6 +1009,30 @@ def sobre():
                   corpo=corpo, msg_zap=msg, ativo="sobre")
 
 
+def mapa_fotos():
+    cards = []
+    for k, nome, pag, onde, formato in FOTO_SLOTS:
+        f = FOTOS.get(k) or {}
+        img = (f.get("imagem") or "").lstrip("/")
+        vis = (f'<img src="{img}" alt="" loading="lazy">' if img else '<span class="mf-vazia">Sem foto ainda</span>')
+        cards.append(
+            f'<article class="mf-card"><div class="mf-img">{vis}</div><div class="mf-txt">'
+            f'<p class="card-cat">Foto {SLOT_NUM[k]:02d}</p><h2>{nome}</h2>'
+            f'<p><strong>Onde aparece:</strong> {onde}.</p><p><strong>Formato:</strong> {formato}.</p>'
+            f'<p><a href="{href(pag, 0)}" target="_blank" rel="noopener">Ver no site</a></p></div></article>')
+    corpo = f"""
+<section class="cabeca-pagina"><div class="wrap">
+  <h1>Mapa das fotos do site</h1>
+  <p class="promessa">Cada foto tem um número. No painel, abra <strong>Fotos do site</strong> e procure o mesmo número e nome.</p>
+  <div class="resposta-rapida"><p><strong>Fotos dos artigos e cases:</strong> ficam dentro de cada artigo, no campo <em>Foto</em> do próprio artigo.<br>
+  <strong>Dica:</strong> nas páginas, o espaço de foto vazio mostra o número dele, por exemplo "Foto 03 · Estufas · Foto do topo".</p></div>
+</div></section>
+<section class="secao"><div class="wrap"><div class="mf-grade">{"".join(cards)}</div></div></section>"""
+    return pagina(slug="fotos-do-site", titulo="Mapa das fotos do site", descricao="Mapa interno das fotos editáveis do site.",
+                  corpo=corpo.replace('<h1>', '<h1>', 1), msg_zap="Olá, Tafarel! Vim pelo site.").replace(
+                  '<meta name="description"', '<meta name="robots" content="noindex, nofollow">\n<meta name="description"', 1)
+
+
 def nao_encontrada():
     corpo = f"""
 <section class="secao"><div class="wrap">
@@ -1715,6 +1759,7 @@ def traira():
   <p class="trilha"><a href="index.html">Início</a> / <a href="{href('piscicultura', 0)}">Piscicultura</a> / Traíra e trairão</p>
   <h1>Criação de traíra e trairão</h1>
   <p class="promessa">Peixe nativo, valorizado na pesca esportiva e nos pesque-pague. Pouca gente sabe criar, e é aí que está a oportunidade.</p>
+  {foto_slot("traira", "", classe="foto-provisoria foto-larga") if (FOTOS.get("traira") or {}).get("imagem") else ""}
   <div class="resposta-rapida"><p><strong>Resumo:</strong> traíra e trairão são predadores. O segredo da criação é o condicionamento alimentar no berçário, que ensina o alevino a comer ração. Depois disso, o que define o resultado é a classificação por tamanho, contra o canibalismo, e a qualidade da água.</p></div>
   <div class="hero-acoes">
     {botao_zap("Quero criar traíra ou trairão", msg)}
@@ -2308,6 +2353,7 @@ def main():
         "cadastro.html": cadastro_page(),
         "seja-revenda-biotecnal.html": revenda_page(),
         "404.html": nao_encontrada(),
+        "fotos-do-site.html": mapa_fotos(),
     }
     for p in BIO_PRODUTOS:
         paginas[f"biotecnal-{p['slug']}.html"] = produto_bio(p)
@@ -2321,7 +2367,7 @@ def main():
 
     urls = []
     for nome in paginas:
-        if nome == "404.html":
+        if nome in ("404.html", "fotos-do-site.html"):
             continue
         caminho = nome.removesuffix("index.html").removesuffix(".html")
         urls.append(f"  <url><loc>{DOMINIO}/{caminho}</loc></url>")
