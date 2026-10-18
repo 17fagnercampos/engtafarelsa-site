@@ -234,9 +234,12 @@ def titulo_tag(t, limite=65):
     return " ".join(palavras).rstrip(":,;-–")
 
 
+CSS_VERSAO = __import__("hashlib").md5((RAIZ / "assets" / "site.css").read_bytes()).hexdigest()[:8]
+
+
 def pagina(*, slug, titulo, descricao, corpo, prof=0, msg_zap, ld=None, ativo=None, zap_numero=None):
     canonico = DOMINIO + "/" + (slug.removesuffix("index") if slug else "")
-    css = "../" * prof + "assets/site.css"
+    css = "../" * prof + "assets/site.css?v=" + CSS_VERSAO
     itens_menu = "".join(
         f'<a href="{href(a, prof)}"{" class=\"menu-destaque\"" if a == "blog/" else ""}{" aria-current=\"page\"" if a == ativo else ""}>{n}</a>'
         for a, n in MENU
@@ -264,9 +267,8 @@ def pagina(*, slug, titulo, descricao, corpo, prof=0, msg_zap, ld=None, ativo=No
 <meta property="og:image:alt" content="Eng. Tafarel Sá: qualidade da água na piscicultura">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0c1416">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,700..800&family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+<link rel="preload" href="{"../" * prof}assets/fonts/inter-regular.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="{"../" * prof}assets/fonts/inter-extrabold.woff" as="font" type="font/woff" crossorigin>
 <link rel="stylesheet" href="{css}">
 <link rel="alternate" type="application/rss+xml" title="Blog Eng. Tafarel Sá" href="{DOMINIO}/blog/feed.xml">
 {ld_html}
@@ -2217,6 +2219,68 @@ def revenda_page():
 
 
 # ---------------------------------------------------------------- build
+
+# ---------- Otimização das imagens no HTML (WebP + largura/altura) ----------
+import struct as _struct
+
+
+def _dimensoes(caminho):
+    """Lê largura e altura de JPG, PNG ou WebP só com a biblioteca padrão."""
+    try:
+        with open(caminho, "rb") as f:
+            d = f.read(65536)
+            if d[:8] == b"\x89PNG\r\n\x1a\n":
+                return _struct.unpack(">II", d[16:24])
+            if d[:4] == b"RIFF" and d[8:12] == b"WEBP":
+                if d[12:16] == b"VP8X":
+                    return (1 + int.from_bytes(d[24:27], "little"), 1 + int.from_bytes(d[27:30], "little"))
+                if d[12:16] == b"VP8 ":
+                    w, h = _struct.unpack("<HH", d[26:30])
+                    return (w & 0x3FFF, h & 0x3FFF)
+                if d[12:16] == b"VP8L":
+                    b = int.from_bytes(d[21:25], "little")
+                    return ((b & 0x3FFF) + 1, ((b >> 14) & 0x3FFF) + 1)
+            if d[:2] == b"\xff\xd8":
+                f.seek(2)
+                while True:
+                    m = f.read(2)
+                    if len(m) < 2 or m[0] != 0xFF:
+                        return None
+                    tam = _struct.unpack(">H", f.read(2))[0]
+                    if m[1] in (0xC0, 0xC1, 0xC2):
+                        f.read(1)
+                        h, w = _struct.unpack(">HH", f.read(4))
+                        return (w, h)
+                    f.seek(tam - 2, 1)
+    except Exception:
+        return None
+    return None
+
+
+def otimizar_imgs(html_txt, nome_pagina):
+    base = (DIST / nome_pagina).parent
+
+    def troca(m):
+        tag = m.group(0)
+        src = re.search(r'src="([^"]+)"', tag)
+        if not src or src.group(1).startswith(("http", "data:")):
+            return tag
+        url = src.group(1)
+        arq = (base / url.split("?")[0]).resolve()
+        webp = arq.with_suffix(".webp")
+        if arq.suffix.lower() in (".jpg", ".jpeg", ".png") and webp.exists():
+            novo = url[: len(url) - len(arq.suffix)] + ".webp" if url.lower().endswith(arq.suffix.lower()) else url
+            tag = tag.replace(f'src="{url}"', f'src="{novo}"')
+            arq = webp
+        if "width=" not in tag:
+            dim = _dimensoes(arq)
+            if dim:
+                tag = tag.replace("<img ", f'<img width="{dim[0]}" height="{dim[1]}" ', 1)
+        return tag
+
+    return re.sub(r"<img\b[^>]*>", troca, html_txt)
+
+
 def main():
     if DIST.exists():
         shutil.rmtree(DIST)
@@ -2253,7 +2317,7 @@ def main():
     for c, n, d in CATEGORIAS:
         paginas[f"blog/categoria/{c}.html"] = categoria_page(c, n, d)
     for nome, conteudo in paginas.items():
-        (DIST / nome).write_text(conteudo, encoding="utf-8")
+        (DIST / nome).write_text(otimizar_imgs(conteudo, nome), encoding="utf-8")
 
     urls = []
     for nome in paginas:
@@ -2312,6 +2376,13 @@ def main():
         ("/calculadora-yt", "/calculadora?utm_source=youtube"),
         ("/cadastro-yt", "/cadastro?utm_source=youtube"),
     ]
+    (DIST / "_headers").write_text(
+        "/assets/fonts/*\n  Cache-Control: public, max-age=31536000, immutable\n"
+        "/assets/site.css\n  Cache-Control: public, max-age=31536000, immutable\n"
+        "/assets/biotecnal/*\n  Cache-Control: public, max-age=2592000\n"
+        "/fotos/*\n  Cache-Control: public, max-age=2592000\n"
+        "/assets/og-capa.png\n  Cache-Control: public, max-age=2592000\n",
+        encoding="utf-8")
     (DIST / "_redirects").write_text("".join(f"{a} {b} 302\n" for a, b in curtos), encoding="utf-8")
     (DIST / "robots.txt").write_text(
         "".join(f"User-agent: {b}\nAllow: /\n\n" for b in ["*", "GPTBot", "OAI-SearchBot", "ChatGPT-User", "ClaudeBot", "Claude-User", "PerplexityBot", "Google-Extended", "Bingbot"]) + f"Sitemap: {DOMINIO}/sitemap.xml\n", encoding="utf-8")

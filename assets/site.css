@@ -1,4 +1,9 @@
 /* Eng. Tafarel Sá — site de vendas */
+/* Fontes no próprio site (Inter, licença OFL): sem esperar o Google Fonts */
+@font-face { font-family: "Inter"; src: url("fonts/inter-regular.woff") format("woff"); font-weight: 400; font-style: normal; font-display: optional; }
+@font-face { font-family: "Inter"; src: url("fonts/inter-bold.woff") format("woff"); font-weight: 600 700; font-style: normal; font-display: optional; }
+@font-face { font-family: "Inter"; src: url("fonts/inter-extrabold.woff") format("woff"); font-weight: 800 900; font-style: normal; font-display: optional; }
+
 :root {
   /* Paleta "Premium noturno": água funda, creme e o laranja da Biotecnal só onde se clica. */
   --agua: #0b3a40;
@@ -14,8 +19,8 @@
   --linha: #d9d1c3;
   --pendente: #fbe3cc;
 
-  --fonte-titulo: "Archivo", "Arial Narrow", system-ui, sans-serif;
-  --fonte-texto: "Atkinson Hyperlegible", system-ui, sans-serif;
+  --fonte-titulo: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --fonte-texto: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
 
   --medida: 68ch;
   --gutter: clamp(16px, 4vw, 40px);
@@ -36,6 +41,7 @@ body {
 }
 
 img, svg { max-width: 100%; display: block; }
+img { height: auto; }
 
 a { color: var(--agua); text-underline-offset: 3px; }
 a:hover { color: var(--manta); }

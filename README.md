@@ -32,3 +32,6 @@ Para guardar um artigo sem publicar, marque **Rascunho**.
 
 - Comando de build: `python3 build.py`
 - Pasta de saída: `dist`
+
+## Fotos novas mais leves
+Depois de subir fotos pelo painel, rode `python3 otimizar_imagens.py` para gerar as versões .webp (o site usa sozinho).
