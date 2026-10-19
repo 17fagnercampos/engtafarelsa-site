@@ -287,6 +287,9 @@ def pagina(*, slug, titulo, descricao, corpo, prof=0, msg_zap, ld=None, ativo=No
 <meta property="og:image:alt" content="Eng. Tafarel Sá: qualidade da água na piscicultura">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0c1416">
+<link rel="icon" href="{"../" * prof}favicon.svg" type="image/svg+xml">
+<link rel="icon" href="{"../" * prof}favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="{"../" * prof}apple-touch-icon.png">
 <link rel="preload" href="{"../" * prof}assets/fonts/inter-regular.woff" as="font" type="font/woff" crossorigin>
 <link rel="preload" href="{"../" * prof}assets/fonts/inter-extrabold.woff" as="font" type="font/woff" crossorigin>
 <link rel="stylesheet" href="{css}">
@@ -632,12 +635,13 @@ def home():
             "@type": "Person",
             "@id": DOMINIO + "/#tafarel",
             "name": "Tafarel Sá",
+            "alternateName": ["Eng. Tafarel Sá", "Engenheiro Tafarel Sá", "Tafarel Sá", "engtafarelsa"],
             "jobTitle": "Engenheiro ambiental",
             "knowsAbout": ["Qualidade da água na piscicultura", "Oxigênio dissolvido", "Amônia e nitrito em viveiros",
                            "Aquaponia", "Hidroponia", "Biotecnologia aplicada à aquicultura"],
             "affiliation": {"@type": "Organization", "name": "Biotecnal", "url": "https://www.biotecnal.ind.br"},
             "url": DOMINIO + "/",
-            "sameAs": [INSTAGRAM, YOUTUBE],
+            "sameAs": [u for u in (INSTAGRAM, YOUTUBE, FACEBOOK) if u],
             "worksFor": {
                 "@type": "Organization",
                 "name": "Benfica AgroEngenharia",
@@ -999,8 +1003,8 @@ def sobre():
 </div></section>
 """
     ld = {"@context": "https://schema.org", "@type": "ProfilePage", "mainEntity": {
-        "@type": "Person", "@id": DOMINIO + "/#tafarel", "name": "Tafarel Sá", "jobTitle": "Engenheiro ambiental",
-        "url": DOMINIO + "/sobre", "sameAs": [u for u in (INSTAGRAM, YOUTUBE, FACEBOOK) if u],
+        "@type": "Person", "@id": DOMINIO + "/#tafarel", "name": "Tafarel Sá", "alternateName": ["Eng. Tafarel Sá", "Engenheiro Tafarel Sá", "Tafarel Sá", "engtafarelsa"], "jobTitle": "Engenheiro ambiental",
+        "url": DOMINIO + "/sobre", "image": DOMINIO + "/assets/og-capa.png", "sameAs": [u for u in (INSTAGRAM, YOUTUBE, FACEBOOK) if u],
         "knowsAbout": ["Qualidade da água na piscicultura", "Piscicultura", "Aquaponia", "Hidroponia",
                        "Estufas agrícolas", "Tanques de geomembrana", "Tratamento biológico de água"],
         "worksFor": {"@type": "Organization", "name": "Benfica AgroEngenharia", "url": BENFICA_URL, "taxID": CNPJ}}}
@@ -2331,6 +2335,9 @@ def main():
         shutil.rmtree(DIST)
     (DIST / "blog").mkdir(parents=True)
     shutil.copytree(RAIZ / "assets", DIST / "assets")
+    for ico in ("favicon.svg", "favicon.ico", "favicon-32.png", "apple-touch-icon.png", "icon-512.png"):
+        if (RAIZ / "assets" / "icones" / ico).exists():
+            shutil.copy(RAIZ / "assets" / "icones" / ico, DIST / ico)
     if (RAIZ / "fotos").exists():
         shutil.copytree(RAIZ / "fotos", DIST / "fotos")
 
