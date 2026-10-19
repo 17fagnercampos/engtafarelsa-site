@@ -280,7 +280,7 @@ def pagina(*, slug, titulo, descricao, corpo, prof=0, msg_zap, ld=None, ativo=No
 <meta property="og:title" content="{html.escape(titulo)}">
 <meta property="og:description" content="{html.escape(descricao)}">
 <meta property="og:url" content="{canonico}">
-<meta property="og:site_name" content="Eng. Tafarel Sá">
+<meta property="og:site_name" content="Eng. Tafarel Sá · Água Boa Dá Lucro">
 <meta property="og:image" content="{DOMINIO}/assets/og-capa.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -630,6 +630,9 @@ def home():
 {chamada("Me conte o que você quer produzir.", "Mande fotos da área pelo WhatsApp. Eu respondo pessoalmente com o próximo passo.", "Falar com o Tafarel no WhatsApp", msg)}
 """
     ld = [
+        {"@context": "https://schema.org", "@type": "WebSite", "@id": DOMINIO + "/#site", "url": DOMINIO + "/",
+         "name": "Eng. Tafarel Sá", "alternateName": ["Água Boa Dá Lucro", "engtafarelsa"],
+         "inLanguage": "pt-BR", "publisher": {"@id": DOMINIO + "/#tafarel"}},
         {
             "@context": "https://schema.org",
             "@type": "Person",
@@ -654,7 +657,7 @@ def home():
         },
         faq_ld(FAQ_HOME),
     ]
-    return pagina(slug="", titulo="Piscicultura e qualidade da água no RS e SC | Eng. Tafarel Sá",
+    return pagina(slug="", titulo="Água Boa Dá Lucro | Piscicultura e qualidade da água no RS e SC",
                   descricao="Qualidade da água na piscicultura: oxigênio, amônia, nitrito e lodo. Produtos Biotecnal com protocolo do Eng. Tafarel Sá, representante no RS e SC. Consultoria, aquaponia, hidroponia e estufas.",
                   corpo=corpo, msg_zap=msg, ld=ld)
 
