@@ -129,7 +129,7 @@ Na medição da tarde de 07/10 o nitrito marcou 0,25 mg/L, ainda abaixo do limit
 ## O que este caso ensina
 
 1. **Medir todo dia faz a diferença.** Foi a análise diária que mostrou o nitrito subindo antes de virar mortalidade.
-2. **Amônia zerada não é água resolvida.** Aqui a amônia zerou três dias antes do nitrito. Quem mede só amônia acha que o problema acabou mas tem o sistema em risco de mortalidade. 
+2. **Amônia zerada não é água resolvida.** Aqui a amônia zerou três dias antes do nitrito. Quem mede só amônia acha que o problema acabou mas tem o sistema em risco de mortalidade.
 3. **Alcalinidade é combustível das bactérias.** Sem o bicarbonato repondo a alcalinidade, a nitrificação perde força. O sucesso do tratamento depende do combo da BIOTECNAL e as condições de alcalinidade.
 4. **Estrutura boa ajuda, mas não substitui o manejo da água.** Mesmo com estufa, geomembrana e aeração automatizada, o tanque novo passou pelo pico de nitrito. O pico de nitrito é um risco grande e o que salva o lote, são as acoes como as da PISCICULTURA COLOMBO que mede, observa e FAZ o que precisa ser feito, investindo pois ÁGUA BOA DÁ LUCRO!
 
