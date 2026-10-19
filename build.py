@@ -681,7 +681,7 @@ def estufas():
         titulo_seo="Estufas agrícolas Brasil Estufas | Representante Eng. Tafarel Sá",
         descricao="Estufas agrícolas Brasil Estufas para hortaliças, mudas, flores e aquaponia. Orçamento direto pelo WhatsApp com o representante Eng. Tafarel Sá.",
         h1="Estufas agrícolas Brasil Estufas",
-        promessa="Sou representante da Brasil Estufas. Estrutura de fábrica para produzir o ano todo, com orientação de engenheiro na escolha do modelo.",
+        promessa="Estrutura de fábrica com 10 anos de garantia, para produzir o ano todo. Sou representante da Brasil Estufas e oriento a escolha do modelo como engenheiro.",
         foto=foto_slot("estufas", "Foto de estufa<br>(substituir)"),
         para_quem=[
             "Produtores de hortaliças que querem produzir o ano todo",
@@ -691,7 +691,7 @@ def estufas():
         ],
         inclui=[
             "Orientação na escolha do modelo e do tamanho",
-            "Estrutura e filme plástico de fábrica",
+            "Estrutura e filme plástico de fábrica, com 10 anos de garantia na estrutura",
             "Orçamento por escrito com prazo de entrega",
             "Projeto de climatização, quando a cultura pede controle de temperatura",
             "Integração com o sistema de aquaponia, se for o seu caso",
@@ -710,6 +710,16 @@ def estufas():
         botao="Pedir orçamento de estufa",
         numero=ZAP_ESTUFAS,
         passos=PASSOS_ESTUFA,
+        extra=f"""<section class="secao secao-escura"><div class="wrap">
+  <h2>Por que Brasil Estufas</h2>
+  <div class="selos selos-escuros">
+    <div><strong>10 anos</strong><span>de garantia na estrutura</span></div>
+    <div><strong>Tubo quadrado fechado</strong><span>estrutura firme contra vento e chuva</span></div>
+    <div><strong>Fabricação própria</strong><span>e suporte de quem instala</span></div>
+    <div><strong>Engenheiro junto</strong><span>na escolha do modelo para a sua cultura</span></div>
+  </div>
+  <p style="margin-top:24px">Para hortaliças, mudas, flores, hidroponia e piscicultura em estufa, como no <a href="{href('blog/case-rolante-nitrito-zerado-em-8-dias', 0)}">tanque de alevinagem em Rolante/RS</a>.</p>
+</div></section>""",
     )
 
 

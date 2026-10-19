@@ -610,3 +610,8 @@ h1, h2 { letter-spacing: -.01em; }
 .mf-txt { padding: 14px 16px; }
 .mf-txt h2 { font-size: 1.15rem; margin: 0 0 8px; }
 .mf-txt p { margin: 0 0 6px; font-size: .95rem; }
+
+.selos-escuros { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; list-style: none; padding: 0; margin: 20px 0 0; }
+.selos-escuros > div { border: 1px solid rgba(255,255,255,.18); border-radius: 12px; padding: 16px 18px; display: flex; flex-direction: column; gap: 4px; }
+.selos-escuros strong { font-family: var(--fonte-titulo); font-size: 1.25rem; color: var(--lona); }
+.selos-escuros span { color: #d9e0de; }
