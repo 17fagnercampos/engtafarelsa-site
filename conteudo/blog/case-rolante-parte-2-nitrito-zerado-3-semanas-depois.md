@@ -9,8 +9,8 @@ resposta: No Tanque 01 da Piscicultura Colombo, em Rolante/RS, o nitrito tinha z
   no 8º dia de protocolo Biotecnal. Nas semanas seguintes, com manutenção a cada
   3 ou 4 dias (Bactrat P, Enzipro Nitro, Nutrat Aqua Plus e bicarbonato), o
   nitrito oscilou entre 0 e 0,25 mg/L, abaixo do limite de 0,5 mg/L, e amônia e
-  nitrito estavam em zero nas análises de 16/10 e 18/10. A alcalinidade subiu de
-  80 para 110 ppm.
+  nitrito estavam em zero nas análises de 16/10 e 18/10, com o trato subindo para
+  17 kg de ração por dia. A alcalinidade subiu de 80 para 110 ppm.
 foto: /fotos/cases/rolante-tanque-aeracao.jpg
 foto_legenda: "Tanque 01 da Piscicultura Colombo, em Rolante/RS: 600 m³ dentro da estufa, juvenis de tilápia genética Acqua Sul, mangueiras porosas e aerador chafariz."
 produtos:
@@ -29,6 +29,10 @@ perguntas:
       Nitro e Nutrat Aqua Plus, com 10 kg de bicarbonato de sódio em cada
       reposição para segurar a alcalinidade, que chegou a 110 ppm. As análises
       seguiram a cada 2 ou 3 dias.
+  - pergunta: Quanto de ração o lote estava comendo?
+    resposta: O trato começou em 6 kg por dia, estava em 9 kg em 07/10 e chegou a
+      17 kg por dia em 18/10. Mesmo com essa carga de ração quase dobrando em 11
+      dias, amônia e nitrito terminaram o período em zero.
   - pergunta: Onde está a primeira parte do case?
     resposta: Na parte 1 estão o sistema, o problema, o protocolo de choque e a
       queda do nitrito de 5 mg/L a zero em 8 dias, com as fotos dos testes antes e
@@ -38,6 +42,8 @@ fontes:
       de Consumo de Insumos de 25/09 a 18/10/2026, Tanque 01, mesmo lote"
   - texto: Relatório técnico atualizado de evolução da qualidade da água, Tanque 01,
       18/10/2026
+  - texto: Trato diário de ração informado pelo produtor (6 kg no início do lote, 9 kg
+      em 07/10 e 17 kg em 18/10/2026)
 ---
 
 Na [parte 1 deste case](case-rolante-nitrito-zerado-em-8-dias.html), o Tanque 01 da Piscicultura Colombo, em Rolante/RS, saiu de **nitrito em 5 mg/L** para zero na manhã do 8º dia de protocolo Biotecnal. São 600 m³ de água, 40 mil juvenis de tilápia da genética Acqua Sul Piscicultura, estufa, geomembrana e aeração automatizada.
@@ -49,6 +55,7 @@ Zerar o nitrito uma vez é a parte que todo mundo comemora. A pergunta que vale 
 <div><strong>14 análises</strong><span>de água registradas no lote</span></div>
 <div><strong>0,00 mg/L</strong><span>amônia e nitrito em 16/10 e 18/10</span></div>
 <div><strong>80 → 110 ppm</strong><span>alcalinidade recuperada</span></div>
+<div><strong>6 → 17 kg</strong><span>de ração por dia, do início do lote a 18/10</span></div>
 </div>
 
 ![Gráfico de amônia e nitrito no Tanque 01 de 25/09 a 18/10/2026, com a fase de choque, a fase de manutenção e as aplicações de Bactrat P e Enzipro Nitro](../fotos/cases/rolante-parte2-amonia-nitrito.png)
@@ -68,6 +75,14 @@ Zerar o nitrito uma vez é a parte que todo mundo comemora. A pergunta que vale 
 O nitrito não voltou a subir. Apareceram leituras de **0,25 mg/L**, metade do limite de referência, intercaladas com zero. As duas últimas análises do período deram **amônia e nitrito em zero**. Duas leituras seguidas em zero dizem mais do que um zero isolado.
 
 O pH ficou em 8,0 em todas as medições, e a temperatura da água subiu para até 27 °C.
+
+## O peixe respondeu no cocho
+
+O trato diário começou em **6 kg** de ração no início do lote, estava em **9 kg** em 07/10 e chegou a **17 kg por dia em 18/10**. É quase o dobro em 11 dias, e quase o triplo do começo.
+
+Esse é o detalhe que mais pesa no case: **mais ração significa mais amônia entrando na água todo dia**. Mesmo com a carga quase dobrando, amônia e nitrito terminaram o período em zero. A água acompanhou o crescimento do trato, e é assim que a ração vira peixe em vez de virar prejuízo.
+
+O trato subindo mostra apetite e lote comendo bem, mas não substitui a biometria. O ganho de peso será medido na pesagem do lote.
 
 ## O que foi feito: de choque para manutenção
 
