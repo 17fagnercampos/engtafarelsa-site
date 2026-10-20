@@ -52,6 +52,14 @@ content:
     type: date
     options:
       format: yyyy-MM-dd
+  - name: atualizado
+    label: Atualizado em (opcional, quando o artigo ganha uma parte nova)
+    type: date
+    options:
+      format: yyyy-MM-dd
+  - name: aviso_atualizacao
+    label: Aviso de atualização no topo (opcional)
+    type: string
   - name: rascunho
     label: Rascunho (não publicar ainda)
     type: boolean

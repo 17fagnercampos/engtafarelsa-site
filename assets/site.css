@@ -618,3 +618,10 @@ h1, h2 { letter-spacing: -.01em; }
 .grupo-acao { background: #fff; border-radius: 16px; padding: clamp(18px, 3vw, 28px); box-shadow: 0 10px 30px rgba(12,20,22,.08); }
 .grupo-acao .botao { margin-top: 8px; }
 .grupo-alt { margin: 12px 0 0; font-size: .92rem; color: var(--texto-suave, #55615f); }
+.aviso-atualizacao { background: var(--lona); color: #fff; border-radius: 12px; padding: 12px 16px; font-weight: 600; margin: 12px 0 18px; }
+.aviso-atualizacao a { color: #fff; text-decoration: underline; }
+.placar { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin: 18px 0 24px; }
+.placar div { background: var(--campo); border-radius: 14px; padding: 14px 16px; }
+.placar strong { display: block; font-size: 1.7rem; line-height: 1.1; color: var(--manta); }
+.placar span { font-size: .9rem; color: var(--texto-suave); }
+.artigo [id] { scroll-margin-top: 90px; }

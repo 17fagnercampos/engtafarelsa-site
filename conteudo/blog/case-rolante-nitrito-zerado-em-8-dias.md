@@ -1,17 +1,20 @@
 ---
 titulo: "Case Piscicultura Colombo Rolante/RS: Nitrito de 5 mg/L a zero em 8 dias"
 categoria: cases
-descricao: "Juvenil de tilápia em estufa com tanque de geomembrana de 600 m³ em
-  Rolante/RS: O protocolo BIOTECNAL Eng Tafarel Sá levou amônia e nitrito a zero
-  em uma semana! "
+descricao: "Rolante/RS: nitrito de 5 mg/L a zero em 8 dias com o protocolo Biotecnal.
+  Parte 2: 24 dias e 14 análises depois, amônia e nitrito seguem em zero."
 data: 2026-10-07
+atualizado: 2026-10-18
+aviso_atualizacao: "Parte 2 publicada: 24 dias e 14 análises depois. <a href=\"#parte-2\">Veja se o nitrito ficou no lugar</a>."
 rascunho: false
 resposta: PROTOCOLO AMONIA E NITRITO - Num tanque de 600 m³ com 40 mil alevinos
   de tilápia em Rolante/RS, o nitrito chegou a 5 mg/L e a amônia a 1 mg/L na
   primeira semana do lote. Com o protocolo Biotecnal (Bactrat P, Enzipro Nitro e
   Nutrat Aqua Plus, com bicarbonato e sal no manejo), a amônia zerou em 4 dias e
   o nitrito zerou na manhã do 8º dia de tratamento. O oxigênio ficou entre 7 e
-  9,5 mg/L o tempo todo.
+  9,5 mg/L o tempo todo. Na parte 2, com aplicações de manutenção a cada 3 ou 4
+  dias, amônia e nitrito estavam em zero nas análises de 16/10 e 18/10, e a
+  alcalinidade subiu de 80 para 110 ppm.
 foto: /fotos/cases/rolante-estufa-produtos-biotecnal.jpg
 foto_legenda: "Piscicultura Colombo Rolante/RS: Combo BIOTECNAL - Enzipro Nitro,
   Nutrat Aqua Plus e Bactrat P sistema fechado em estufa, geomembrana e aeração
@@ -37,6 +40,17 @@ perguntas:
       proposto e acompanhado pelo Eng Tafarel Sá. O que o caso mostra é que, com
       medição frequente e protocolo ajustado, um sistema com nitrito alto voltou
       para a faixa segura em poucos dias.
+  - pergunta: O nitrito voltou depois de zerar?
+    resposta: Apareceram leituras de 0,25 mg/L em 07/10 à tarde, 09/10 e 14/10,
+      sempre abaixo do limite de referência de 0,5 mg/L e intercaladas com zero.
+      As duas últimas análises do período, em 16/10 e 18/10, deram zero. Por
+      isso a leitura certa é a tendência de várias medições, e não um ponto
+      isolado.
+  - pergunta: O que foi feito depois que o nitrito zerou?
+    resposta: Manutenção. Em 08/10, 12/10 e 15/10 entraram Bactrat P, Enzipro
+      Nitro e Nutrat Aqua Plus, com 10 kg de bicarbonato de sódio em cada
+      reposição para segurar a alcalinidade, que chegou a 110 ppm. As análises
+      seguiram a cada 2 ou 3 dias.
   - pergunta: Para que serve o sal no tratamento de nitrito?
     resposta: "O cloreto do sal compete com o nitrito na entrada pelas brânquias e
       protege o peixe enquanto as bactérias trabalham. Ele não remove o nitrito
@@ -46,6 +60,10 @@ fontes:
       emitido em 07/10/2026 (registros do produtor)
   - texto: Relatórios de Consumo de Insumos do mesmo lote, 25/09 a 07/10/2026
   - texto: Relatório técnico de evolução da qualidade da água, Tanque 01 (Biotecnal)
+  - texto: "Parte 2: Relatório de Análises de Água emitido em 18/10/2026 e Relatório
+      de Consumo de Insumos de 25/09 a 18/10/2026, Tanque 01, mesmo lote"
+  - texto: Relatório técnico atualizado de evolução da qualidade da água, Tanque 01,
+      18/10/2026
 ---
 ## O sistema
 
@@ -124,7 +142,7 @@ No preparo da água também foram usados 2 kg de cal virgem.
 
 A **amônia respondeu primeiro**: caiu para 0,25 mg/L em 02/10 e zerou em 04/10. O **nitrito resistiu mais**. Ficou em 5 mg/L até 05/10, caiu para 4 mg/L em 06/10 e **zerou na manhã de 07/10, no 8º dia de tratamento**.
 
-Na medição da tarde de 07/10 o nitrito marcou 0,25 mg/L, ainda abaixo do limite. O sistema segue em acompanhamento diário.
+Na medição da tarde de 07/10 o nitrito marcou 0,25 mg/L, ainda abaixo do limite. O sistema seguiu em acompanhamento: veja na [parte 2](#parte-2) o que aconteceu nas semanas seguintes.
 
 ## O que este caso ensina
 
@@ -135,4 +153,72 @@ Na medição da tarde de 07/10 o nitrito marcou 0,25 mg/L, ainda abaixo do limit
 
 Uma ressalva honesta: O COMBO BIOTECNAL aplicado junto a atenção do produtor, ALCALINIDADE, OXIGÊNIO. Por isso, o resultado é do **protocolo integrado** com a água boa dando lucro.
 
-Tem um tanque com nitrito ou amônia alta? Mande as suas medições pelo WhatsApp e eu monto o protocolo para o seu caso.
+<h2 id="parte-2">Parte 2 · Três semanas depois: o nitrito ficou no lugar?</h2>
+
+Zerar o nitrito uma vez é a parte que todo mundo comemora. A pergunta que vale dinheiro é outra: **ele fica zerado?** Voltamos ao Tanque 01 com as análises até 18/10/2026.
+
+<div class="placar">
+<div><strong>24 dias</strong><span>de acompanhamento, de 25/09 a 18/10</span></div>
+<div><strong>14 análises</strong><span>de água registradas no lote</span></div>
+<div><strong>0,00 mg/L</strong><span>amônia e nitrito em 16/10 e 18/10</span></div>
+<div><strong>80 → 110 ppm</strong><span>alcalinidade recuperada</span></div>
+</div>
+
+![Gráfico de amônia e nitrito no Tanque 01 de 25/09 a 18/10/2026, com a fase de choque, a fase de manutenção e as aplicações de Bactrat P e Enzipro Nitro](../fotos/cases/rolante-parte2-amonia-nitrito.png)
+
+### As análises depois do zero
+
+| Data | Amônia (mg/L) | Nitrito (mg/L) | Alcalinidade (ppm) | Temperatura (°C) |
+| --- | --- | --- | --- | --- |
+| 07/10, 6h22 | 0,00 | 0,00 | 100 | 24,0 |
+| 07/10, 16h26 | — | 0,25 | 100 | 27,0 |
+| 09/10 | — | 0,25 | 110 | 25,0 |
+| 11/10 | — | 0,00 | 100 | 24,5 |
+| 14/10 | 0,00 | 0,25 | 110 | 24,5 |
+| 16/10 | **0,00** | **0,00** | 110 | 25,0 |
+| 18/10 | **0,00** | **0,00** | 110 | 26,0 |
+
+O nitrito não voltou a subir. Apareceram leituras de **0,25 mg/L**, metade do limite de referência, intercaladas com zero. As duas últimas análises do período deram **amônia e nitrito em zero**. Duas leituras seguidas em zero dizem mais do que um zero isolado.
+
+O pH ficou em 8,0 em todas as medições, e a temperatura da água subiu para até 27 °C.
+
+### O que foi feito: de choque para manutenção
+
+Depois do zero, o protocolo mudou de ritmo. Em vez de aplicação quase diária, entrou a **manutenção a cada 3 ou 4 dias** (08/10, 12/10 e 15/10):
+
+- **[Bactrat P](../biotecnal-bactrat-p.html)** e **Enzipro Nitro**: 150 g cada em 08/10 e 100 g cada em 12/10 e 15/10, para manter as bactérias trabalhando.
+- **[Nutrat Aqua Plus](../biotecnal-nutrat-aqua-plus.html)**: 30 mL em cada uma das três datas.
+- **Bicarbonato de sódio**: 10 kg em 08/10, 12/10, 15/10 e 18/10.
+
+Somando as duas partes, de 25/09 a 18/10:
+
+| Insumo | Total no lote | Aplicações |
+| --- | --- | --- |
+| Bactrat P | 1.000 g | 8 |
+| Enzipro Nitro | 1.000 g | 8 |
+| Nutrat Aqua Plus | 200 mL | 7 |
+| Bicarbonato de sódio | 82 kg | 7 |
+| Sal comum sem iodo | 400 kg | 6 (até 02/10) |
+
+Esses números são do registro deste tanque. A dose para o seu viveiro depende da sua análise: fale comigo no WhatsApp.
+
+### Alcalinidade e sólidos: os outros sinais
+
+![Gráficos da alcalinidade com as reposições de bicarbonato e dos sólidos sedimentáveis no Tanque 01, de 25/09 a 18/10/2026](../fotos/cases/rolante-parte2-alcalinidade-solidos.png)
+
+**Alcalinidade.** Começou em 150 ppm e caiu para 80 ppm em 02/10, no auge do trabalho das bactérias. Com a reposição de bicarbonato a cada aplicação, voltou para 100 ppm em 07/10 e está em **110 ppm desde 14/10**. A dureza passou de 60 para 70 ppm.
+
+**Sólidos sedimentáveis.** Oscilaram e tiveram um pico de **12 mL/L em 11/10**, voltando para 2 mL/L em 16/10 e 18/10. Os registros não permitem apontar uma causa única para esse pico. Por isso os sólidos ficam no radar, junto com amônia e nitrito.
+
+### O que a parte 2 ensina
+
+1. **Zerar é metade do trabalho.** A outra metade é a manutenção, com aplicação espaçada e análise frequente.
+2. **Leia a tendência, não um ponto.** Um 0,25 mg/L isolado não é motivo de pânico, e um zero isolado não é motivo para parar de medir.
+3. **A alcalinidade precisa de reposição contínua.** Ela é consumida pelas bactérias e só voltou para 110 ppm com bicarbonato a cada aplicação.
+4. **Registre tudo.** Foi o registro de análises e insumos do produtor que permitiu contar esta história com números.
+
+Uma ressalva honesta: vários insumos foram usados juntos e não houve um tanque de comparação. O resultado é compatível com o **protocolo integrado** e com o manejo atento do produtor, mas não dá para atribuí-lo a um produto isolado, nem garantir que todo sistema responda igual.
+
+Tem um tanque com nitrito ou amônia alta? Mande as suas medições pelo WhatsApp e eu monto o protocolo para o seu caso. E se quiser acompanhar os próximos cases, [entre no grupo Água Boa Dá Lucro](../grupo.html).
+
+**Não é mágica, é manejo. Água boa dá lucro.**

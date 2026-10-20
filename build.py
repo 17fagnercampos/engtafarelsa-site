@@ -1088,6 +1088,8 @@ def carregar_artigos():
             "titulo": d.get("titulo") or arq.stem,
             "descricao": d.get("descricao") or "",
             "data": str(d.get("data") or DATA_SITE),
+            "atualizado": str(d.get("atualizado") or "") or None,
+            "aviso": d.get("aviso_atualizacao") or "",
             "resposta": d.get("resposta") or "",
             "ep": d.get("episodio") or None,
             "foto": (d.get("foto") or "").lstrip("/"),
@@ -1101,7 +1103,7 @@ def carregar_artigos():
             "leitura": max(1, round(len((corpo + " " + str(d.get("resposta") or "") + " " +
                                        " ".join(str(q.get("resposta") or "") for q in (d.get("perguntas") or []))).split()) / 180)),
         })
-    artigos.sort(key=lambda a: (a["data"], a["categoria"] == "cases"), reverse=True)  # no mesmo dia, case vem primeiro
+    artigos.sort(key=lambda a: (max(a["data"], a["atualizado"] or ""), a["categoria"] == "cases"), reverse=True)  # no mesmo dia, case vem primeiro
     return artigos
 
 
@@ -1155,8 +1157,9 @@ def post_page(a):
 <article class="secao secao-branca"><div class="wrap artigo">
   <p class="trilha"><a href="../index.html">Início</a> / <a href="index.html">{PORTAL}</a> / <a href="categoria/{a['categoria']}.html">{CAT.get(a['categoria'], ('Dicas técnicas',))[0]}</a></p>
   <h1>{a['titulo']}</h1>
-  <p class="post-meta">Por <a href="../sobre.html">Eng. Tafarel Sá</a> · {data_legivel(a['data'])} · {a['leitura']} min de leitura</p>
+  <p class="post-meta">Por <a href="../sobre.html">Eng. Tafarel Sá</a> · {data_legivel(a['data'])}{(' · <strong>Atualizado em ' + data_legivel(a['atualizado']) + '</strong>') if a.get('atualizado') else ''} · {a['leitura']} min de leitura</p>
   {ep}
+  {f'<p class="aviso-atualizacao">{md_html(a["aviso"]).strip().removeprefix("<p>").removesuffix("</p>")}</p>' if a.get('aviso') else ''}
   {f'<figure class="post-foto"><img src="../{a["foto"]}" alt="{html.escape(a["foto_legenda"] or a["titulo"])}" decoding="async">' + (f'<figcaption>{a["foto_legenda"]}</figcaption>' if a["foto_legenda"] else '') + '</figure>' if a["foto"] else ''}
   <div class="resposta-rapida"><p><strong>Resposta rápida:</strong> {a['resposta']}</p></div>
   {a['corpo']}
@@ -1181,7 +1184,7 @@ def post_page(a):
 """
     ld = [
         {"@context": "https://schema.org", "@type": "BlogPosting", "headline": a["titulo"],
-         "description": a["descricao"], "datePublished": a["data"], "dateModified": a["data"],
+         "description": a["descricao"], "datePublished": a["data"], "dateModified": a["atualizado"] or a["data"],
          **({"image": f"{DOMINIO}/{a['foto']}"} if a["foto"] else {}),
          "inLanguage": "pt-BR", "mainEntityOfPage": f"{DOMINIO}/blog/{a['slug']}",
          "author": {"@type": "Person", "@id": DOMINIO + "/#tafarel", "name": "Tafarel Sá",
