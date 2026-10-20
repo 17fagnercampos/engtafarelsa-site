@@ -615,3 +615,6 @@ h1, h2 { letter-spacing: -.01em; }
 .selos-escuros > div { border: 1px solid rgba(255,255,255,.18); border-radius: 12px; padding: 16px 18px; display: flex; flex-direction: column; gap: 4px; }
 .selos-escuros strong { font-family: var(--fonte-titulo); font-size: 1.25rem; color: var(--lona); }
 .selos-escuros span { color: #d9e0de; }
+.grupo-acao { background: #fff; border-radius: 16px; padding: clamp(18px, 3vw, 28px); box-shadow: 0 10px 30px rgba(12,20,22,.08); }
+.grupo-acao .botao { margin-top: 8px; }
+.grupo-alt { margin: 12px 0 0; font-size: .92rem; color: var(--texto-suave, #55615f); }

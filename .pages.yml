@@ -288,6 +288,9 @@ content:
   - name: whatsapp_vendas_legivel
     label: WhatsApp de vendas (como aparece)
     type: string
+  - name: grupo_whatsapp
+    label: Link do grupo de WhatsApp Água Boa Dá Lucro (chat.whatsapp.com/...)
+    type: string
   - name: youtube
     label: Canal do YouTube
     type: string

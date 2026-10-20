@@ -54,6 +54,8 @@ ZAP_LEGIVEL = CONFIG.get("whatsapp_tafarel_legivel") or "(51) 99936-5993"
 # Brasil Estufas (representação): vendas de estufas vão para este número
 ZAP_ESTUFAS = str(CONFIG.get("whatsapp_vendas") or "5548998508182")
 ZAP_ESTUFAS_LEGIVEL = CONFIG.get("whatsapp_vendas_legivel") or "(48) 99850-8182"
+# Grupo de WhatsApp Água Boa Dá Lucro (link de convite, editável no CMS)
+GRUPO = (str(CONFIG.get("grupo_whatsapp") or "https://chat.whatsapp.com/BZejAaFpFxnAH6e30eYcwu")).split("?")[0]
 YOUTUBE = CONFIG.get("youtube") or "https://www.youtube.com/@engtafarelsa"
 
 # Loja AKSO: links de parceiro 7766 (Piscicultura Lucrativa), testados em 15/10/2026.
@@ -339,6 +341,7 @@ def pagina(*, slug, titulo, descricao, corpo, prof=0, msg_zap, ld=None, ativo=No
       <ul>
         <li><a href="{zap_link('Olá, Tafarel! Vim pelo site.')}" target="_blank" rel="noopener">WhatsApp {ZAP_LEGIVEL}</a></li>
         <li><a href="{zap_link('Olá! Vim pelo site do Eng. Tafarel e quero orçamento de estufa.', ZAP_ESTUFAS)}" target="_blank" rel="noopener">Estufas: {ZAP_ESTUFAS_LEGIVEL}</a></li>
+        <li><a href="{GRUPO}" target="_blank" rel="noopener">Grupo Água Boa Dá Lucro</a></li>
         <li><a href="{YOUTUBE}" target="_blank" rel="noopener">YouTube Engenheiro Tafarel Sá</a></li>
         <li><a href="{INSTAGRAM}" target="_blank" rel="noopener">Instagram @engtafarelsa</a></li>
       </ul>
@@ -588,7 +591,7 @@ def home():
   <p style="margin-top:20px"><a class="botao botao-linha" href="{href('calculadora', 0)}#diagnostico">Fazer o diagnóstico da água</a> <a class="botao botao-linha" href="{href('projeto', 0)}">Contar meu projeto</a></p>
 </div></section>
 
-{bloco_cadastro(0)}
+{bloco_grupo(0)}
 {CADASTRO_JS}
 
 <section class="secao" id="o-que-eu-faco"><div class="wrap">
@@ -1173,7 +1176,7 @@ def post_page(a):
   <h2>Continue lendo</h2>
   <div class="cards">{outros}</div>
 </div></section>
-{bloco_cadastro(1)}
+{bloco_grupo(1)}
 {CADASTRO_JS}
 """
     ld = [
@@ -1526,6 +1529,7 @@ def biotecnal():
   {caixa_autor(0)}
 </div></section>
 {chamada("Vamos tratar a sua água?", "Mande as medições e o problema. O protocolo sai pelo WhatsApp.", "Pedir protocolo no WhatsApp", MSG_BIO, ZAP)}
+{bloco_grupo(0, titulo="Veja os resultados no grupo Água Boa Dá Lucro")}
 """
     ld = [faq_ld(faq), {
         "@context": "https://schema.org", "@type": "ItemList", "name": "Linha Aqua Biotecnal",
@@ -1741,6 +1745,8 @@ def calculadora():
 </div></section>
 
 {bloco_diagnostico()}
+
+{bloco_grupo(0, titulo="Quer receber os alertas de manejo?")}
 
 <section class="secao"><div class="wrap">
   <h2>Faixas de referência</h2>
@@ -2100,6 +2106,55 @@ def card_artigo(a, prof, nivel=3):
             f'<h{nivel}>{a["titulo"]}</h{nivel}><p>{a["descricao"]}</p></div></a></article>')
 
 
+def bloco_grupo(prof=0, titulo="Entre no grupo Água Boa Dá Lucro", intro=None):
+    intro = intro or ("Cases reais com análise de água, resultados de campo e dicas de manejo, direto no seu WhatsApp. "
+                      "Só eu posto, então o grupo não vira bagunça. De vez em quando abro um plantão de dúvidas.")
+    return f"""<section class="secao secao-cadastro secao-grupo" id="grupo"><div class="wrap cad-grade">
+  <div>
+    <p class="card-cat">Grupo no WhatsApp</p>
+    <h2>{titulo}</h2>
+    <p>{intro}</p>
+    <p class="nota-afiliado">Entrada livre pelo link. Para sair, é só sair do grupo. Dúvida sobre o seu viveiro? Essa é no privado, pelo WhatsApp {ZAP_LEGIVEL}.</p>
+  </div>
+  <div class="grupo-acao">
+    <ul class="lista-check">
+      <li>Cases com antes e depois das análises</li>
+      <li>Alertas de manejo: calor, frio, oxigênio, nitrito</li>
+      <li>Novidades Biotecnal, AKSO, cursos e consultoria primeiro aqui</li>
+      <li>Plantão de dúvidas aberto em dias marcados</li>
+    </ul>
+    <a class="botao botao-zap" href="{GRUPO}" target="_blank" rel="noopener">{ICONE_ZAP}Entrar no grupo</a>
+    <p class="grupo-alt">Prefere receber no privado? <a href="{href('cadastro', prof)}">Faça o cadastro</a>.</p>
+  </div>
+</div></section>"""
+
+
+def grupo_page():
+    corpo = f"""
+<section class="cabeca-pagina"><div class="wrap">
+  <p class="trilha"><a href="index.html">Início</a> / Grupo</p>
+  <h1>Grupo Água Boa Dá Lucro no WhatsApp</h1>
+  <p class="promessa">O grupo do Eng. Tafarel Sá para quem cria peixe e quer água boa: cases reais, resultados e dicas de manejo, sem bagunça.</p>
+  <p><a class="botao botao-zap" href="{GRUPO}" target="_blank" rel="noopener">{ICONE_ZAP}Entrar no grupo</a></p>
+</div></section>
+<section class="secao"><div class="wrap">
+  <h2>Como funciona</h2>
+  <ul class="lista-check">
+    <li><strong>Só o Tafarel posta.</strong> Duas ou três vezes por semana, nada de corrente, figurinha ou propaganda de terceiros.</li>
+    <li><strong>Plantão de dúvidas.</strong> Em dias avisados antes, o grupo abre para todo mundo perguntar.</li>
+    <li><strong>Primeiro aqui.</strong> Cases novos, condições especiais e vagas de consultoria saem no grupo antes das redes.</li>
+    <li><strong>Seu viveiro, no privado.</strong> Dúvida específica com as suas medições vai pelo WhatsApp {ZAP_LEGIVEL}.</li>
+    <li><strong>Sem pegadinha.</strong> Ninguém é adicionado sem querer: você entra pelo link e sai quando quiser.</li>
+  </ul>
+  <p style="margin-top:20px"><a class="botao botao-zap" href="{GRUPO}" target="_blank" rel="noopener">{ICONE_ZAP}Entrar no grupo Água Boa Dá Lucro</a></p>
+  <p class="nota-afiliado">Não é mágica, é manejo. Água boa dá lucro. #AguaBoaDaLucro</p>
+</div></section>
+"""
+    return pagina(slug="grupo", titulo="Grupo Água Boa Dá Lucro no WhatsApp | Eng. Tafarel Sá",
+                  descricao="Entre no grupo de WhatsApp Água Boa Dá Lucro: cases reais, resultados de análise de água e dicas de manejo para piscicultura, com o Eng. Tafarel Sá.",
+                  corpo=corpo, msg_zap="Olá, Tafarel! Vim pela página do grupo.", ativo="blog/")
+
+
 def bloco_cadastro(prof=0, titulo="Receba o Água Boa Dá Lucro no WhatsApp", intro=None):
     intro = intro or ("Um conteúdo por semana sobre qualidade de água, os episódios novos do canal e avisos de "
                       "cursos e dias de campo. Escolha o seu perfil para receber o que interessa a você.")
@@ -2179,7 +2234,7 @@ def portal_index():
   <div class="destaque">{card_artigo(destaque, 1, 2)}</div>
 </div></section>
 {secoes}
-{bloco_cadastro(1)}
+{bloco_grupo(1)}
 {bloco_youtube(1)}
 <section class="secao"><div class="wrap">
   <div class="sec-topo"><h2>Ferramentas grátis</h2></div>
@@ -2218,7 +2273,7 @@ def categoria_page(s, n, d):
   <nav class="cat-chips" aria-label="Categorias">{chips}</nav>
 </div></section>
 <section class="secao"><div class="wrap">{conteudo}</div></section>
-{bloco_cadastro(2)}
+{bloco_grupo(2)}
 {CADASTRO_JS}
 """
     return pagina(slug=f"blog/categoria/{s}", titulo=f"{n} | {PORTAL} | Eng. Tafarel Sá", descricao=d,
@@ -2371,6 +2426,7 @@ def main():
         "sobre.html": sobre(),
         "blog/index.html": portal_index(),
         "cadastro.html": cadastro_page(),
+        "grupo.html": grupo_page(),
         "seja-revenda-biotecnal.html": revenda_page(),
         "404.html": nao_encontrada(),
         "fotos-do-site.html": mapa_fotos(),
@@ -2409,6 +2465,7 @@ def main():
     linhas += ["", "## Outras páginas",
                f"- [Portal Água Boa Dá Lucro]({DOMINIO}/blog/): dicas técnicas, produtos Biotecnal, cases, por dentro da Biotecnal e mercado da piscicultura.",
                f"- [Seja revenda Biotecnal no RS e SC]({DOMINIO}/seja-revenda-biotecnal): para agropecuárias, cooperativas e técnicos.",
+               f"- [Grupo Água Boa Dá Lucro]({DOMINIO}/grupo): grupo de WhatsApp com cases, resultados e dicas de manejo.",
                f"- [Cadastro]({DOMINIO}/cadastro): receber o Água Boa Dá Lucro pelo WhatsApp.",
                f"- [Criação de traíra e trairão]({DOMINIO}/traira-e-trairao): condicionamento alimentar, berçário e manejo para pesca esportiva e pesque-pague.",
                f"- [Curso Aquaponia Comercial]({DOMINIO}/cursos): Método AquaHortis, online e presencial.",
@@ -2441,6 +2498,10 @@ def main():
         ("/biotecnal-yt", "/biotecnal?utm_source=youtube"),
         ("/calculadora-yt", "/calculadora?utm_source=youtube"),
         ("/cadastro-yt", "/cadastro?utm_source=youtube"),
+        ("/grupo-yt", "/grupo?utm_source=youtube"),
+        ("/grupo-insta", "/grupo?utm_source=instagram"),
+        ("/grupo-face", "/grupo?utm_source=facebook"),
+        ("/entrar", GRUPO),
     ]
     (DIST / "_headers").write_text(
         "/assets/fonts/*\n  Cache-Control: public, max-age=31536000, immutable\n"
