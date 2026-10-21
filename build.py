@@ -600,8 +600,9 @@ def bloco_biotecnal(prof=0, pagina_bio=False):
     texto = ("Estes números são de um tanque real, em Rolante/RS, acompanhado análise por análise e biometria por biometria. É o resultado que eu quero levar para o seu viveiro."
              if pagina_bio else
              "A Biotecnal é a empresa que eu escolhi para cuidar da água dos meus clientes. Indústria de biotecnologia de Toledo/PR, "
-             "fabricando desde 2007, com ISO 9001 e ISO 14001. Tenho carinho e gratidão por essa parceria: é com a linha Aqua "
-             "que eu monto os protocolos do Água Boa Dá Lucro, e vejo o resultado no tanque.")
+             "fabricando desde 2007, com ISO 9001 e ISO 14001. Conheço a marca desde a faculdade, pela excelência dos produtos para "
+             "tratamento de efluentes industriais e de água. Hoje é com a linha Aqua que eu monto os protocolos do Água Boa Dá Lucro, "
+             "e vejo o resultado no tanque.")
     botoes = (f'<a class="botao botao-linha botao-claro" href="{href("blog/" + CASES_ROLANTE[0], prof)}">Ler o case completo (3 partes)</a>'
               if pagina_bio else
               f'<a class="botao botao-linha botao-claro" href="{href("biotecnal", prof)}">Conhecer a linha Aqua</a>'
@@ -1582,7 +1583,7 @@ def biotecnal():
   <div>
     <h2>Por dentro da Biotecnal</h2>
     <p>Indústria de biotecnologia em Toledo/PR desde 2007, com registros no IBAMA, na ANVISA e no Ministério da Agricultura. A linha Aqua parte de uma ideia simples: tratar a água é tão importante quanto tratar os animais.</p>
-    <p><strong>Por que eu trabalho com a Biotecnal.</strong> Porque é fabricante de verdade, com controle de qualidade e equipe técnica, e porque eu vejo o resultado no tanque do cliente. Tenho carinho e gratidão por essa empresa, e é por isso que levo a linha Aqua para produtores de todo o Brasil.</p>
+    <p><strong>Por que eu trabalho com a Biotecnal.</strong> Porque é fabricante de verdade, com controle de qualidade e equipe técnica, e porque eu vejo o resultado no tanque do cliente. Conheço a Biotecnal desde a faculdade, pela excelência dos produtos para tratamento de efluentes industriais e de água. Por isso levo a linha Aqua para produtores de todo o Brasil.</p>
     <ul class="selos">
       <li><strong>ISO 9001:2015</strong><span>Gestão da qualidade</span></li>
       <li><strong>ISO 14001</strong><span>Gestão ambiental</span></li>
