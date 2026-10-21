@@ -3,6 +3,7 @@ titulo: "Case Rolante/RS, parte 2: o nitrito ficou zerado 3 semanas depois?"
 categoria: cases
 titulo_pagina: "Parte 2: o nitrito ficou zerado 3 semanas depois?"
 etiqueta: Case real · Rolante/RS
+aviso_atualizacao: "Já saiu a parte 3: de 1,4 g para 12 g em 26 dias. <a href=\"case-rolante-parte-3-agua-boa-virou-peixe.html\">A água boa virou peixe?</a>"
 destaques:
   - valor: 0,00 mg/L
     rotulo: amônia e nitrito em 16 e 18/10
@@ -93,7 +94,7 @@ O trato diário começou em **6 kg** de ração no início do lote, estava em **
 
 Esse é o detalhe que mais pesa no case: **mais ração significa mais amônia entrando na água todo dia**. Mesmo com a carga quase dobrando, amônia e nitrito terminaram o período em zero. A água acompanhou o crescimento do trato, e é assim que a ração vira peixe em vez de virar prejuízo.
 
-O trato subindo mostra apetite e lote comendo bem, mas não substitui a biometria. O ganho de peso será medido na pesagem do lote.
+O trato subindo mostra apetite e lote comendo bem, mas não substitui a biometria. O ganho de peso está na [parte 3 do case](case-rolante-parte-3-agua-boa-virou-peixe.html).
 
 ## O que foi feito: de choque para manutenção
 

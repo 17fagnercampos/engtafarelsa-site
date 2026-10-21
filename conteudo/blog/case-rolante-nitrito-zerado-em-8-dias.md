@@ -15,7 +15,7 @@ barra_texto: Mande suas medições
 descricao: "Juvenil de tilápia em estufa com tanque de geomembrana de 600 m³ em
   Rolante/RS: o protocolo Biotecnal levou amônia e nitrito a zero em 8 dias."
 data: 2026-10-07
-aviso_atualizacao: "Já saiu a parte 2: 24 dias e 14 análises depois. <a href=\"case-rolante-parte-2-nitrito-zerado-3-semanas-depois.html\">O nitrito ficou no lugar?</a>"
+aviso_atualizacao: "Este case continua: <a href=\"case-rolante-parte-2-nitrito-zerado-3-semanas-depois.html\">parte 2, o nitrito ficou no lugar?</a> e <a href=\"case-rolante-parte-3-agua-boa-virou-peixe.html\">parte 3, a água boa virou peixe?</a>"
 rascunho: false
 resposta: PROTOCOLO AMONIA E NITRITO - Num tanque de 600 m³ com 40 mil alevinos
   de tilápia em Rolante/RS, o nitrito chegou a 5 mg/L e a amônia a 1 mg/L na
