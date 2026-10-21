@@ -49,7 +49,7 @@ fontes:
 ---
 ## O sistema
 
-A propriedade é a piscicultura Colombo em **Rolante/RS**. É um sistema fechado de produção de juvenis, genética Acqua Sul Piscicultura, dentro de uma [estufa](../estufas.html), com um [tanque escavado revestido de geomembrana](../tanques-de-geomembrana.html):
+A propriedade é a piscicultura Colombo em **Rolante/RS**. É um sistema fechado de produção de juvenis, dentro de uma [estufa](../estufas.html), com um [tanque escavado revestido de geomembrana](../tanques-de-geomembrana.html):
 
 
 | Item | Valor |  |  |

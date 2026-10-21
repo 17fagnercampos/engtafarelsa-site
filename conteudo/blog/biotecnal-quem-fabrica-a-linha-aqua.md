@@ -16,7 +16,7 @@ perguntas:
   - pergunta: Onde fica a fábrica da Biotecnal?
     resposta: Em Toledo, no oeste do Paraná, na Rua Joaquim Piazza, 408, Jardim Anápolis.
   - pergunta: Quem atende a Biotecnal no Rio Grande do Sul e em Santa Catarina?
-    resposta: O Eng. Tafarel Sá, representante técnico-comercial da Biotecnal no RS e em SC. O atendimento é pelo WhatsApp, com protocolo montado a partir das medições da água.
+    resposta: O Eng. Tafarel Sá, coordenador técnico e de expansão da Biotecnal no RS e em SC. O atendimento é pelo WhatsApp, com protocolo montado a partir das medições da água.
   - pergunta: A Biotecnal só faz produtos para peixe?
     resposta: Não. A empresa atende também a indústria, cuidados com o lar, pets e outras criações do agro, como suínos, aves e gado de leite. Na aquicultura, os produtos são da linha Aqua.
 fontes:
@@ -52,4 +52,4 @@ Quando usados juntos, o Nutrat potencializa o trabalho das bactérias do Bactrat
 
 ## Atendimento no RS e em SC
 
-Sou o representante técnico-comercial da Biotecnal no Rio Grande do Sul e em Santa Catarina. O caminho é sempre o mesmo: você mede a água, me manda os números e eu monto o protocolo para o seu viveiro. Use o [diagnóstico rápido](../calculadora.html#diagnostico) ou a página [Contar meu projeto](../projeto.html).
+Sou coordenador técnico e de expansão da Biotecnal no Rio Grande do Sul e em Santa Catarina. O caminho é sempre o mesmo: você mede a água, me manda os números e eu monto o protocolo para o seu viveiro. Use o [diagnóstico rápido](../calculadora.html#diagnostico) ou a página [Contar meu projeto](../projeto.html).

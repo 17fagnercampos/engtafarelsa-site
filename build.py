@@ -318,7 +318,7 @@ def pagina(*, slug, titulo, descricao, corpo, prof=0, msg_zap, ld=None, ativo=No
       <h3>Eng. Tafarel Sá</h3>
       <p>Engenheiro responsável pela <a href="{BENFICA_URL}">Benfica AgroEngenharia</a>.<br>
       CNPJ {CNPJ}</p>
-      <p>{ENDERECO}<br>Atendimento no Rio Grande do Sul e em outros estados, conforme o projeto.</p>
+      <p>{ENDERECO}<br>Atendimento em todo o Brasil, presencial ou por vídeo, conforme o projeto.</p>
     </div>
     <div>
       <h3>Produtos e serviços</h3>
@@ -455,7 +455,7 @@ def pagina_produto(*, slug, titulo_seo, descricao, h1, promessa, foto, para_quem
             "@type": "Service",
             "name": h1,
             "description": descricao,
-            "areaServed": "BR-RS",
+            "areaServed": {"@type": "Country", "name": "Brasil"},
             "provider": {"@id": DOMINIO + "/#tafarel"},
         },
         faq_ld(faq),
@@ -515,7 +515,7 @@ OFERTAS = [
 
 FAQ_HOME = [
     ("Você atende só no Rio Grande do Sul?",
-     "A base fica em Triunfo/RS. Atendo o estado inteiro e outros estados quando o porte do projeto justifica o deslocamento. A consultoria também pode ser feita por vídeo."),
+     "Não. A base fica em Triunfo/RS e o atendimento é em todo o Brasil: presencial quando o projeto pede, ou por vídeo e WhatsApp."),
     ("Preciso ter o projeto pronto para pedir orçamento?",
      "Não. Você me conta o que quer produzir e o tamanho da área, e eu monto o projeto junto com o orçamento."),
     ("Quem emite a nota fiscal?",
@@ -607,7 +607,8 @@ def home():
     {foto_slot("inicio_tafarel", CARTAO_AUTOR, classe="cartao-autor")}
     <ul class="assina-fatos">
       <li><strong>Desde 2020</strong><span>Benfica AgroEngenharia</span></li>
-      <li><strong>RS e SC</strong><span>Representante Biotecnal</span></li>
+      <li><strong>Todo o Brasil</strong><span>Atendimento presencial ou por vídeo</span></li>
+      <li><strong>Biotecnal</strong><span>Coordenador técnico e expansão RS e SC</span></li>
       <li><strong>4 marcas</strong><span>de fabricante, com procedência</span></li>
     </ul>
   </div>
@@ -615,7 +616,7 @@ def home():
     <p class="sobretitulo">Quem assina o projeto</p>
     <h2>Eng. Tafarel Sá</h2>
     <p class="assina-lead">Sou engenheiro e responsável técnico pela Benfica AgroEngenharia, empresa de engenharia com sede em Triunfo/RS desde 2020.</p>
-    <p>Represento a Brasil Estufas, a Biotecnal e a Geotop, vendo a linha de hidroponia Hortivinyl e indico os equipamentos AKSO. Isso quer dizer material de fabricante, com procedência, e alguém que responde por ele depois da entrega.</p>
+    <p>Sou coordenador técnico e de expansão da Biotecnal no RS e em SC, represento a Brasil Estufas e a Geotop, vendo a linha de hidroponia Hortivinyl e indico os equipamentos AKSO. Isso quer dizer material de fabricante, com procedência, e alguém que responde por ele depois da entrega. O atendimento é em todo o Brasil.</p>
     <p>No canal, apresento a série <a href="{href('blog/', 0)}">Água Boa Dá Lucro</a>: manejo da água explicado com números, para o produtor decidir com segurança.</p>
     <p class="assina-clientes-titulo">Pela Benfica, já atendemos empresas como:</p>
     <ul class="clientes">{"".join(f"<li>{c}</li>" for c in clientes)}</ul>
@@ -642,7 +643,7 @@ def home():
             "@id": DOMINIO + "/#tafarel",
             "name": "Tafarel Sá",
             "alternateName": ["Eng. Tafarel Sá", "Engenheiro Tafarel Sá", "Tafarel Sá", "engtafarelsa"],
-            "jobTitle": "Engenheiro ambiental",
+            "jobTitle": ["Engenheiro ambiental", "Coordenador técnico e de expansão Biotecnal RS e SC"],
             "knowsAbout": ["Qualidade da água na piscicultura", "Oxigênio dissolvido", "Amônia e nitrito em viveiros",
                            "Aquaponia", "Hidroponia", "Biotecnologia aplicada à aquicultura"],
             "affiliation": {"@type": "Organization", "name": "Biotecnal", "url": "https://www.biotecnal.ind.br"},
@@ -660,8 +661,8 @@ def home():
         },
         faq_ld(FAQ_HOME),
     ]
-    return pagina(slug="", titulo="Água Boa Dá Lucro | Piscicultura e qualidade da água no RS e SC",
-                  descricao="Qualidade da água na piscicultura: oxigênio, amônia, nitrito e lodo. Produtos Biotecnal com protocolo do Eng. Tafarel Sá, representante no RS e SC. Consultoria, aquaponia, hidroponia e estufas.",
+    return pagina(slug="", titulo="Água Boa Dá Lucro | Qualidade da água na piscicultura",
+                  descricao="Qualidade da água na piscicultura: oxigênio, amônia, nitrito e lodo. Protocolo Biotecnal com o Eng. Tafarel Sá. Atendimento em todo o Brasil: consultoria, aquaponia, hidroponia e estufas.",
                   corpo=corpo, msg_zap=msg, ld=ld)
 
 
@@ -777,10 +778,10 @@ def links_relacionados(itens, prof=0):
 def piscicultura():
     return pagina_produto(
         slug="piscicultura",
-        titulo_seo="Consultoria em piscicultura no RS | Eng. Tafarel Sá",
-        descricao="Consultoria em piscicultura: qualidade da água, dimensionamento de viveiros, aeração, manejo e adequação ambiental, com o Eng. Tafarel Sá. Presencial no RS ou por vídeo.",
+        titulo_seo="Consultoria em piscicultura em todo o Brasil | Eng. Tafarel Sá",
+        descricao="Consultoria em piscicultura: qualidade da água, dimensionamento de viveiros, aeração, manejo e adequação ambiental, com o Eng. Tafarel Sá. Presencial ou por vídeo, em todo o Brasil.",
         h1="Consultoria em piscicultura",
-        promessa="Para quem quer começar a criar peixe do jeito certo ou já produz e quer mais resultado por tanque. Presencial no RS ou por vídeo em todo o Brasil.",
+        promessa="Para quem quer começar a criar peixe do jeito certo ou já produz e quer mais resultado por tanque. Atendimento presencial ou por vídeo, em todo o Brasil.",
         foto=foto_slot("piscicultura", "Foto de viveiros em produção<br>(substituir)"),
         para_quem=[
             "Produtores começando na piscicultura que querem evitar erro de projeto",
@@ -1011,7 +1012,7 @@ def sobre():
   <h2>Marcas que represento</h2>
   <ul class="ofertas">
     <li class="oferta"><h3>Brasil Estufas</h3><p>Estufas agrícolas de fábrica, com atendimento em todo o Brasil.</p><a href="{href('estufas', 0)}">Ver estufas</a></li>
-    <li class="oferta"><h3>Biotecnal</h3><p>Sistemas biológicos para tratamento de água e dejetos. Representação no RS e em SC.</p><a href="{href('biotecnal', 0)}">Ver Biotecnal</a></li>
+    <li class="oferta"><h3>Biotecnal</h3><p>Sistemas biológicos para tratamento de água e dejetos. Coordenação técnica e expansão no RS e em SC.</p><a href="{href('biotecnal', 0)}">Ver Biotecnal</a></li>
     <li class="oferta"><h3>Geotop</h3><p>Geomembranas para tanques, reservatórios e lagoas. Representação no RS, SC e PR.</p><a href="{href('tanques-de-geomembrana', 0)}">Ver tanques</a></li>
     <li class="oferta"><h3>Hortivinyl</h3><p>Perfis e sistemas de hidroponia em PVC, com garantia de 10 anos do fabricante.</p><a href="{href('hidroponia', 0)}">Ver hidroponia</a></li>
     <li class="oferta"><h3>AKSO</h3><p>Medidores de qualidade da água que eu uso e indico.</p><a href="{href('loja-akso', 0)}">Ver medidores</a></li>
@@ -1019,13 +1020,13 @@ def sobre():
 </div></section>
 """
     ld = {"@context": "https://schema.org", "@type": "ProfilePage", "mainEntity": {
-        "@type": "Person", "@id": DOMINIO + "/#tafarel", "name": "Tafarel Sá", "alternateName": ["Eng. Tafarel Sá", "Engenheiro Tafarel Sá", "Tafarel Sá", "engtafarelsa"], "jobTitle": "Engenheiro ambiental",
+        "@type": "Person", "@id": DOMINIO + "/#tafarel", "name": "Tafarel Sá", "alternateName": ["Eng. Tafarel Sá", "Engenheiro Tafarel Sá", "Tafarel Sá", "engtafarelsa"], "jobTitle": ["Engenheiro ambiental", "Coordenador técnico e de expansão Biotecnal RS e SC"],
         "url": DOMINIO + "/sobre", "image": DOMINIO + "/assets/og-capa.png", "sameAs": [u for u in (INSTAGRAM, YOUTUBE, FACEBOOK) if u],
         "knowsAbout": ["Qualidade da água na piscicultura", "Piscicultura", "Aquaponia", "Hidroponia",
                        "Estufas agrícolas", "Tanques de geomembrana", "Tratamento biológico de água"],
         "worksFor": {"@type": "Organization", "name": "Benfica AgroEngenharia", "url": BENFICA_URL, "taxID": CNPJ}}}
     return pagina(ld=ld, slug="sobre", titulo="Sobre o Eng. Tafarel Sá | Benfica AgroEngenharia",
-                  descricao="Conheça o Eng. Tafarel Sá, fundador e responsável técnico da Benfica AgroEngenharia, em Triunfo/RS, e representante Brasil Estufas, Biotecnal e Geotop.",
+                  descricao="Conheça o Eng. Tafarel Sá, fundador da Benfica AgroEngenharia, em Triunfo/RS, coordenador técnico e de expansão da Biotecnal no RS e SC, com atendimento em todo o Brasil.",
                   corpo=corpo, msg_zap=msg, ativo="sobre")
 
 
@@ -1206,8 +1207,8 @@ def post_page(a):
 # Itens marcados "A CONFIRMAR" na base técnica (pH 8,5 no choque, alcalinidade 20 mg/L,
 # tabela emergencial do Oxitrat, doses de choque) NÃO são publicados: ficam para o diagnóstico.
 
-AUTOR_BIO = ("Engenheiro ambiental, fundador da Benfica AgroEngenharia e representante técnico-comercial "
-             "da Biotecnal no Rio Grande do Sul e em Santa Catarina. Apresenta a série Água Boa Dá Lucro no YouTube.")
+AUTOR_BIO = ("Engenheiro ambiental, fundador da Benfica AgroEngenharia e coordenador técnico e de expansão "
+             "da Biotecnal no RS e em SC. Atende em todo o Brasil e apresenta a série Água Boa Dá Lucro no YouTube.")
 
 REFERENCIAS = [
     # parâmetro, faixa, frequência, link do artigo
@@ -1407,7 +1408,7 @@ def qualidade_agua():
 
 <section class="secao"><div class="wrap">
   <h2>Corrigir: problema e solução</h2>
-  <p class="intro">Produtos da linha Aqua da Biotecnal, empresa de biotecnologia de Toledo/PR, com fabricação própria desde 2007. Sou representante técnico da Biotecnal no RS e em SC.</p>
+  <p class="intro">Produtos da linha Aqua da Biotecnal, empresa de biotecnologia de Toledo/PR, com fabricação própria desde 2007. Sou coordenador técnico e de expansão da Biotecnal no RS e em SC.</p>
   {tabela_matriz(0)}
   <ul class="ofertas" style="margin-top:32px">{cards}</ul>
 </div></section>
@@ -1461,7 +1462,7 @@ def biotecnal():
         ("Qual produto usar primeiro?",
          "Depende do problema. Para prevenção ao longo do ciclo, o Bactrat P na ração. Para oxigênio baixo ou emergência, o Oxitrat. Para amônia e nitrito, o Nutrat Aqua Plus e o Bactrat Aquanitro. O certo é medir a água e montar o protocolo."),
         ("Vocês atendem fora do RS e SC?",
-         "Sou representante técnico no RS e em SC. Para outros estados, eu te coloco em contato com a equipe da Biotecnal da sua região."),
+         "Sim. O protocolo e o acompanhamento técnico eu faço em todo o Brasil, por WhatsApp e vídeo. Sou coordenador técnico e de expansão da Biotecnal no RS e em SC; para pedidos de outros estados, eu te coloco em contato com a equipe da Biotecnal da sua região."),
     ]
     corpo = f"""
 <section class="cabeca-pagina"><div class="wrap">
@@ -1550,7 +1551,7 @@ def produto_bio(p):
     faq = [
         (f"Para que serve o {p['nome']}?", f"{p['resumo']} {p['acao']}"),
         (f"Qual a dose do {p['nome']}?", f"Pela ficha técnica: {p['dose']} Em situação de crise, o protocolo é definido a partir das medições da água."),
-        (f"Onde comprar {p['nome']} no RS e em SC?", "Com o Eng. Tafarel Sá, representante técnico da Biotecnal. O pedido é feito pelo WhatsApp e sai de fábrica para a sua propriedade."),
+        (f"Onde comprar {p['nome']} no RS e em SC?", "Com o Eng. Tafarel Sá, coordenador técnico e de expansão da Biotecnal no RS e em SC. O pedido é feito pelo WhatsApp e sai de fábrica para a sua propriedade."),
     ]
     corpo = f"""
 <section class="cabeca-pagina"><div class="wrap">
@@ -2456,7 +2457,7 @@ def main():
         + "\n".join(urls) + "\n</urlset>\n", encoding="utf-8")
     # GEO: resumo para buscadores de IA
     linhas = [f"# Eng. Tafarel Sá", "",
-              "> Site do Eng. Tafarel Sá, engenheiro ambiental e representante técnico da Biotecnal no RS e em SC. "
+              "> Site do Eng. Tafarel Sá, engenheiro ambiental, coordenador técnico e de expansão da Biotecnal no RS e em SC, com atendimento em todo o Brasil. "
               "Conteúdo sobre qualidade da água na piscicultura (oxigênio dissolvido, amônia, nitrito, pH, alcalinidade, lodo) "
               "e produtos da linha Aqua Biotecnal (Oxitrat, Bactrat P, Bactrat Aquanitro, Bactrat Aquatech, Bioflow Aqua, Nutrat Aqua Plus). "
               "Inclui cases reais com análises de água, como o de Rolante/RS, onde o nitrito caiu de 5 mg/L a zero em 8 dias. "

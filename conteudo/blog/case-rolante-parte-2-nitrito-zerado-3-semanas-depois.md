@@ -12,7 +12,7 @@ resposta: No Tanque 01 da Piscicultura Colombo, em Rolante/RS, o nitrito tinha z
   nitrito estavam em zero nas análises de 16/10 e 18/10, com o trato subindo para
   17 kg de ração por dia. A alcalinidade subiu de 80 para 110 ppm.
 foto: /fotos/cases/rolante-tanque-aeracao.jpg
-foto_legenda: "Tanque 01 da Piscicultura Colombo, em Rolante/RS: 600 m³ dentro da estufa, juvenis de tilápia genética Acqua Sul, mangueiras porosas e aerador chafariz."
+foto_legenda: "Tanque 01 da Piscicultura Colombo, em Rolante/RS: 600 m³ dentro da estufa, juvenis de tilápia, mangueiras porosas e aerador chafariz."
 produtos:
   - bactrat-p
   - nutrat-aqua-plus
@@ -46,7 +46,7 @@ fontes:
       em 07/10 e 17 kg em 18/10/2026)
 ---
 
-Na [parte 1 deste case](case-rolante-nitrito-zerado-em-8-dias.html), o Tanque 01 da Piscicultura Colombo, em Rolante/RS, saiu de **nitrito em 5 mg/L** para zero na manhã do 8º dia de protocolo Biotecnal. São 600 m³ de água, 40 mil juvenis de tilápia da genética Acqua Sul Piscicultura, estufa, geomembrana e aeração automatizada.
+Na [parte 1 deste case](case-rolante-nitrito-zerado-em-8-dias.html), o Tanque 01 da Piscicultura Colombo, em Rolante/RS, saiu de **nitrito em 5 mg/L** para zero na manhã do 8º dia de protocolo Biotecnal. São 600 m³ de água, 40 mil juvenis de tilápia, estufa, geomembrana e aeração automatizada.
 
 Zerar o nitrito uma vez é a parte que todo mundo comemora. A pergunta que vale dinheiro é outra: **ele fica zerado?** Voltamos ao Tanque 01 com as análises até 18/10/2026.
 
