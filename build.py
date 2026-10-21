@@ -582,6 +582,48 @@ def bloco_youtube(prof=0, titulo="Água Boa Dá Lucro", intro=None):
 </div></section>"""
 
 
+CASES_ROLANTE = ["case-rolante-nitrito-zerado-em-8-dias", "case-rolante-parte-2-nitrito-zerado-3-semanas-depois",
+                 "case-rolante-parte-3-agua-boa-virou-peixe"]
+PROVA_ROLANTE = [("5 → 0 mg/L", "nitrito em 8 dias"), ("24 dias", "de água estável"), ("1,4 → 12 g", "peso médio em 26 dias")]
+
+
+def bloco_biotecnal(prof=0, pagina_bio=False):
+    """Destaque da Biotecnal: parceira principal, prova do case Rolante e a linha Aqua."""
+    prods = "".join(
+        f'<a class="bio-prod" href="{href("biotecnal-" + s, prof)}">'
+        f'<img src="{"../" * prof}assets/biotecnal/{s}.jpg" alt="Embalagem {PROD[s]["nome"]} Biotecnal" loading="lazy" decoding="async">'
+        f'<span>{PROD[s]["nome"].title()}</span></a>'
+        for s in ["bactrat-p", "nutrat-aqua-plus", "oxitrat", "bactrat-aquanitro", "bioflow-aqua", "bicarbonato-de-sodio"]
+        if s in PROD and (RAIZ / "assets" / "biotecnal" / f"{s}.jpg").exists())
+    prova = "".join(f'<li><b>{v}</b><span>{r}</span></li>' for v, r in PROVA_ROLANTE)
+    titulo = "A Biotecnal no campo" if pagina_bio else "A biotecnologia que eu levo para o seu viveiro"
+    texto = ("Estes números são de um tanque real, em Rolante/RS, acompanhado análise por análise e biometria por biometria. É o resultado que eu quero levar para o seu viveiro."
+             if pagina_bio else
+             "A Biotecnal é a empresa que eu escolhi para cuidar da água dos meus clientes. Indústria de biotecnologia de Toledo/PR, "
+             "fabricando desde 2007, com ISO 9001 e ISO 14001. Tenho carinho e gratidão por essa parceria: é com a linha Aqua "
+             "que eu monto os protocolos do Água Boa Dá Lucro, e vejo o resultado no tanque.")
+    botoes = (f'<a class="botao botao-linha botao-claro" href="{href("blog/" + CASES_ROLANTE[0], prof)}">Ler o case completo (3 partes)</a>'
+              if pagina_bio else
+              f'<a class="botao botao-linha botao-claro" href="{href("biotecnal", prof)}">Conhecer a linha Aqua</a>'
+              f'<a class="botao botao-linha botao-claro" href="{href("blog/" + CASES_ROLANTE[0], prof)}">Ver o case Rolante</a>')
+    return f"""<section class="secao secao-escura secao-bio" id="biotecnal-destaque"><div class="wrap">
+  <div class="bio-grade">
+    <div>
+      <p class="bio-kicker">Parceira principal · Biotecnal</p>
+      <h2>{titulo}</h2>
+      <p class="intro">{texto}</p>
+      <div class="hero-acoes">{botao_zap("Pedir protocolo Biotecnal", MSG_BIO, numero=ZAP)}{botoes}</div>
+    </div>
+    <div class="bio-prova">
+      <p class="bio-prova-tit">Case real · Rolante/RS · 2026</p>
+      <ul>{prova}</ul>
+      <p class="bio-prova-nota">Protocolo integrado Biotecnal com o manejo do produtor. Cada viveiro responde de um jeito.</p>
+    </div>
+  </div>
+  <div class="bio-prods">{prods}</div>
+</div></section>"""
+
+
 def home():
     linhas = "".join(
         f'<li class="oferta"><h3>{n}</h3><p>{d}</p><a href="{href(s, 0)}">Ver detalhes</a></li>'
@@ -603,12 +645,14 @@ def home():
     <p class="promessa">Guias práticos, produtos Biotecnal, cases e mercado, com o Eng. Tafarel Sá. Para a ração virar peixe e não prejuízo.</p>
     <div class="hero-acoes">
       <a class="botao botao-zap" href="{href('blog/', 0)}">Ler os guias</a>
-      <a class="botao botao-linha botao-claro" href="#cadastro">Receber no WhatsApp</a>
+      <a class="botao botao-linha botao-claro" href="#grupo">Entrar no grupo</a>
     </div>
     <nav class="cat-chips" aria-label="Categorias">{"".join(f'<a class="cat-chip" href="{href("blog/categoria/" + c, 0)}">{n}</a>' for c, n, _ in CATEGORIAS)}</nav>
   </div>
   <div class="hero-destaque"><p class="card-cat">Em destaque</p>{card_artigo(ARTIGOS[0], 0, 2).replace('loading="lazy"', 'fetchpriority="high"', 1)}</div>
 </div></section>
+
+{bloco_biotecnal(0)}
 
 <section class="secao"><div class="wrap">
   <div class="sec-topo"><h2>Últimos conteúdos</h2><a href="{href('blog/', 0)}">Ver todos</a></div>
@@ -1503,7 +1547,8 @@ def biotecnal():
          "Sim. Vendo e atendo em todo o Brasil: o pedido é feito pelo WhatsApp, o produto sai de fábrica, em Toledo/PR, para a sua propriedade, e o protocolo e o acompanhamento técnico são feitos por WhatsApp e vídeo."),
     ]
     corpo = f"""
-<section class="cabeca-pagina"><div class="wrap">
+<section class="cabeca-pagina"><div class="wrap cabeca-grade">
+  <div>
   <p class="trilha"><a href="index.html">Início</a> / Biotecnal</p>
   <h1>Biotecnal para piscicultura em todo o Brasil</h1>
   <p class="promessa">Biotecnologia para a água da piscicultura: bactérias benéficas, bioestimulador, floculante e oxigênio em pó para prevenir e resolver amônia, nitrito, lodo e falta de oxigênio. E o portfólio completo Biotecnal Agro para criação animal e efluentes. Venda e protocolo em todo o Brasil, com o coordenador técnico e de expansão da Biotecnal no RS e em SC.</p>
@@ -1511,6 +1556,15 @@ def biotecnal():
     {botao_zap("Pedir protocolo para o meu viveiro", MSG_BIO, numero=ZAP)}
     <a class="botao botao-linha" href="{href('calculadora', 0)}">Calcular as doses de manutenção</a>
   </div>
+  </div>
+  <figure class="bio-hero-foto"><img class="foto" src="fotos/cases/rolante-estufa-produtos-biotecnal.jpg" alt="Enzipro Nitro, Nutrat Aqua Plus e Bactrat P da Biotecnal na beira do tanque, dentro da estufa, em Rolante/RS" fetchpriority="high" decoding="async"><figcaption>Linha Aqua no campo: case Rolante/RS, 2026.</figcaption></figure>
+</div></section>
+
+{bloco_biotecnal(0, pagina_bio=True)}
+
+<section class="secao secao-branca"><div class="wrap">
+  <div class="sec-topo"><h2>O case Rolante, em 3 partes</h2></div>
+  <div class="cards">{"".join(card_artigo(a, 0) for c in CASES_ROLANTE for a in ARTIGOS if a["slug"] == c)}</div>
 </div></section>
 
 <section class="secao"><div class="wrap">
@@ -1528,6 +1582,7 @@ def biotecnal():
   <div>
     <h2>Por dentro da Biotecnal</h2>
     <p>Indústria de biotecnologia em Toledo/PR desde 2007, com registros no IBAMA, na ANVISA e no Ministério da Agricultura. A linha Aqua parte de uma ideia simples: tratar a água é tão importante quanto tratar os animais.</p>
+    <p><strong>Por que eu trabalho com a Biotecnal.</strong> Porque é fabricante de verdade, com controle de qualidade e equipe técnica, e porque eu vejo o resultado no tanque do cliente. Tenho carinho e gratidão por essa empresa, e é por isso que levo a linha Aqua para produtores de todo o Brasil.</p>
     <ul class="selos">
       <li><strong>ISO 9001:2015</strong><span>Gestão da qualidade</span></li>
       <li><strong>ISO 14001</strong><span>Gestão ambiental</span></li>
