@@ -67,7 +67,7 @@ A propriedade é a piscicultura Colombo em **Rolante/RS**. É um sistema fechado
 | ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------- | --- | --- |
 | Volume do tanque | 600 m³ |  |  |
 | Profundidade média | 2 m |  |  |
-| Tilápias | 40 mil, com peso inicial de 1,3 g |  |  |
+| Tilápias | 40 mil, com peso inicial de 1,4 g (biometria de 25/09) |  |  |
 | Ração | 50 kg de ração em pó (55% de proteína) e 40 kg de 1mm (48% de proteína) no período; o trato começou em 6 kg por dia e hoje (07/10/2026) está em 9 kg por dia. |  |  |
 | Aeração | Controlada por sonda e automação,mangueiras porosas e aerador chafariz ligado direto. |  |  |
 
