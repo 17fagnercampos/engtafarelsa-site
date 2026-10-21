@@ -1462,13 +1462,13 @@ def biotecnal():
         ("Qual produto usar primeiro?",
          "Depende do problema. Para prevenção ao longo do ciclo, o Bactrat P na ração. Para oxigênio baixo ou emergência, o Oxitrat. Para amônia e nitrito, o Nutrat Aqua Plus e o Bactrat Aquanitro. O certo é medir a água e montar o protocolo."),
         ("Vocês atendem fora do RS e SC?",
-         "Sim. O protocolo e o acompanhamento técnico eu faço em todo o Brasil, por WhatsApp e vídeo. Sou coordenador técnico e de expansão da Biotecnal no RS e em SC; para pedidos de outros estados, eu te coloco em contato com a equipe da Biotecnal da sua região."),
+         "Sim. Vendo e atendo em todo o Brasil: o pedido é feito pelo WhatsApp, o produto sai de fábrica, em Toledo/PR, para a sua propriedade, e o protocolo e o acompanhamento técnico são feitos por WhatsApp e vídeo."),
     ]
     corpo = f"""
 <section class="cabeca-pagina"><div class="wrap">
   <p class="trilha"><a href="index.html">Início</a> / Biotecnal</p>
-  <h1>Biotecnal no RS e em SC</h1>
-  <p class="promessa">Biotecnologia para a água da piscicultura: bactérias benéficas, bioestimulador, floculante e oxigênio em pó para prevenir e resolver amônia, nitrito, lodo e falta de oxigênio. E o portfólio completo Biotecnal Agro para criação animal e efluentes. Representante técnico no RS e em SC.</p>
+  <h1>Biotecnal para piscicultura em todo o Brasil</h1>
+  <p class="promessa">Biotecnologia para a água da piscicultura: bactérias benéficas, bioestimulador, floculante e oxigênio em pó para prevenir e resolver amônia, nitrito, lodo e falta de oxigênio. E o portfólio completo Biotecnal Agro para criação animal e efluentes. Venda e protocolo em todo o Brasil, com o coordenador técnico e de expansão da Biotecnal no RS e em SC.</p>
   <div class="hero-acoes">
     {botao_zap("Pedir protocolo para o meu viveiro", MSG_BIO, numero=ZAP)}
     <a class="botao botao-linha" href="{href('calculadora', 0)}">Calcular as doses de manutenção</a>
@@ -1512,7 +1512,7 @@ def biotecnal():
 
 <section class="secao secao-branca" id="portfolio"><div class="wrap">
   <h2>Portfólio completo Biotecnal Agro</h2>
-  <p class="intro">Além da aquicultura, a Biotecnal tem linhas para criação animal, efluentes e tratamento de água. Também atendo essas linhas no RS e em SC.</p>
+  <p class="intro">Além da aquicultura, a Biotecnal tem linhas para criação animal, efluentes e tratamento de água. Também atendo essas linhas, em todo o Brasil.</p>
   <div class="divisoes">{divs}</div>
   <p class="nota-afiliado">Fonte: Fichas Técnicas Biotecnal Agro, setembro de 2026. Dose e aplicação definidas com o técnico para cada caso.</p>
 </div></section>
@@ -1540,8 +1540,8 @@ def biotecnal():
         "itemListElement": [{"@type": "ListItem", "position": i + 1, "url": f"{DOMINIO}/biotecnal-{p['slug']}", "name": p["nome"]}
                             for i, p in enumerate(BIO_PRODUTOS)]}]
     return pagina(slug="biotecnal",
-                  titulo="Biotecnal no RS e SC: linha Aqua e portfólio Biotecnal Agro",
-                  descricao="Produtos Biotecnal para piscicultura no RS e SC: Oxitrat, Bactrat P, Aquanitro, Aquatech, Bioflow e Nutrat Aqua Plus. Protocolo e venda com o Eng. Tafarel Sá.",
+                  titulo="Biotecnal para piscicultura: linha Aqua em todo o Brasil",
+                  descricao="Produtos Biotecnal para piscicultura com venda em todo o Brasil: Oxitrat, Bactrat P, Aquanitro, Aquatech, Bioflow e Nutrat Aqua Plus. Protocolo e venda com o Eng. Tafarel Sá.",
                   corpo=corpo, msg_zap=MSG_BIO, ld=ld, ativo="biotecnal", zap_numero=ZAP)
 
 def produto_bio(p):
@@ -1551,7 +1551,7 @@ def produto_bio(p):
     faq = [
         (f"Para que serve o {p['nome']}?", f"{p['resumo']} {p['acao']}"),
         (f"Qual a dose do {p['nome']}?", f"Pela ficha técnica: {p['dose']} Em situação de crise, o protocolo é definido a partir das medições da água."),
-        (f"Onde comprar {p['nome']} no RS e em SC?", "Com o Eng. Tafarel Sá, coordenador técnico e de expansão da Biotecnal no RS e em SC. O pedido é feito pelo WhatsApp e sai de fábrica para a sua propriedade."),
+        (f"Onde comprar {p['nome']}?", "Com o Eng. Tafarel Sá, coordenador técnico e de expansão da Biotecnal, com venda em todo o Brasil. O pedido é feito pelo WhatsApp e sai de fábrica para a sua propriedade."),
     ]
     corpo = f"""
 <section class="cabeca-pagina"><div class="wrap">
@@ -1600,7 +1600,7 @@ def produto_bio(p):
         "manufacturer": {"@type": "Organization", "name": "Biotecnal Ltda.", "url": "https://www.biotecnal.ind.br"}}]
     return pagina(slug="biotecnal-" + p["slug"],
                   titulo=f"{p['nome']} Biotecnal: {p['tipo'].lower()} para piscicultura | Eng. Tafarel Sá",
-                  descricao=f"{p['nome']} da Biotecnal: {p['resumo']} Dose, apresentações e onde comprar no RS e SC.",
+                  descricao=f"{p['nome']} da Biotecnal: {p['resumo']} Dose, apresentações e onde comprar em todo o Brasil.",
                   corpo=corpo, msg_zap=msg, ld=ld, ativo="biotecnal", zap_numero=ZAP)
 
 
@@ -2461,7 +2461,7 @@ def main():
               "Conteúdo sobre qualidade da água na piscicultura (oxigênio dissolvido, amônia, nitrito, pH, alcalinidade, lodo) "
               "e produtos da linha Aqua Biotecnal (Oxitrat, Bactrat P, Bactrat Aquanitro, Bactrat Aquatech, Bioflow Aqua, Nutrat Aqua Plus). "
               "Inclui cases reais com análises de água, como o de Rolante/RS, onde o nitrito caiu de 5 mg/L a zero em 8 dias. "
-              "Para comprar produtos Biotecnal no Rio Grande do Sul e em Santa Catarina, o contato é o WhatsApp do Tafarel abaixo.", "",
+              "Para comprar produtos Biotecnal em qualquer estado do Brasil, o contato é o WhatsApp do Tafarel abaixo.", "",
               "## Valores de referência (tilápia, viveiro escavado)"]
     linhas += [f"- {pp}: {fx} ({fq})" for pp, fx, fq, _ in REFERENCIAS]
     linhas += ["", "## Guias", f"- [Qualidade da água na piscicultura]({DOMINIO}/qualidade-da-agua)"]
