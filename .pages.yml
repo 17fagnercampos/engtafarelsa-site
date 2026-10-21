@@ -52,6 +52,29 @@ content:
     type: date
     options:
       format: yyyy-MM-dd
+  - name: titulo_pagina
+    label: Título curto no topo do artigo (opcional; o título completo continua no Google)
+    type: string
+  - name: etiqueta
+    label: Etiqueta acima do título (opcional, ex. Case real · Rolante/RS)
+    type: string
+  - name: destaques
+    label: Números em destaque abaixo do título (opcional, até 3)
+    type: object
+    list: true
+    fields:
+    - name: valor
+      label: Número (ex. 5 → 0 mg/L)
+      type: string
+    - name: rotulo
+      label: O que é (ex. nitrito)
+      type: string
+  - name: barra_pergunta
+    label: Pergunta da barra de WhatsApp (opcional, ex. Nitrito ou amônia alta?)
+    type: string
+  - name: barra_texto
+    label: Complemento da barra de WhatsApp (opcional, ex. Mande suas medições)
+    type: string
   - name: atualizado
     label: Atualizado em (opcional, quando o artigo ganha uma parte nova)
     type: date

@@ -1,6 +1,17 @@
 ---
 titulo: "Case Piscicultura Colombo Rolante/RS: Nitrito de 5 mg/L a zero em 8 dias"
 categoria: cases
+titulo_pagina: Nitrito de 5 mg/L a zero em 8 dias
+etiqueta: Case real · Rolante/RS
+destaques:
+  - valor: 5 → 0 mg/L
+    rotulo: nitrito
+  - valor: 8 dias
+    rotulo: de protocolo
+  - valor: 40 mil
+    rotulo: juvenis de tilápia
+barra_pergunta: Nitrito ou amônia alta?
+barra_texto: Mande suas medições
 descricao: "Juvenil de tilápia em estufa com tanque de geomembrana de 600 m³ em
   Rolante/RS: o protocolo Biotecnal levou amônia e nitrito a zero em 8 dias."
 data: 2026-10-07

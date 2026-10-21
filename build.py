@@ -259,7 +259,38 @@ def titulo_tag(t, limite=65):
 CSS_VERSAO = __import__("hashlib").md5((RAIZ / "assets" / "site.css").read_bytes()).hexdigest()[:8]
 
 
-def pagina(*, slug, titulo, descricao, corpo, prof=0, msg_zap, ld=None, ativo=None, zap_numero=None):
+GOTA_SVG = ('<svg class="marca-gota" viewBox="0 0 22 28" aria-hidden="true"><path d="M11 0C11 0 0 13 0 18a11 10 0 0 0 22 0C22 13 11 0 11 0z" fill="#e0761f"/>'
+            '<path d="M5 20l4-4 3 2 5-6" stroke="#fff" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>')
+
+# Frase da barra de WhatsApp por página: (pergunta, complemento). False = sem barra.
+BARRAS = {
+    "estufas": ("Quer um orçamento de estufa?", "Veja os modelos e fale com vendas"),
+    "hidroponia": ("Quer montar sua hidroponia?", "Fale com vendas no WhatsApp"),
+    "calculadora": ("Quer o protocolo do seu viveiro?", "Mande os números da calculadora"),
+    "qualidade-da-agua": ("Problema na água do viveiro?", "Mande suas medições"),
+    "biotecnal": ("Qual produto Biotecnal usar?", "Mande suas medições"),
+    "piscicultura": ("Vai começar ou ampliar?", "Conte o seu projeto"),
+    "tanques-de-geomembrana": ("Quer um tanque de geomembrana?", "Peça o orçamento"),
+    "cursos": ("Dúvida sobre o curso?", "Fale com o Tafarel"),
+    "loja-akso": ("Qual medidor comprar?", "Fale com o Tafarel"),
+    "grupo": ("Dúvida sobre o seu viveiro?", "Essa é no privado"),
+    "projeto": False,
+}
+
+
+def barra_zap(msg, numero=None, barra=None):
+    if barra is False:
+        return ""
+    t, sub = barra or (("Quer um orçamento de estufa?", "Fale com vendas") if numero == ZAP_ESTUFAS
+                       else ("Dúvida sobre a água do viveiro?", "Fale com o Tafarel"))
+    return (f'<div class="barra-zap" id="barra-zap"><p><b>{t}</b>{sub}</p>'
+            f'<a class="barra-zap-botao" href="{zap_link(msg, numero)}" target="_blank" rel="noopener">{ICONE_ZAP}WhatsApp</a></div>'
+            '<script>(function(){var b=document.getElementById("barra-zap");if(!b)return;'
+            'function v(){if(window.scrollY>240)b.classList.add("visivel");}'
+            'window.addEventListener("scroll",v,{passive:true});setTimeout(function(){b.classList.add("visivel");},4000);v();})();</script>')
+
+
+def pagina(*, slug, titulo, descricao, corpo, prof=0, msg_zap, ld=None, ativo=None, zap_numero=None, barra=None):
     canonico = DOMINIO + "/" + (slug.removesuffix("index") if slug else "")
     css = "../" * prof + "assets/site.css?v=" + CSS_VERSAO
     itens_menu = "".join(
@@ -303,9 +334,9 @@ def pagina(*, slug, titulo, descricao, corpo, prof=0, msg_zap, ld=None, ativo=No
 <a class="skip" href="#conteudo">Pular para o conteúdo</a>
 <header class="topo">
   <div class="wrap">
-    <a class="marca" href="{href('', prof)}">Eng. Tafarel Sá<small>Qualidade da água e piscicultura</small></a>
+    <a class="marca" href="{href('', prof)}">{GOTA_SVG}<span>Eng. Tafarel Sá<small>Água Boa Dá Lucro</small></span></a>
     <a class="topo-cta" href="{href('projeto', prof)}">Contar meu projeto</a>
-    <button class="menu-botao" aria-expanded="false" aria-controls="menu">Menu</button>
+    <button class="menu-botao" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu"><span class="hamb" aria-hidden="true"></span><span class="menu-txt">Menu</span></button>
     <nav class="menu" id="menu" aria-label="Principal">{itens_menu}</nav>
   </div>
 </header>
@@ -348,7 +379,7 @@ def pagina(*, slug, titulo, descricao, corpo, prof=0, msg_zap, ld=None, ativo=No
     </div>
   </div>
 </footer>
-{botao_zap("Falar no WhatsApp", msg_zap, "zap-fixo", zap_numero)}
+{barra_zap(msg_zap, zap_numero, barra if barra is not None else BARRAS.get(slug))}
 <script>
   (function () {{
     var b = document.querySelector('.menu-botao'), m = document.getElementById('menu');
@@ -1090,6 +1121,10 @@ def carregar_artigos():
             "descricao": d.get("descricao") or "",
             "data": str(d.get("data") or DATA_SITE),
             "atualizado": str(d.get("atualizado") or "") or None,
+            "h1": d.get("titulo_pagina") or d.get("titulo") or arq.stem,
+            "etiqueta": d.get("etiqueta") or "",
+            "destaques": [(str(x.get("valor")), str(x.get("rotulo") or "")) for x in (d.get("destaques") or []) if x.get("valor")],
+            "barra": ((d.get("barra_pergunta"), d.get("barra_texto") or "Mande suas medições") if d.get("barra_pergunta") else None),
             "aviso": d.get("aviso_atualizacao") or "",
             "resposta": d.get("resposta") or "",
             "ep": d.get("episodio") or None,
@@ -1157,8 +1192,10 @@ def post_page(a):
     corpo = f"""
 <article class="secao secao-branca"><div class="wrap artigo">
   <p class="trilha"><a href="../index.html">Início</a> / <a href="index.html">{PORTAL}</a> / <a href="categoria/{a['categoria']}.html">{CAT.get(a['categoria'], ('Dicas técnicas',))[0]}</a></p>
-  <h1>{a['titulo']}</h1>
+  <p class="chip-etiqueta">{a.get('etiqueta') or CAT.get(a['categoria'], ('Dicas técnicas',))[0]}</p>
+  <h1 class="post-titulo">{a['h1']}</h1>
   <p class="post-meta">Por <a href="../sobre.html">Eng. Tafarel Sá</a> · {data_legivel(a['data'])}{(' · <strong>Atualizado em ' + data_legivel(a['atualizado']) + '</strong>') if a.get('atualizado') else ''} · {a['leitura']} min de leitura</p>
+  {('<div class="destaques">' + "".join(f'<span><b>{v}</b>{r}</span>' for v, r in a['destaques']) + '</div>') if a.get('destaques') else ''}
   {ep}
   {f'<p class="aviso-atualizacao">{md_html(a["aviso"]).strip().removeprefix("<p>").removesuffix("</p>")}</p>' if a.get('aviso') else ''}
   {f'<figure class="post-foto"><img src="../{a["foto"]}" alt="{html.escape(a["foto_legenda"] or a["titulo"])}" decoding="async">' + (f'<figcaption>{a["foto_legenda"]}</figcaption>' if a["foto_legenda"] else '') + '</figure>' if a["foto"] else ''}
@@ -1199,7 +1236,8 @@ def post_page(a):
             {"@type": "ListItem", "position": 3, "name": a["titulo"]}]},
     ]
     return pagina(slug="blog/" + a["slug"], titulo=a["titulo"] + " | Eng. Tafarel Sá",
-                  descricao=a["descricao"], corpo=corpo, prof=1, msg_zap=msg, ld=ld, ativo="blog/", zap_numero=numero)
+                  descricao=a["descricao"], corpo=corpo, prof=1, msg_zap=msg, ld=ld, ativo="blog/", zap_numero=numero,
+                  barra=a.get("barra") or ("Problema na água do viveiro?", "Mande suas medições"))
 
 
 # ================================================================ QUALIDADE DA ÁGUA + BIOTECNAL
@@ -1545,6 +1583,7 @@ def biotecnal():
                   corpo=corpo, msg_zap=MSG_BIO, ld=ld, ativo="biotecnal", zap_numero=ZAP)
 
 def produto_bio(p):
+    BARRAS["biotecnal-" + p["slug"]] = (f"Quer usar o {p['nome']}?", "Mande suas medições")
     msg = f"Olá, Tafarel! Vim pelo site e quero comprar {p['nome']} da Biotecnal. Área do viveiro: __ m². Problema: __."
     artigos_rel = [a for a in ARTIGOS if p["slug"] in a.get("produtos", [])]
     rel = "".join(f'<li><a href="{href("blog/" + a["slug"], 0)}">{a["titulo"]}</a></li>' for a in artigos_rel)

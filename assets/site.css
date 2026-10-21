@@ -625,3 +625,46 @@ h1, h2 { letter-spacing: -.01em; }
 .placar strong { display: block; font-size: 1.7rem; line-height: 1.1; color: var(--manta); }
 .placar span { font-size: .9rem; color: var(--texto-suave); }
 .artigo [id] { scroll-margin-top: 90px; }
+
+/* ===== Cabeçalho e barra de WhatsApp (out/2026) ===== */
+.topo { background: rgba(251,248,242,.97); backdrop-filter: saturate(1.2) blur(8px); }
+.topo .wrap { min-height: 58px; }
+.marca { display: inline-flex !important; align-items: center; gap: 9px; white-space: nowrap !important; font-size: 1.2rem; line-height: 1 !important; }
+.marca-gota { width: 24px; height: 30px; flex: none; }
+.marca small { display: block !important; color: var(--lona); font-weight: 700; font-size: .74rem; letter-spacing: .02em; margin-top: 4px; white-space: nowrap; }
+.menu { top: 100% !important; }
+.hamb { display: none; }
+@media (max-width: 1365px) {
+  .menu-botao { border: 0 !important; width: 44px; height: 44px; justify-content: center; padding: 0 !important; }
+  .menu-txt { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+  .hamb, .hamb::before, .hamb::after { display: block; width: 22px; height: 2.5px; background: var(--manta); border-radius: 2px; position: relative; content: ""; }
+  .hamb::before { position: absolute; top: -7px; } .hamb::after { position: absolute; top: 7px; }
+}
+@media (max-width: 760px) { .topo-cta { display: none !important; } }
+
+.barra-zap {
+  position: fixed; right: 16px; bottom: 16px; z-index: 40; width: min(420px, calc(100% - 20px));
+  display: flex; align-items: center; gap: 12px; background: #fff; border-radius: 16px;
+  box-shadow: 0 12px 32px rgba(12,20,22,.22); padding: 10px 10px 10px 16px;
+  transform: translateY(140%); opacity: 0; transition: transform .35s ease, opacity .35s ease;
+}
+.barra-zap.visivel { transform: none; opacity: 1; }
+.barra-zap p { margin: 0; flex: 1; font-size: .86rem; line-height: 1.25; color: var(--texto); }
+.barra-zap p b { display: block; font-size: .95rem; color: var(--manta); }
+.barra-zap-botao {
+  display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; text-decoration: none;
+  background: #25d366; color: #0c1416; font-weight: 800; border-radius: 999px; padding: 12px 16px;
+}
+.barra-zap-botao:hover { background: #1fbd5a; color: #0c1416; }
+.barra-zap-botao svg { width: 20px; height: 20px; }
+@media (max-width: 640px) { .barra-zap { left: 10px; right: 10px; bottom: calc(10px + env(safe-area-inset-bottom)); width: auto; } body { padding-bottom: 90px; } }
+
+/* Topo dos artigos */
+.chip-etiqueta { display: inline-block; background: var(--agua); color: #fff; font-weight: 700; font-size: .78rem; letter-spacing: .06em; text-transform: uppercase; border-radius: 999px; padding: 6px 12px; margin: 6px 0 0; }
+.artigo .post-titulo { font-size: clamp(2rem, 5.2vw, 3.2rem); line-height: 1.08; margin: .35em 0 .4em; }
+.destaques { display: flex; flex-wrap: wrap; gap: 8px; margin: 6px 0 16px; }
+.destaques span { background: #f6efe3; border: 1px solid #ead9bf; border-radius: 10px; padding: 8px 12px; font-size: .88rem; line-height: 1.25; color: var(--texto-suave); }
+.destaques b { display: block; font-size: 1.15rem; color: var(--manta); }
+.aviso-atualizacao { background: #fff4ea !important; color: var(--texto) !important; border-left: 4px solid var(--lona); border-radius: 10px !important; font-weight: 500 !important; font-size: .95rem; padding: 10px 14px !important; }
+.aviso-atualizacao a { color: #b85a12 !important; font-weight: 700; }
+@media (max-width: 640px) { .artigo .trilha { font-size: .85rem; } }

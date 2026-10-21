@@ -1,6 +1,17 @@
 ---
 titulo: "Case Rolante/RS, parte 2: o nitrito ficou zerado 3 semanas depois?"
 categoria: cases
+titulo_pagina: "Parte 2: o nitrito ficou zerado 3 semanas depois?"
+etiqueta: Case real · Rolante/RS
+destaques:
+  - valor: 0,00 mg/L
+    rotulo: amônia e nitrito em 16 e 18/10
+  - valor: 24 dias
+    rotulo: e 14 análises
+  - valor: 6 → 17 kg
+    rotulo: de ração por dia
+barra_pergunta: Nitrito ou amônia alta?
+barra_texto: Mande suas medições
 descricao: "Parte 2 do case Piscicultura Colombo: 24 dias e 14 análises depois, amônia e
   nitrito em zero e alcalinidade de 80 para 110 ppm com manutenção Biotecnal."
 data: 2026-10-18
