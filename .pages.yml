@@ -322,6 +322,9 @@ content:
   - name: grupo_whatsapp
     label: Link do grupo de WhatsApp Água Boa Dá Lucro (chat.whatsapp.com/...)
     type: string
+  - name: checkout_nitrito_zero
+    label: Link do checkout da Kiwify do Guia Nitrito Zero (vazio = botão vai para o WhatsApp)
+    type: string
   - name: youtube
     label: Canal do YouTube
     type: string

@@ -373,6 +373,7 @@ def pagina(*, slug, titulo, descricao, corpo, prof=0, msg_zap, ld=None, ativo=No
         <li><a href="{zap_link('Olá, Tafarel! Vim pelo site.')}" target="_blank" rel="noopener">WhatsApp {ZAP_LEGIVEL}</a></li>
         <li><a href="{zap_link('Olá! Vim pelo site do Eng. Tafarel e quero orçamento de estufa.', ZAP_ESTUFAS)}" target="_blank" rel="noopener">Estufas: {ZAP_ESTUFAS_LEGIVEL}</a></li>
         <li><a href="{GRUPO}" target="_blank" rel="noopener">Grupo Água Boa Dá Lucro</a></li>
+        <li><a href="{href('nitrito-zero', prof)}">Guia Nitrito Zero</a></li>
         <li><a href="{YOUTUBE}" target="_blank" rel="noopener">YouTube Engenheiro Tafarel Sá</a></li>
         <li><a href="{INSTAGRAM}" target="_blank" rel="noopener">Instagram @engtafarelsa</a></li>
       </ul>
@@ -2228,6 +2229,94 @@ def bloco_grupo(prof=0, titulo="Entre no grupo Água Boa Dá Lucro", intro=None)
 </div></section>"""
 
 
+CHECKOUT_NZ = str(CONFIG.get("checkout_nitrito_zero") or "").strip()
+
+
+def nitrito_zero():
+    msg = "Olá, Tafarel! Quero comprar o Guia Nitrito Zero."
+    if CHECKOUT_NZ:
+        comprar = f'<a class="botao nz-comprar" href="{CHECKOUT_NZ}" rel="noopener">Comprar agora · R$ 47</a>'
+    else:
+        comprar = botao_zap("Quero o guia · R$ 47", msg, "nz-comprar")
+    duvida = botao_zap("Tirar dúvida no WhatsApp", "Olá, Tafarel! Tenho uma dúvida sobre o Guia Nitrito Zero.")
+    faq = [
+        ("Como recebo o guia?", "Logo depois do pagamento, você recebe o acesso por e-mail. O PDF e a planilha ficam na área de membros para baixar no celular ou no computador."),
+        ("Serve para viveiro escavado em terra?", "O guia foi feito para bioflocos, aquaponia e recirculação em tanque de geomembrana. A lógica do nitrito é a mesma em viveiro de terra, mas o volume, o solo e a troca de água mudam a conta. Nesse caso, fale comigo antes."),
+        ("Preciso de algum aparelho?", "Um kit de teste de amônia, nitrito, pH e alcalinidade resolve para começar. O guia ensina a medir certo e indica medidores para quem quer mais precisão."),
+        ("A planilha funciona no celular?", "Funciona no Excel e no Google Planilhas. No celular dá para consultar; para preencher, o computador é mais confortável."),
+        ("O resultado é garantido?", "Não. Cada sistema tem a sua água e as doses dependem da sua análise. O guia mostra um case real documentado e ensina a ler os números para decidir com segurança."),
+        ("E se eu não gostar?", "Você tem 7 dias de garantia pela plataforma de pagamento. Pediu, recebe o dinheiro de volta."),
+    ]
+    corpo = f"""
+<section class="cabeca-pagina nz-hero"><div class="wrap nz-hero-grade">
+  <div>
+    <p class="trilha"><a href="index.html">Início</a> / Guia Nitrito Zero</p>
+    <p class="chip-etiqueta">Análise + protocolo de um case real documentado</p>
+    <h1>Guia Nitrito Zero</h1>
+    <p class="promessa">Como um sistema de bioflocos de 600 m³ saiu de <strong>5 mg/L de nitrito para zero em 8 dias</strong>, explicado passo a passo para você aplicar no seu tanque. Com planilha que calcula as doses para o seu volume de água.</p>
+    <div class="hero-acoes">{comprar}{duvida}</div>
+    <p class="nz-garantia">PDF de 24 páginas + planilha calculadora · acesso imediato · 7 dias de garantia</p>
+  </div>
+  <img class="nz-capa" src="fotos/nitrito-zero/capa.jpg" alt="Capa do Guia Nitrito Zero" width="900" height="1273">
+</div></section>
+
+<section class="secao"><div class="wrap">
+  <h2>Nitrito alto não mata só peixe. Ele trava o crescimento.</h2>
+  <p class="intro">No case, na semana do nitrito em 5 mg/L, o crescimento dos juvenis caiu de 9,1% para 3,8% do peso por dia. Numa simulação com um lote de engorda de 10 mil tilápias, 10 dias assim custariam cerca de R$ 4 mil em peixe a menos na despesca, ou quase R$ 3 mil em ração extra para recuperar o peso.</p>
+  <img class="nz-pagina" src="fotos/nitrito-zero/pagina-prejuizo.jpg" alt="Página do guia com a simulação do prejuízo do nitrito num lote de engorda" loading="lazy">
+</div></section>
+
+<section class="secao"><div class="wrap">
+  <h2>O que tem no guia</h2>
+  <ul class="lista-check">
+    <li><strong>Por que o nitrito sobe</strong> e por que o tanque novo trava no meio do caminho.</li>
+    <li><strong>O que ele faz com o peixe</strong>, quanto dinheiro tira do lote e como o sal protege enquanto as bactérias trabalham.</li>
+    <li><strong>Os 7 números da sua água</strong>, as faixas de referência e como medir certo no campo.</li>
+    <li><strong>Fluxograma de decisão</strong>: o que fazer primeiro, na ordem certa.</li>
+    <li><strong>O protocolo completo</strong>: choque e manutenção, sal pelo nitrito e bicarbonato pela alcalinidade.</li>
+    <li><strong>Tabelas prontas</strong> para 1, 10, 50 e 600 m³, e cuidados para quem tem aquaponia.</li>
+    <li><strong>O case dia a dia</strong>: 14 análises, insumos e 5 biometrias.</li>
+    <li><strong>Os 7 erros</strong> que mantêm o nitrito alto, checklists e <strong>cartão de emergência</strong> para imprimir.</li>
+    <li><strong>Bônus: planilha calculadora</strong> com as doses para o seu tanque, registro diário colorido e simulação de prejuízo.</li>
+  </ul>
+  <div class="nz-amostras">
+    <figure><img src="fotos/nitrito-zero/pagina-fluxograma.jpg" alt="Página do fluxograma de decisão" loading="lazy"><figcaption>Fluxograma: o que fazer primeiro</figcaption></figure>
+    <figure><img src="fotos/nitrito-zero/pagina-cartao-emergencia.jpg" alt="Página do cartão de emergência" loading="lazy"><figcaption>Cartão de emergência com a tabela de sal</figcaption></figure>
+  </div>
+</div></section>
+
+<section class="secao"><div class="wrap">
+  <h2>Para quem é</h2>
+  <p class="intro">Para quem cria peixe em <strong>bioflocos, aquaponia ou recirculação em tanque de geomembrana</strong>, e para técnicos que atendem esses sistemas. Se você tem viveiro escavado em terra, fale comigo antes de comprar.</p>
+  <p>Leia o case completo, com as análises: <a href="blog/case-rolante-nitrito-zerado-em-8-dias.html">parte 1</a>, <a href="blog/case-rolante-parte-2-nitrito-zerado-3-semanas-depois.html">parte 2</a> e <a href="blog/case-rolante-parte-3-agua-boa-virou-peixe.html">parte 3</a>.</p>
+</div></section>
+
+<section class="secao"><div class="wrap">
+  <h2>Quem escreveu</h2>
+  <p class="intro">Eng. Tafarel Sá, engenheiro ambiental, especialista em qualidade de água na piscicultura e coordenador técnico e de expansão da Biotecnal no RS e em SC. Atende produtores em todo o Brasil.</p>
+</div></section>
+
+<section class="secao nz-oferta"><div class="wrap">
+  <h2>Guia Nitrito Zero + planilha calculadora</h2>
+  <p class="nz-preco">R$ 47</p>
+  <p>Pagamento único · acesso imediato · 7 dias de garantia</p>
+  <div class="hero-acoes" style="justify-content:center">{comprar}</div>
+  <p class="nota-afiliado">Cada sistema responde de um jeito, e o resultado não é garantido. A dose certa depende da sua análise.</p>
+</div></section>
+
+<section class="secao"><div class="wrap">
+  <h2>Perguntas frequentes</h2>
+  {perguntas(faq)}
+</div></section>
+
+{chamada("Ficou com dúvida?", "Me mande uma mensagem antes de comprar. Eu respondo se o guia serve para o seu sistema.", "Falar com o Tafarel", "Olá, Tafarel! Tenho uma dúvida sobre o Guia Nitrito Zero.")}
+<p class="nota-afiliado" style="text-align:center">Não é mágica, é manejo. Água boa dá lucro. #AguaBoaDaLucro</p>
+"""
+    return pagina(slug="nitrito-zero", titulo="Guia Nitrito Zero: nitrito de 5 mg/L a zero em 8 dias | Eng. Tafarel Sá",
+                  descricao="Guia em PDF com o protocolo de um case real: nitrito de 5 mg/L a zero em 8 dias em bioflocos. Fluxograma, doses, cartão de emergência e planilha calculadora.",
+                  corpo=corpo, msg_zap=msg, ld=faq_ld(faq))
+
+
 def grupo_page():
     corpo = f"""
 <section class="cabeca-pagina"><div class="wrap">
@@ -2526,6 +2615,7 @@ def main():
         "blog/index.html": portal_index(),
         "cadastro.html": cadastro_page(),
         "grupo.html": grupo_page(),
+        "nitrito-zero.html": nitrito_zero(),
         "seja-revenda-biotecnal.html": revenda_page(),
         "404.html": nao_encontrada(),
         "fotos-do-site.html": mapa_fotos(),
@@ -2601,6 +2691,10 @@ def main():
         ("/grupo-insta", "/grupo?utm_source=instagram"),
         ("/grupo-face", "/grupo?utm_source=facebook"),
         ("/entrar", GRUPO),
+        ("/nitrito-zero-grupo", "/nitrito-zero?utm_source=grupo"),
+        ("/nitrito-zero-insta", "/nitrito-zero?utm_source=instagram"),
+        ("/nitrito-zero-face", "/nitrito-zero?utm_source=facebook"),
+        ("/nitrito-zero-yt", "/nitrito-zero?utm_source=youtube"),
     ]
     (DIST / "_headers").write_text(
         "/assets/fonts/*\n  Cache-Control: public, max-age=31536000, immutable\n"

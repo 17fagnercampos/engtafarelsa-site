@@ -690,3 +690,15 @@ h1, h2 { letter-spacing: -.01em; }
 .bio-hero-foto { margin: 0; }
 .bio-hero-foto img { border-radius: 18px; aspect-ratio: 4/3; object-fit: cover; width: 100%; }
 .bio-hero-foto figcaption { font-size: .85rem; color: var(--texto-suave); margin-top: 6px; }
+
+/* Guia Nitrito Zero (página de vendas) */
+.nz-hero-grade{display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center}
+.nz-capa{width:100%;max-width:360px;justify-self:center;border-radius:10px;box-shadow:0 24px 50px rgba(0,0,0,.35)}
+.nz-garantia{font-size:.92rem;opacity:.85;margin-top:6px}
+.nz-comprar{background:#e0761f!important;color:#0c1416!important;font-weight:800}
+.nz-pagina{display:block;width:100%;max-width:560px;margin:24px auto 0;border-radius:8px;box-shadow:0 10px 30px rgba(0,0,0,.15)}
+.nz-amostras{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:24px;margin-top:28px}
+.nz-amostras figure{margin:0}.nz-amostras img{width:100%;border-radius:8px;box-shadow:0 10px 30px rgba(0,0,0,.15)}
+.nz-amostras figcaption{font-size:.9rem;margin-top:6px;opacity:.8;text-align:center}
+.nz-oferta{text-align:center}.nz-preco{font-size:3rem;font-weight:900;margin:8px 0;color:#e0761f}
+@media (max-width:760px){.nz-hero-grade{grid-template-columns:1fr}.nz-capa{max-width:260px}}
