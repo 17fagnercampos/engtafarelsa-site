@@ -224,7 +224,12 @@ def pixel_html():
             "n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;"
             "n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];"
             "s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');"
-            f"fbq('init','{META_PIXEL_ID}');fbq('track','PageView');</script>")
+            f"fbq('init','{META_PIXEL_ID}');fbq('track','PageView');"
+            "if(/nitrito-zero/.test(location.pathname)){fbq('track','ViewContent',{content_name:'Guia Nitrito Zero',value:47,currency:'BRL'});}"
+            "document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a.nz-comprar');"
+            "if(a){try{fbq('track','InitiateCheckout',{content_name:'Guia Nitrito Zero',value:47,currency:'BRL'});}catch(x){}}},true);"
+            "</script>"
+            f'<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id={META_PIXEL_ID}&ev=PageView&noscript=1"/></noscript>')
 
 
 
