@@ -1217,6 +1217,21 @@ def data_legivel(iso):
         return iso
 
 
+def caixa_guia_nz(a):
+    """Chamada para o Guia Nitrito Zero nos artigos que falam de nitrito ou amônia."""
+    texto = (a["slug"] + " " + a["titulo"]).lower()
+    if not any(k in texto for k in ("nitrito", "amonia", "amônia", "case-rolante")):
+        return ""
+    link = href("nitrito-zero", 1)
+    return (f'<aside class="nz-caixa"><a class="nz-caixa-img" href="{link}">'
+            f'<img src="../fotos/nitrito-zero/capa.jpg" alt="Capa do Guia Nitrito Zero" loading="lazy" decoding="async"></a>'
+            f'<div><p class="card-cat">Guia Nitrito Zero</p>'
+            f'<h3>O protocolo completo do case, passo a passo</h3>'
+            f'<p>O que medir, o que fazer primeiro e como calcular sal e bicarbonato pelo volume do seu tanque. '
+            f'Com planilha calculadora e cartão de emergência para imprimir.</p>'
+            f'<p><a class="botao nz-caixa-botao" href="{link}">Conhecer o guia · R$ 47</a></p></div></aside>')
+
+
 def post_page(a):
     numero = ZAP  # tudo no portal Água Boa Dá Lucro vai para o WhatsApp do Tafarel
     msg = f"Olá, Tafarel! Li no Água Boa Dá Lucro o artigo \"{a['titulo']}\" e quero conversar sobre o meu caso."
@@ -1253,6 +1268,7 @@ def post_page(a):
   {f'<figure class="post-foto"><img src="../{a["foto"]}" alt="{html.escape(a["foto_legenda"] or a["titulo"])}" decoding="async">' + (f'<figcaption>{a["foto_legenda"]}</figcaption>' if a["foto_legenda"] else '') + '</figure>' if a["foto"] else ''}
   <div class="resposta-rapida"><p><strong>Resposta rápida:</strong> {a['resposta']}</p></div>
   {a['corpo']}
+  {caixa_guia_nz(a)}
   {('<h2>Perguntas frequentes</h2>' + perguntas(a['faq'])) if a['faq'] else ''}
   {('<h2>Fontes</h2><ul class="fontes">' + fontes + '</ul>') if fontes else ''}
   {caixa_autor(1)}

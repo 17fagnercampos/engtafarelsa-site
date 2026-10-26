@@ -702,3 +702,9 @@ h1, h2 { letter-spacing: -.01em; }
 .nz-amostras figcaption{font-size:.9rem;margin-top:6px;opacity:.8;text-align:center}
 .nz-oferta{text-align:center}.nz-preco{font-size:3rem;font-weight:900;margin:8px 0;color:#e0761f}
 @media (max-width:760px){.nz-hero-grade{grid-template-columns:1fr}.nz-capa{max-width:260px}}
+.nz-caixa{display:grid;grid-template-columns:120px 1fr;gap:20px;align-items:center;margin:32px 0;padding:20px;border-radius:14px;background:#eef7f6;border:1px solid #cfe6e3}
+.nz-caixa img{width:100%;height:auto;border-radius:8px;box-shadow:0 4px 14px rgba(0,0,0,.15)}
+.nz-caixa h3{margin:4px 0 8px}
+.nz-caixa p{margin:0 0 10px}
+@media (max-width:560px){.nz-caixa{grid-template-columns:1fr}.nz-caixa-img{max-width:160px}}
+.nz-caixa-botao{background:#e0761f;color:#0c1416;font-weight:800}.nz-caixa-botao:hover{background:#c9651a;color:#0c1416}
