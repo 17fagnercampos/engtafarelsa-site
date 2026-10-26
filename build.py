@@ -1739,11 +1739,8 @@ def produto_bio(p):
 </div></section>
 {chamada(f"Quer {p['nome']} com o protocolo certo?", "Mande a área do viveiro e as últimas medições. Eu indico a dose e a forma de aplicar.", f"Comprar {p['nome']}", msg, ZAP)}
 """
-    ld = [faq_ld(faq), {
-        "@context": "https://schema.org", "@type": "Product", "name": p["nome"],
-        "description": p["resumo"], "category": p["tipo"],
-        "brand": {"@type": "Brand", "name": "Biotecnal"},
-        "manufacturer": {"@type": "Organization", "name": "Biotecnal Ltda.", "url": "https://www.biotecnal.ind.br"}}]
+    # Sem marcação Product: os produtos não têm preço publicado, e o Google exige offers/review/aggregateRating.
+    ld = [faq_ld(faq)]
     return pagina(slug="biotecnal-" + p["slug"],
                   titulo=f"{p['nome']} Biotecnal: {p['tipo'].lower()} para piscicultura | Eng. Tafarel Sá",
                   descricao=f"{p['nome']} da Biotecnal: {p['resumo']} Dose, apresentações e onde comprar em todo o Brasil.",
@@ -2364,7 +2361,16 @@ def nitrito_zero():
 """
     return pagina(slug="nitrito-zero", titulo="Guia Nitrito Zero: nitrito de 5 mg/L a zero em 8 dias | Eng. Tafarel Sá",
                   descricao="Guia em PDF com o protocolo de um case real: nitrito de 5 mg/L a zero em 8 dias em bioflocos. Fluxograma, doses, cartão de emergência e planilha calculadora.",
-                  corpo=corpo, msg_zap=msg, ld=faq_ld(faq))
+                  corpo=corpo, msg_zap=msg, ld=[faq_ld(faq), {
+                      "@context": "https://schema.org", "@type": "Product",
+                      "name": "Guia Nitrito Zero + Planilha Calculadora",
+                      "description": "Guia em PDF de 24 páginas com o protocolo de um case real de nitrito em bioflocos, fluxograma de decisão, cartão de emergência e planilha que calcula as doses pelo volume do tanque.",
+                      "image": f"{DOMINIO}/fotos/nitrito-zero/capa.jpg",
+                      "brand": {"@type": "Brand", "name": "Eng. Tafarel Sá"},
+                      "category": "Guia técnico digital",
+                      "offers": {"@type": "Offer", "price": "47.00", "priceCurrency": "BRL",
+                                 "availability": "https://schema.org/InStock",
+                                 "url": f"{DOMINIO}/nitrito-zero"}}])
 
 
 def grupo_page():
