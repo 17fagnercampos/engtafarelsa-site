@@ -89,7 +89,7 @@ Quando o filtro não dá conta, aparece o [nitrito](nitrito-na-piscicultura.html
 
 ## Ração: quanto e qual
 
-No teste da Embrapa, os peixes comeram ração com 32% de proteína, em grão de 4 mm. Perto de 100 g, passaram para 28% de proteína e grão de 5 mm. A quantidade foi 5% do peso dos peixes por dia no primeiro mês e 3% depois.
+No teste da Embrapa, os peixes comeram ração com 32% de proteína, em grão de 4 mm. Perto de 100 g, os pesquisadores passaram para 28% de proteína e grão de 5 mm. Na produção profissional, a engorda vai com ração de 32% até a despesca. A quantidade no teste foi 5% do peso dos peixes por dia no primeiro mês e 3% depois.
 
 Ração demais é o caminho mais rápido para estragar a água de uma caixa. A sobra apodrece, vira amônia e consome oxigênio. Na dúvida, dê menos e observe se o peixe come tudo em poucos minutos. Veja o [manejo alimentar da tilápia](manejo-alimentar-da-tilapia.html).
 
