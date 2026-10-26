@@ -810,11 +810,37 @@ def estufas():
     )
 
 
+def tabela_tanques():
+    """Quantos peixes por volume, pela premissa da Base Técnica (5, 7 e 10 peixes/m² a 1,5 m; abate a 850 g)."""
+    linhas = ""
+    for mil in (10, 20, 30, 50, 60, 100, 200):
+        m3 = mil
+        cel = []
+        for dens in (5, 7, 10):
+            n = int(m3 * dens / 1.5)
+            cel.append(f"{n:,}".replace(",", ".") + f" <small>({n * 0.85:,.0f} kg)</small>".replace(",", "."))
+        linhas += f"<tr><td><strong>{mil} mil litros</strong><br><small>{m3} m³</small></td>" + "".join(f"<td>{c}</td>" for c in cel) + "</tr>"
+    return f"""
+<section class="secao secao-branca"><div class="wrap">
+  <h2>Quantos peixes cabem em cada tamanho de tanque</h2>
+  <p>A pergunta que mais chega é "quantas tilápias cabem num tanque de 30, 50 ou 100 mil litros". A tabela abaixo usa a referência de densidade que eu uso nos viveiros do Sul: <strong>5, 7 ou 10 peixes por m² de lâmina, com 1,5 m de profundidade</strong>, ou seja, cerca de 3,3, 4,7 e 6,7 peixes por m³ de água. Entre parênteses, a biomassa na despesca, com peixe de 850 g.</p>
+  <div class="tabela-rolagem"><table>
+    <thead><tr><th>Tanque</th><th>5 peixes/m²</th><th>7 peixes/m²</th><th>10 peixes/m²</th></tr></thead>
+    <tbody>{linhas}</tbody>
+  </table></div>
+  <p><small>Conta: peixes = volume (m³) × densidade (peixes/m²) ÷ 1,5 m. Exemplo: 50 m³ × 7 ÷ 1,5 = 233 peixes. Referência para tanque com aeração e manejo de água; não considera mortalidade.</small></p>
+  <h3>E se eu quiser colocar mais peixe?</h3>
+  <p>Dá, mas o tanque deixa de depender só do aerador e passa a precisar de filtragem: bioflocos ou recirculação com decantador e filtro biológico. Em sistemas assim, a pesquisa registra de 3,5 a 32 kg de peixe por m³ (Zhang et al., 2017, sistema de recirculação com tilápia). Quanto mais peixe, mais filtro, mais oxigênio e mais análise de água. É projeto, não chute: me mande o que você quer produzir que eu dimensiono.</p>
+  <p>Começando pequeno? Veja <a href="{href('blog/criacao-de-tilapia-em-caixa-dagua', 0)}">criação de tilápia em caixa d'água</a>. Quer produzir no inverno? O tanque pode ficar dentro de uma <a href="{href('estufas', 0)}">estufa</a>.</p>
+</div></section>"""
+
+
 def tanques():
     return pagina_produto(
         slug="tanques-de-geomembrana",
-        titulo_seo="Tanque de geomembrana para piscicultura e reservatório | Eng. Tafarel Sá",
-        descricao="Tanques e reservatórios impermeabilizados com geomembrana Geotop: projeto, fornecimento e instalação com equipe própria e responsabilidade técnica.",
+        titulo_seo="Tanque de geomembrana para peixe: tamanhos e quantos peixes cabem",
+        descricao="Tanque de geomembrana para piscicultura de 10 a 200 mil litros: quantos peixes cabem em cada tamanho, espessura da manta e instalação com equipe própria.",
+        extra=tabela_tanques(),
         h1="Tanques de geomembrana",
         promessa="Tanque de peixe, reservatório ou lagoa impermeabilizados com geomembrana Geotop. Eu projeto, forneço a manta e instalo com equipe própria.",
         foto=foto_slot("tanques", "Foto de tanque com geomembrana<br>(substituir)"),
@@ -833,6 +859,8 @@ def tanques():
             "ART do engenheiro responsável",
         ],
         faq=[
+            ("Quantos peixes cabem num tanque de 50 mil litros?",
+             "Com a referência de 5 a 10 peixes por m² de lâmina e 1,5 m de profundidade, um tanque de 50 mil litros (50 m³) recebe de 166 a 333 tilápias, que dão de 141 a 283 kg na despesca com peixe de 850 g. Com bioflocos ou recirculação cabe mais, mas aí entra filtragem no projeto."),
             ("Qual espessura de geomembrana eu preciso?",
              "Depende do uso, do tamanho do tanque e do terreno. A espessura certa sai no projeto. Manta mais grossa que o necessário encarece sem ganho, e mais fina reduz a vida útil."),
             ("Vocês instalam em tanque que já existe?",
