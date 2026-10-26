@@ -308,6 +308,7 @@ def pagina(*, slug, titulo, descricao, corpo, prof=0, msg_zap, ld=None, ativo=No
     return f"""<!doctype html>
 <html lang="pt-BR">
 <head>
+<meta name="facebook-domain-verification" content="pjxrjkwqe0gbne5iygo8rs10olgtuv" />
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{html.escape(titulo_tag(titulo))}</title>
