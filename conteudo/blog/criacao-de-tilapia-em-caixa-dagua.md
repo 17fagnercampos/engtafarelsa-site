@@ -1,5 +1,5 @@
 ---
-titulo: "Criação de tilápia em caixa d'água: passo a passo e quantas tilápias por caixa de 1000 litros"
+titulo: "Criação de tilápia em caixa d'água: quantas tilápias por 1000 L"
 categoria: dicas-tecnicas
 titulo_pagina: "Criação de tilápia em caixa d'água: quantas tilápias cabem e o que não pode faltar"
 etiqueta: Guia prático
