@@ -20,20 +20,16 @@ whatsapp: vendas
 produtos: []
 perguntas:
   - pergunta: O que é bioflocos na piscicultura?
-    resposta: "É um sistema de criação com pouca ou nenhuma troca de água, em que bactérias agrupadas em flocos suspensos transformam a amônia em biomassa. Os flocos, além de limpar a água, servem de alimento: em teste da Embrapa, eles tinham de 42% a 45% de proteína bruta."
+    resposta: "É um sistema de criação com pouca ou nenhuma troca de água, em que bactérias agrupadas em flocos suspensos transformam a amônia em biomassa. Os flocos, além de limpar a água, servem de alimento para a tilápia."
   - pergunta: Qual a fonte de carbono no bioflocos?
-    resposta: "O mais comum é o melaço de cana-de-açúcar. Nos testes da Embrapa com alevinos de tilápia, o melaço foi usado para formar os flocos, mantendo a relação carbono:nitrogênio de 6:1. A quantidade depende da ração que entra no sistema."
+    resposta: "O mais comum é o melaço de cana-de-açúcar. Ele entra para equilibrar a relação carbono:nitrogênio, porque a ração tem muito nitrogênio e pouco carbono. A quantidade depende da ração que entra no sistema e da análise da água."
   - pergunta: Quanto de sólidos o bioflocos deve ter?
-    resposta: "Mede-se no cone Imhoff, com 1 litro de água e 45 minutos de repouso. Num estudo da Embrapa com alevinos de tilápia, os sólidos sedimentáveis ficaram entre 15,7 e 28,1 mL/L, dentro da faixa de 5 a 50 mL/L citada por Avnimelech para tilápia."
+    resposta: "Mede-se no cone Imhoff, com 1 litro de água e 45 minutos de repouso. Pouco floco não trata a água; floco demais consome oxigênio e machuca as brânquias. O importante é medir todo dia e manter estável na faixa definida para o seu sistema."
   - pergunta: Bioflocos precisa de aerador ligado o tempo todo?
     resposta: "Sim. Os flocos precisam ficar em suspensão e as bactérias consomem muito oxigênio. Uma parada de aeração derruba o oxigênio rápido, e os flocos assentam e apodrecem no fundo. Gerador é item obrigatório."
   - pergunta: Nitrito sobe no bioflocos?
     resposta: "Pode subir, principalmente em sistema novo, antes de as bactérias se estabilizarem. No case de Rolante, um tanque de bioflocos de 600 m³ chegou a 5 mg/L de nitrito e foi zerado em 8 dias com manejo de água."
 fontes:
-  - texto: "Ferri, G. H. et al. (2016). Desempenho de alevinos de tilápia do Nilo alimentados com diferentes níveis de proteína em sistema bioflocos. 10º CIIC, Campinas (Embrapa)"
-    link: https://www.alice.cnptia.embrapa.br/alice/bitstream/doc/1064006/1/2016AA20.pdf
-  - texto: "Santos, L. F. et al. (2016). Qualidade de água na produção de alevinos de tilápia do Nilo alimentados com diferentes níveis de proteína em sistema bioflocos. 10º CIIC, Campinas (Embrapa)"
-    link: https://www.alice.cnptia.embrapa.br/alice/bitstream/doc/1063050/1/2016AA16.pdf
   - texto: "Blatt, T. L. S. et al. (2025). Biofloc technology for Nile tilapia (Embrapa Meio Ambiente e Itaipu Binacional). Sustainability, 17(13), 5670"
     link: ''
   - texto: "Ebeling, J. M.; Timmons, M. B.; Bisogni, J. J. (2006). Engineering analysis of the stoichiometry of photoautotrophic, autotrophic, and heterotrophic removal of ammonia-nitrogen in aquaculture systems. Aquaculture, 257, 346-358"
@@ -58,32 +54,27 @@ Num viveiro comum, quem cuida da amônia são as bactérias nitrificantes: elas 
 
 No bioflocos entram em cena as **bactérias heterotróficas**. Elas usam a amônia para crescer e virar mais floco, ou seja, biomassa. Para isso, precisam de carbono. Como a ração tem muito nitrogênio e pouco carbono, o produtor adiciona uma fonte de carbono, como o melaço de cana, para equilibrar a relação carbono:nitrogênio.
 
-Nos testes da Embrapa com alevinos de tilápia, a relação usada foi de **6 para 1** (6 partes de carbono para 1 de nitrogênio), com melaço de cana para formar os flocos (Ferri et al., 2016). Na prática, os dois tipos de bactéria convivem no sistema.
+É o controle da relação carbono:nitrogênio que faz o sistema funcionar (Avnimelech, 1999). Na prática, os dois tipos de bactéria convivem no sistema.
 
 ## Os flocos também alimentam o peixe
 
-O floco não é só filtro: é comida. A tilápia filtra e come os flocos. Num teste da Embrapa, os flocos tinham de **42% a 45% de proteína bruta** (Ferri et al., 2016).
+O floco não é só filtro: é comida. A tilápia filtra e come os flocos, que são ricos em proteína de origem microbiana.
 
 E o reaproveitamento do nitrogênio é o pulo do gato. Avnimelech (1999) mostrou, em viveiros de tilápia, que trabalhar com fonte de carbono baixou a conversão alimentar de 2,62 para 2,17. Uma comparação mais recente mostrou tilápia crescendo mais e convertendo melhor em bioflocos do que em água clara com biofiltro (Nguyen et al., 2021).
 
 ## Quanto peixe cabe no bioflocos
 
-O bioflocos permite densidades muito acima de um viveiro comum, porque a água é tratada o tempo todo. Dois exemplos de pesquisas brasileiras:
+O bioflocos permite densidades muito acima de um viveiro comum, porque a água é tratada o tempo todo. Num estudo da Embrapa Meio Ambiente com a Itaipu Binacional, tilápias foram criadas em 3 unidades de bioflocos de 4,2 m³ com **395 peixes por m³**: em 70 dias, a sobrevivência foi de **98%** e a conversão alimentar de **1,05** (Blatt et al., 2025).
 
-| Estudo | Sistema | Densidade | Resultado |
-| --- | --- | --- | --- |
-| Embrapa (Ferri et al., 2016) | Tanques de 200 L, alevinos de 6,3 g | 15 peixes por tanque (cerca de 75/m³) | 60 dias, sobrevivência acima de 90%, conversão de 1,08 a 1,21 |
-| Embrapa Meio Ambiente e Itaipu (Blatt et al., 2025) | 3 unidades de 4,2 m³ | 395 peixes/m³ | 70 dias, peso final de 20,4 g, conversão de 1,05, sobrevivência de 98% |
-
-Repare: são fases iniciais, com peixe pequeno. Densidade alta só funciona com aeração forte, gerador e análise diária da água. Para a engorda, o projeto precisa ser dimensionado caso a caso.
+Repare: é a fase inicial, com peixe pequeno. Densidade alta só funciona com aeração forte, gerador e análise diária da água. Para a engorda, o projeto precisa ser dimensionado caso a caso.
 
 ## O que medir no bioflocos
 
 | Parâmetro | Por que importa | Referência |
 | --- | --- | --- |
-| Oxigênio dissolvido | As bactérias e os peixes consomem muito | Nos testes da Embrapa ficou entre 5,2 e 6,7 mg/L; a minha base técnica pede no mínimo 3 mg/L ao amanhecer |
-| Sólidos sedimentáveis (cone Imhoff) | Mostra quanto floco tem na água: pouco não trata, muito entope e consome oxigênio | 15,7 a 28,1 mL/L no estudo da Embrapa; faixa de 5 a 50 mL/L citada por Avnimelech para tilápia |
-| Alcalinidade | As bactérias consomem; sem ela, o pH cai e o sistema desanda | Nos testes da Embrapa ficou acima de 245 mg/L |
+| Oxigênio dissolvido | As bactérias e os peixes consomem muito | A minha base técnica pede de 3 a 6 mg/L, medido ao amanhecer; no bioflocos, trabalhe com folga |
+| Sólidos sedimentáveis (cone Imhoff) | Mostra quanto floco tem na água: pouco não trata, muito entope e consome oxigênio | Medir todo dia e manter estável na faixa definida para o seu sistema |
+| Alcalinidade | As bactérias consomem; sem ela, o pH cai e o sistema desanda | 100 a 150 mg/L em sistemas fechados (Ebeling et al., 2006) |
 | Amônia e nitrito | Mostram se as bactérias estão dando conta | Amônia total abaixo de 0,5 mg/L e nitrito abaixo de 0,5 mg/L (base técnica) |
 | pH | Afeta as bactérias e a toxicidade da amônia | Ideal entre 7,5 e 8,0 (base técnica) |
 
