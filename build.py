@@ -1248,7 +1248,7 @@ def data_legivel(iso):
 def caixa_guia_nz(a):
     """Chamada para o Guia Nitrito Zero nos artigos que falam de nitrito ou amônia."""
     texto = (a["slug"] + " " + a["titulo"]).lower()
-    if not any(k in texto for k in ("nitrito", "amonia", "amônia", "case-rolante")):
+    if not any(k in texto for k in ("nitrito", "amonia", "amônia", "case-rolante", "biofloc")):
         return ""
     link = href("nitrito-zero", 1)
     return (f'<aside class="nz-caixa"><a class="nz-caixa-img" href="{link}">'
