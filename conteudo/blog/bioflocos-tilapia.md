@@ -14,7 +14,7 @@ barra_pergunta: Seu bioflocos está instável?
 barra_texto: Mande suas análises
 descricao: "O que é bioflocos, como as bactérias limpam a água, o que medir (sólidos, alcalinidade, oxigênio, nitrito) e os erros que derrubam o sistema. Com dados da Embrapa e de pesquisas."
 data: 2026-10-27
-rascunho: true
+rascunho: false
 resposta: "Bioflocos (BFT, de Biofloc Technology) é um sistema de criação de peixe com pouca ou nenhuma troca de água, em que bactérias que vivem em flocos suspensos na água transformam a amônia em biomassa. Para isso, o produtor mantém aeração forte o tempo todo e adiciona uma fonte de carbono, como melaço, para equilibrar a relação carbono:nitrogênio. Os flocos ainda servem de alimento para a tilápia. O sistema permite densidades altas, mas exige medir a água todo dia: sem oxigênio, alcalinidade e controle de sólidos, ele desanda rápido."
 whatsapp: vendas
 produtos: []
@@ -24,7 +24,7 @@ perguntas:
   - pergunta: Qual a fonte de carbono no bioflocos?
     resposta: "O mais comum é o melaço de cana-de-açúcar. Ele entra para equilibrar a relação carbono:nitrogênio, porque a ração tem muito nitrogênio e pouco carbono. A quantidade depende da ração que entra no sistema e da análise da água."
   - pergunta: Quanto de sólidos o bioflocos deve ter?
-    resposta: "Mede-se no cone Imhoff, com 1 litro de água e 45 minutos de repouso. Pouco floco não trata a água; floco demais consome oxigênio e machuca as brânquias. O importante é medir todo dia e manter estável na faixa definida para o seu sistema."
+    resposta: "Mede-se no cone Imhoff, com 1 litro de água e 45 minutos de repouso. Pouco floco não trata a água; floco demais consome oxigênio e machuca as brânquias. Para tilápia em bioflocos, Avnimelech (2011) cita a faixa de 5 a 50 mL/L. O importante é medir todo dia e manter estável."
   - pergunta: Bioflocos precisa de aerador ligado o tempo todo?
     resposta: "Sim. Os flocos precisam ficar em suspensão e as bactérias consomem muito oxigênio. Uma parada de aeração derruba o oxigênio rápido, e os flocos assentam e apodrecem no fundo. Gerador é item obrigatório."
   - pergunta: Nitrito sobe no bioflocos?
@@ -35,6 +35,8 @@ fontes:
   - texto: "Ebeling, J. M.; Timmons, M. B.; Bisogni, J. J. (2006). Engineering analysis of the stoichiometry of photoautotrophic, autotrophic, and heterotrophic removal of ammonia-nitrogen in aquaculture systems. Aquaculture, 257, 346-358"
     link: https://doi.org/10.1016/j.aquaculture.2006.03.019
   - texto: "Avnimelech, Y. (1999). Carbon/nitrogen ratio as a control element in aquaculture systems. Aquaculture, 176, 227-235"
+    link: ''
+  - texto: "Avnimelech, Y. (2011). Biofloc Technology: A Practical Guide Book. Baton Rouge: World Aquaculture Society"
     link: ''
   - texto: "Crab, R. et al. (2007). Nitrogen removal techniques in aquaculture for a sustainable production. Aquaculture"
     link: https://doi.org/10.1016/j.aquaculture.2007.05.006
@@ -73,7 +75,7 @@ Repare: é a fase inicial, com peixe pequeno. Densidade alta só funciona com ae
 | Parâmetro | Por que importa | Referência |
 | --- | --- | --- |
 | Oxigênio dissolvido | As bactérias e os peixes consomem muito | A minha base técnica pede de 3 a 6 mg/L, medido ao amanhecer; no bioflocos, trabalhe com folga |
-| Sólidos sedimentáveis (cone Imhoff) | Mostra quanto floco tem na água: pouco não trata, muito entope e consome oxigênio | Medir todo dia e manter estável na faixa definida para o seu sistema |
+| Sólidos sedimentáveis (cone Imhoff) | Mostra quanto floco tem na água: pouco não trata, muito entope e consome oxigênio | 5 a 50 mL/L para tilápia (Avnimelech, 2011) |
 | Alcalinidade | As bactérias consomem; sem ela, o pH cai e o sistema desanda | 100 a 150 mg/L em sistemas fechados (Ebeling et al., 2006) |
 | Amônia e nitrito | Mostram se as bactérias estão dando conta | Amônia total abaixo de 0,5 mg/L e nitrito abaixo de 0,5 mg/L (base técnica) |
 | pH | Afeta as bactérias e a toxicidade da amônia | Ideal entre 7,5 e 8,0 (base técnica) |
