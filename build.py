@@ -1643,7 +1643,7 @@ def biotecnal():
     </ul>
     <div class="hero-acoes">
       <a class="botao botao-linha" href="{href('blog/biotecnal-quem-fabrica-a-linha-aqua', 0)}">Conhecer a Biotecnal</a>
-      <a class="botao botao-linha" href="{href('seja-revenda-biotecnal', 0)}">Seja revenda no RS e SC</a>
+      <a class="botao botao-linha" href="{href('seja-revenda-biotecnal', 0)}">Seja revenda Biotecnal</a>
     </div>
   </div>
   <img class="foto" src="assets/biotecnal/produtos-linha-aqua.jpg" alt="Linha Aqua Biotecnal: Nutrat Aqua Plus, Bactrat P e Oxitrat" loading="lazy" decoding="async">
@@ -2544,7 +2544,7 @@ def revenda_page():
            "• Cidade/UF: __\n• Atendo produtores de: __")
     faq = [
         ("Quem pode revender a linha Aqua Biotecnal?",
-         "Agropecuárias, cooperativas, associações de produtores e técnicos que atendem piscicultores no Rio Grande do Sul e em Santa Catarina."),
+         "Agropecuárias, cooperativas, associações de produtores e técnicos que atendem piscicultores em todo o Brasil. O produto sai de fábrica, em Toledo/PR, direto para você."),
         ("Preciso entender de qualidade de água?",
          "Ajuda, mas não é obrigatório. O suporte técnico e os protocolos ficam comigo, e o conteúdo do Água Boa Dá Lucro serve de material para os seus clientes."),
         ("Como funciona o pedido?",
@@ -2554,7 +2554,7 @@ def revenda_page():
 <section class="cabeca-pagina"><div class="wrap cabeca-grade">
   <div>
     <p class="trilha"><a href="index.html">Início</a> / <a href="{href('biotecnal', 0)}">Biotecnal</a> / Seja revenda</p>
-    <h1>Seja revenda Biotecnal no RS e em SC</h1>
+    <h1>Seja revenda Biotecnal em todo o Brasil</h1>
     <p class="promessa">Para agropecuárias, cooperativas e técnicos que atendem piscicultores. Produto de fábrica certificada, suporte técnico de engenheiro e conteúdo pronto para os seus clientes.</p>
     <div class="hero-acoes">{botao_zap("Quero ser revenda", msg)}</div>
   </div>
@@ -2574,8 +2574,8 @@ def revenda_page():
 </div></section>
 {chamada("Vamos conversar sobre a sua região?", "Me conte onde você atua e quantos piscicultores atende. Eu respondo pessoalmente.", "Quero ser revenda", msg)}
 """
-    return pagina(slug="seja-revenda-biotecnal", titulo="Seja revenda Biotecnal no RS e SC | Eng. Tafarel Sá",
-                  descricao="Agropecuárias, cooperativas e técnicos: revenda a linha Aqua Biotecnal no Rio Grande do Sul e em Santa Catarina, com suporte técnico e conteúdo pronto.",
+    return pagina(slug="seja-revenda-biotecnal", titulo="Seja revenda Biotecnal em todo o Brasil | Eng. Tafarel Sá",
+                  descricao="Agropecuárias, cooperativas e técnicos: revenda a linha Aqua Biotecnal em todo o Brasil, direto da indústria, com suporte técnico e conteúdo pronto.",
                   corpo=corpo, msg_zap=msg, ld=faq_ld(faq), ativo="biotecnal")
 
 
@@ -2709,7 +2709,7 @@ def main():
     linhas += [f"- [{a['titulo']}]({DOMINIO}/blog/{a['slug']}): {a['resposta']}" for a in ARTIGOS]
     linhas += ["", "## Outras páginas",
                f"- [Portal Água Boa Dá Lucro]({DOMINIO}/blog/): dicas técnicas, produtos Biotecnal, cases, por dentro da Biotecnal e mercado da piscicultura.",
-               f"- [Seja revenda Biotecnal no RS e SC]({DOMINIO}/seja-revenda-biotecnal): para agropecuárias, cooperativas e técnicos.",
+               f"- [Seja revenda Biotecnal em todo o Brasil]({DOMINIO}/seja-revenda-biotecnal): para agropecuárias, cooperativas e técnicos.",
                f"- [Grupo Água Boa Dá Lucro]({DOMINIO}/grupo): grupo de WhatsApp com cases, resultados e dicas de manejo.",
                f"- [Cadastro]({DOMINIO}/cadastro): receber o Água Boa Dá Lucro pelo WhatsApp.",
                f"- [Criação de traíra e trairão]({DOMINIO}/traira-e-trairao): condicionamento alimentar, berçário e manejo para pesca esportiva e pesque-pague.",
