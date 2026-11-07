@@ -126,7 +126,7 @@ A taxa de crescimento específico (quanto o peixe cresce por dia, em porcentagem
 ![Gráficos das análises de água do Tanque 01 de 25/09 a 05/11/2026: amônia, nitrito, alcalinidade, dureza, sólidos sedimentáveis e pH](../fotos/cases/rolante-parte4-analises.jpg)
 
 - **Nitrito.** Ficou entre 0 e 0,5 mg/L desde que zerou em 07/10. O ponto mais alto foi **0,5 mg/L em 24/10**, no limite de referência. Na mesma semana entraram duas reposições de sal (50 kg em 21/10 e 50 kg em 24/10) para proteger o peixe. A última análise, em 04/11, deu **zero**.
-- **Amônia.** Ficou em **0,25 mg/L** nas análises de 25/10 a 02/11, abaixo do limite de referência de 0,5 mg/L, e voltou a **zero** em 04/11.
+- **Amônia.** Ficou em **0,25 mg/L** nas análises de 24/10 a 02/11, abaixo do limite de referência de 0,5 mg/L, e voltou a **zero** em 04/11.
 - **Alcalinidade.** Oscilou entre **80 e 130 ppm**, com média de 103 ppm no lote. As bactérias consomem alcalinidade todo dia, e ela só se manteve com bicarbonato a cada reposição.
 - **pH.** Ficou em 8,0 em todas as análises até a última, que deu 7,5. Com a alcalinidade em 90 ppm, é sinal para seguir de olho.
 - **Sólidos sedimentáveis.** Subiram para a faixa de **10 a 13 mL/L** no fim de outubro e baixaram para 6 mL/L em 04/11. Floco demais consome oxigênio, por isso os sólidos seguem no radar.
@@ -154,6 +154,30 @@ De 19/10 a 05/11, a manutenção seguiu a cada 3 ou 4 dias:
 | Sal comum sem iodo | 100 kg em 2 reposições | 500 kg |
 
 Esses números são do registro deste tanque. A dose para o seu viveiro depende da sua análise: fale comigo no WhatsApp.
+
+## O lote inteiro em gráficos
+
+Quatro partes de case cabem em poucos gráficos. Todos usam os registros do produtor, de 25/09 a 05/11.
+
+**O que aconteceu e o que foi feito.** Em cima, amônia e nitrito. Embaixo, cada aplicação registrada. Dá para ver o choque concentrado na primeira semana e a manutenção espaçada depois.
+
+![Linha do tempo do lote no Tanque 01: amônia e nitrito de 25/09 a 04/11/2026 e, embaixo, as datas de aplicação de sal, Bactrat P, Enzipro Nitro, Nutrat Aqua Plus e bicarbonato](../fotos/cases/rolante-linha-do-tempo.png)
+
+**Quanto a semana do nitrito custou.** Se o peixe tivesse mantido o ritmo da semana anterior, teria chegado a cerca de 4,6 g em 08/10, e não 3,5 g. É perto de 1,1 g a menos por peixe, ou uns 43 kg a menos no tanque naquele dia. Na prática, o lote perdeu cerca de 3 dias de crescimento. É uma estimativa, mas mostra o prejuízo que não aparece como peixe morto.
+
+![Gráfico do peso medido e da projeção sem a semana do nitrito: 3,5 g medidos contra cerca de 4,6 g projetados em 08/10](../fotos/cases/rolante-custo-semana-nitrito.png)
+
+**Crescimento percentual entre biometrias.** A barra laranja é a semana do nitrito. Do início do lote a 05/11, o peso médio cresceu 1.479%.
+
+![Gráfico do crescimento percentual do peso médio entre biometrias: +107%, +21% na semana do nitrito, +51%, +126% e +84%](../fotos/cases/rolante-crescimento-percentual.png)
+
+**Biomassa por m² e por m³.** Com 40 mil peixes, o tanque saiu de 56 kg para cerca de 884 kg: 2,95 kg por m² de lâmina e 1,47 kg por m³. Ainda há muito espaço para o lote crescer.
+
+![Gráfico da biomassa estimada no Tanque 01 por m² e por m³, de 0,19 para 2,95 kg/m² e de 0,09 para 1,47 kg/m³](../fotos/cases/rolante-biomassa-m2-m3.png)
+
+**Alcalinidade e bicarbonato.** A alcalinidade caiu de 150 para 80 ppm no auge do trabalho das bactérias e só se manteve com reposição. Quando entraram três reposições seguidas, chegou a 130 ppm. Quando espaçou, voltou a 80.
+
+![Gráfico da alcalinidade do Tanque 01 com as reposições de bicarbonato de sódio em barras, de 25/09 a 04/11/2026](../fotos/cases/rolante-alcalinidade-bicarbonato.png)
 
 ## O que a parte 4 ensina
 
