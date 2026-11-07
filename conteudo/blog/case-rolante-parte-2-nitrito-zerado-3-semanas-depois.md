@@ -3,7 +3,7 @@ titulo: "Case Rolante/RS, parte 2: o nitrito ficou zerado 3 semanas depois?"
 categoria: cases
 titulo_pagina: "Parte 2: o nitrito ficou zerado 3 semanas depois?"
 etiqueta: Case real · Rolante/RS
-aviso_atualizacao: "Já saiu a parte 3: de 1,4 g para 12 g em 26 dias. <a href=\"case-rolante-parte-3-agua-boa-virou-peixe.html\">A água boa virou peixe?</a>"
+aviso_atualizacao: "Já saiu a parte 4: de 1,4 g para 22,1 g em 41 dias, com conversão perto de 1,0. <a href=\"case-rolante-parte-4-22-gramas-em-41-dias.html\">E a conta da ração?</a>"
 destaques:
   - valor: 0,00 mg/L
     rotulo: amônia e nitrito em 16 e 18/10

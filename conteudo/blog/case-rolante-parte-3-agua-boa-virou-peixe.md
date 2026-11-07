@@ -3,6 +3,7 @@ titulo: "Case Rolante/RS, parte 3: a água boa virou peixe? Biometria em 26 dias
 categoria: cases
 titulo_pagina: "Parte 3: a água boa virou peixe?"
 etiqueta: Case real · Rolante/RS
+aviso_atualizacao: "Já saiu a parte 4: de 1,4 g para 22,1 g em 41 dias, com conversão perto de 1,0. <a href=\"case-rolante-parte-4-22-gramas-em-41-dias.html\">E a conta da ração?</a>"
 destaques:
   - valor: 1,4 → 12 g
     rotulo: peso médio em 26 dias
@@ -53,7 +54,7 @@ fontes:
       final − ln peso inicial) ÷ dias × 100"
 ---
 
-Este case tem três partes. Na [parte 1](case-rolante-nitrito-zerado-em-8-dias.html), o nitrito do Tanque 01 da Piscicultura Colombo, em Rolante/RS, saiu de **5 mg/L** e zerou no 8º dia de protocolo Biotecnal. Na [parte 2](case-rolante-parte-2-nitrito-zerado-3-semanas-depois.html), as análises mostraram a água estável por mais de três semanas, com o trato subindo para 17 kg de ração por dia.
+Este case tem quatro partes; a [parte 4](case-rolante-parte-4-22-gramas-em-41-dias.html) traz a conta da ração. Na [parte 1](case-rolante-nitrito-zerado-em-8-dias.html), o nitrito do Tanque 01 da Piscicultura Colombo, em Rolante/RS, saiu de **5 mg/L** e zerou no 8º dia de protocolo Biotecnal. Na [parte 2](case-rolante-parte-2-nitrito-zerado-3-semanas-depois.html), as análises mostraram a água estável por mais de três semanas, com o trato subindo para 17 kg de ração por dia.
 
 Faltava a pergunta que paga a conta: **a água boa virou peixe?** A biometria de 21/10 responde.
 
