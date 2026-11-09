@@ -79,6 +79,12 @@ fontes:
   - texto: Saturação de oxigênio na água doce pela equação de Benson e Krause (Standard
       Methods, APHA)
   - texto: Base Técnica Biotecnal, ficha e tabela de emergência do OXITRAT
+  - texto: "KIM, Y.; JO, J.-Y. Effects of feeding frequency on oxygen consumption of
+      Nile tilapia, Oreochromis niloticus, in a recirculating aquaculture system.
+      Korean Journal of Fisheries and Aquatic Sciences, v. 32, n. 2, p. 144–148, 1999"
+  - texto: "ALY, T. E. Oxygen consumption of Nile tilapia (Oreochromis niloticus) juveniles
+      under different water temperatures and feeding frequencies. National Institute of
+      Oceanography and Fisheries, Egito [A CONFIRMAR revista e ano]"
   - texto: Tabela de arraçoamento de tilápia por peso e temperatura, POP 001, Eng. Tafarel
       Sá (2022)
 ---
@@ -116,6 +122,23 @@ Todo mundo aprende que o oxigênio é mínimo de madrugada. Isso vale para vivei
 Na média de 23 dias, o oxigênio foi **máximo às 10h** e **mínimo entre 16h e 23h**. Em 21 de 22 dias completos, o mínimo do dia caiu entre 15h e 1h. O fim da tarde junta o peixe digerindo o trato, a água mais quente e os flocos trabalhando.
 
 ![Gráfico do oxigênio médio por hora em quatro fases do lote: estável, sólidos subindo, recuperação e água a 27–29 °C](../fotos/cases/rolante-analise-ciclo-por-fase.png)
+
+### O trato explica o desenho do dia
+
+O produtor trata 4 vezes, todas de manhã: às 7h, 8h30, 9h30 e 11h30, com 21 kg por dia. Colocando os horários sobre a curva, o desenho do dia fica claro.
+
+![Gráfico do oxigênio, da saturação e da temperatura média por hora no Tanque 01, com os horários do trato marcados às 7h, 8h30, 9h30 e 11h30](../fotos/cases/rolante-trato-x-oxigenio.png)
+
+- **Da meia-noite às 10h**, sem trato desde o fim da manhã anterior, o aerador vence e o oxigênio sobe devagar.
+- **Durante o trato**, a subida perde força: de +0,06 mg/L por hora às 7h para +0,03 às 10h.
+- **Das 13h às 16h**, de 1h30 a 4h30 depois da última refeição, vem a **queda mais rápida do dia**: cerca de 0,1 mg/L por hora.
+- **Das 17h à meia-noite**, o oxigênio fica no patamar mais baixo, perto de 6,8 mg/L.
+
+O calor da tarde explica só uma parte. Das 10h às 18h, o oxigênio caiu 0,56 mg/L. Se fosse só a temperatura, a queda seria de 0,11 mg/L. Os outros **0,45 mg/L (80%) são consumo**: peixe digerindo o trato e flocos trabalhando.
+
+A ciência ajuda a entender o intervalo. Kim e Jo, da Universidade Nacional de Pukyong, mediram tilápias de 400 g em recirculação (1999): o consumo de oxigênio atingiu o pico de 30 a 50 minutos depois de cada refeição, e o consumo médio do peixe alimentado foi cerca do dobro do peixe em jejum (de 80 a 99 contra 39 mg por kg por hora). Já Aly, no Egito, encontrou o pico de 4 a 5 horas depois da refeição em juvenis de 100 g. No Tanque 01, com 4 refeições seguidas, o efeito vai se somando e a queda mais forte aparece no início da tarde, justamente quando a água está mais quente.
+
+**O que isso muda no manejo:** neste tanque, a medição que mais importa é a do fim da tarde, entre 16h e 18h. E se faltar luz à noite, o tanque já começa no ponto mais baixo do dia. Se o trato aumentar, o reforço de aeração rende mais das 12h às 20h.
 
 Separando por fase, a curva inteira desceu cerca de **1 mg/L** quando os sólidos subiram, e voltou na recuperação. A lição é simples: **cada tanque tem o seu horário crítico**. Quem mede só de manhã cedo pode estar olhando para o melhor momento do dia.
 
