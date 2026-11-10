@@ -367,7 +367,7 @@ def pagina(*, slug, titulo, descricao, corpo, prof=0, msg_zap, ld=None, ativo=No
         <li><a href="{href('estufas', prof)}">Estufas Brasil Estufas</a></li>
         <li><a href="{href('piscicultura', prof)}">Consultoria em piscicultura</a></li>
         <li><a href="{href('aquaponia-comercial', prof)}">Consultoria em aquaponia</a></li>
-        <li><a href="{href('hidroponia', prof)}">Hidroponia Hortivinyl</a></li>
+        <li><a href="{href('hidroponia', prof)}">Hidroponia</a></li>
         <li><a href="{href('qualidade-da-agua', prof)}">Qualidade da água</a></li>
         <li><a href="{href('biotecnal', prof)}">Linha Aqua Biotecnal</a></li>
         <li><a href="{href('calculadora', prof)}">Calculadora de manejo</a></li>
@@ -545,8 +545,8 @@ OFERTAS = [
      "Do dimensionamento dos viveiros ao manejo da água, para produzir mais peixe por metro quadrado."),
     ("aquaponia-comercial", "Consultoria em aquaponia",
      "Peixe e hortaliça no mesmo sistema, projetado para vender, não para hobby."),
-    ("hidroponia", "Hidroponia Hortivinyl",
-     "Torre, mini bancada e bancadas para iniciantes, com garantia de 10 anos do fabricante."),
+    ("hidroponia", "Hidroponia",
+     "Torre, mini bancada e bancadas para iniciantes, com orientação de engenheiro."),
     ("tanques-de-geomembrana", "Tanques de geomembrana",
      "Viveiros e reservatórios que não perdem água, com manta Geotop."),
     ("traira-e-trairao", "Traíra e trairão",
@@ -703,7 +703,7 @@ def home():
     <p class="sobretitulo">Quem assina o projeto</p>
     <h2>Eng. Tafarel Sá</h2>
     <p class="assina-lead">Sou engenheiro e responsável técnico pela Benfica AgroEngenharia, empresa de engenharia com sede em Triunfo/RS desde 2020.</p>
-    <p>Sou coordenador técnico e de expansão da Biotecnal no RS e em SC, represento a Brasil Estufas e a Geotop, vendo a linha de hidroponia Hortivinyl e indico os equipamentos AKSO. Isso quer dizer material de fabricante, com procedência, e alguém que responde por ele depois da entrega. O atendimento é em todo o Brasil.</p>
+    <p>Sou coordenador técnico e de expansão da Biotecnal no RS e em SC, represento a Brasil Estufas e a Geotop e indico os equipamentos AKSO. Isso quer dizer material de fabricante, com procedência, e alguém que responde por ele depois da entrega. O atendimento é em todo o Brasil.</p>
     <p>No canal, apresento a série <a href="{href('blog/', 0)}">Água Boa Dá Lucro</a>: manejo da água explicado com números, para o produtor decidir com segurança.</p>
     <p class="assina-clientes-titulo">Pela Benfica, já atendemos empresas como:</p>
     <ul class="clientes">{"".join(f"<li>{c}</li>" for c in clientes)}</ul>
@@ -976,7 +976,7 @@ def aquaponia():
     )
 
 
-# Hidroponia Hortivinyl: sistemas pequenos. Preço de referência quando houver
+# Hidroponia: sistemas pequenos. Preço de referência quando houver
 # (loja Bruno Palma Hidroponia, 15/10/2026); o resto é orçamento no WhatsApp de vendas.
 HIDRO_SISTEMAS = [
     ("Torre de cultivo", "12 plantas", "1,50 m de altura, base de 42 x 42 cm",
@@ -997,7 +997,7 @@ def hidroponia():
     for nome, cap, med, inclui, preco in HIDRO_SISTEMAS:
         valor = (f'<p class="preco">A partir de {preco}<small>preço de referência</small></p>' if preco
                  else '<p class="preco preco-consulta">Preço no WhatsApp</p>')
-        msg_item = f"Olá! Vim pelo site do Eng. Tafarel e quero orçamento da {nome} Hortivinyl. Minha cidade é __."
+        msg_item = f"Olá! Vim pelo site do Eng. Tafarel e quero orçamento da {nome} de hidroponia. Minha cidade é __."
         cards += f"""<article class="kit sistema">
   <h3>{nome}</h3>
   <p class="cap">{cap} · {med}</p>
@@ -1010,8 +1010,8 @@ def hidroponia():
         for n, pr, l in AKSO_KITS[1][2])
     extra = f"""
 <section class="secao" id="sistemas"><div class="wrap">
-  <h2>Sistemas pequenos Hortivinyl</h2>
-  <p class="intro">Para começar em casa, no sítio ou testar antes de crescer. Perfis de PVC Hortivinyl, com garantia de 10 anos do fabricante.</p>
+  <h2>Sistemas pequenos de hidroponia</h2>
+  <p class="intro">Para começar em casa, no sítio ou testar antes de crescer. Perfis de PVC próprios para hidroponia.</p>
   <div class="kits">{cards}</div>
   <p class="nota-afiliado">Preço de referência de mercado em {AKSO_DATA}. O valor final, o frete e o prazo vêm no orçamento pelo WhatsApp.</p>
 </div></section>
@@ -1031,11 +1031,11 @@ def hidroponia():
 </div></section>"""
     return pagina_produto(
         slug="hidroponia",
-        titulo_seo="Hidroponia Hortivinyl: torre, mini bancada e bancadas para iniciantes | Eng. Tafarel Sá",
-        descricao="Sistemas pequenos de hidroponia Hortivinyl: torre de cultivo, mini bancada e bancadas de 1,5 m a 6 m, com garantia de 10 anos. Orçamento pelo WhatsApp.",
-        h1="Hidroponia Hortivinyl",
-        promessa="Sistemas pequenos para produzir alface, temperos e folhosas sem terra. Estrutura Hortivinyl com garantia de 10 anos e orientação de engenheiro para montar.",
-        foto=foto_slot("hidroponia", "Foto de bancada Hortivinyl<br>(substituir)"),
+        titulo_seo="Hidroponia: torre, mini bancada e bancadas para iniciantes | Eng. Tafarel Sá",
+        descricao="Sistemas pequenos de hidroponia: torre de cultivo, mini bancada e bancadas de 1,5 m a 6 m, com orientação de engenheiro. Orçamento pelo WhatsApp.",
+        h1="Hidroponia",
+        promessa="Sistemas pequenos para produzir alface, temperos e folhosas sem terra. Estrutura em PVC próprio para hidroponia e orientação de engenheiro para montar.",
+        foto=foto_slot("hidroponia", "Foto de bancada de hidroponia<br>(substituir)"),
         para_quem=[
             "Quem quer produzir hortaliça em casa ou no sítio",
             "Pequenos produtores testando a hidroponia antes de investir mais",
@@ -1043,8 +1043,7 @@ def hidroponia():
             "Quem já tem aquaponia e quer ampliar a parte vegetal",
         ],
         inclui=[
-            "Estrutura Hortivinyl de fábrica, em PVC sem metais pesados",
-            "Garantia de 10 anos do fabricante",
+            "Estrutura em PVC próprio para hidroponia",
             "Orientação para escolher o tamanho certo",
             "Indicação do medidor de pH e da estufa, se precisar",
         ],
@@ -1056,7 +1055,7 @@ def hidroponia():
             ("O que não vem no kit?",
              "Nas bancadas para iniciantes, o reservatório de 150 a 200 L e os canos. Na bancada mista de 1,5 m, os cavaletes."),
         ],
-        msg="Olá! Vim pelo site do Eng. Tafarel e quero orçamento de hidroponia Hortivinyl. Quero produzir __ plantas, na cidade de __.",
+        msg="Olá! Vim pelo site do Eng. Tafarel e quero orçamento de hidroponia. Quero produzir __ plantas, na cidade de __.",
         chamada_titulo="Qual sistema cabe no seu espaço?",
         chamada_texto="Mande o espaço disponível e a cidade. O orçamento sai pelo WhatsApp de vendas.",
         botao="Pedir orçamento de hidroponia",
@@ -1129,7 +1128,6 @@ def sobre():
     <li class="oferta"><h3>Brasil Estufas</h3><p>Estufas agrícolas de fábrica, com atendimento em todo o Brasil.</p><a href="{href('estufas', 0)}">Ver estufas</a></li>
     <li class="oferta"><h3>Biotecnal</h3><p>Sistemas biológicos para tratamento de água e dejetos. Coordenação técnica e expansão no RS e em SC.</p><a href="{href('biotecnal', 0)}">Ver Biotecnal</a></li>
     <li class="oferta"><h3>Geotop</h3><p>Geomembranas para tanques, reservatórios e lagoas. Representação no RS, SC e PR.</p><a href="{href('tanques-de-geomembrana', 0)}">Ver tanques</a></li>
-    <li class="oferta"><h3>Hortivinyl</h3><p>Perfis e sistemas de hidroponia em PVC, com garantia de 10 anos do fabricante.</p><a href="{href('hidroponia', 0)}">Ver hidroponia</a></li>
     <li class="oferta"><h3>AKSO</h3><p>Medidores de qualidade da água que eu uso e indico.</p><a href="{href('loja-akso', 0)}">Ver medidores</a></li>
   </ul>
 </div></section>
@@ -2086,7 +2084,7 @@ PROJETO_TIPOS = [
         ("cultura", "O que vai plantar?", "texto", "ex.: alface, morango, mudas"),
         ("ja_tem", "Já tem estufa?", "opcoes", ["Não, é a primeira", "Sim, quero ampliar", "Sim, quero trocar"]),
     ]),
-    ("hidroponia", "Hidroponia", "Sistemas Hortivinyl, da torre à bancada de 6 m.", "venda", [
+    ("hidroponia", "Hidroponia", "Da torre à bancada de 6 m.", "venda", [
         ("plantas", "Quantas plantas quer produzir?", "opcoes", ["Até 30 (casa)", "30 a 200", "200 a 1.000", "Mais de 1.000"]),
         ("objetivo", "Para quê?", "opcoes", ["Consumo próprio", "Vender a produção", "Escola ou projeto"]),
     ]),
