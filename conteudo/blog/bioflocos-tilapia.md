@@ -1,5 +1,5 @@
 ---
-titulo: "Bioflocos: o que é e como funciona na criação de tilápia"
+titulo: "Bioflocos na tilápia: o que é, como funciona e o que medir"
 categoria: dicas-tecnicas
 titulo_pagina: "Bioflocos na tilápia: o que é, como funciona e onde quase todo mundo erra"
 etiqueta: Bioflocos

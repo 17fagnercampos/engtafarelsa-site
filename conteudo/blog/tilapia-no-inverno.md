@@ -1,5 +1,5 @@
 ---
-titulo: "Tilápia no inverno: por que para de comer e como evitar perdas"
+titulo: "Tilápia no inverno: por que para de comer e quando o frio mata"
 categoria: dicas-tecnicas
 titulo_pagina: "Tilápia no inverno: por que ela para de comer e o que fazer no Sul"
 etiqueta: Sazonalidade

@@ -1,6 +1,6 @@
 ---
 categoria: dicas-tecnicas
-titulo: Temperatura da água e crescimento da tilápia no Sul
+titulo: 'Temperatura ideal da tilápia: 26 a 30 °C e o que muda no Sul'
 descricao: Por que a tilápia quase para de crescer no inverno gaúcho, a faixa de temperatura ideal e por que o calor dobra o consumo de oxigênio do viveiro.
 data: '2026-10-15'
 resposta: 'A tilápia cresce melhor com a água entre 26 e 30 °C. Entre 20 e 22 °C o crescimento cai para cerca de 30% do máximo, e abaixo de 10 a 11 °C ela morre. No calor, o problema muda: o peixe respira mais e o consumo de oxigênio do viveiro pode mais que dobrar entre 24 e 32 °C. No Sul, o manejo tem que mudar com a estação.'

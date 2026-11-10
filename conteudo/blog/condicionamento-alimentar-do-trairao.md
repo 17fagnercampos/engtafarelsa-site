@@ -1,6 +1,6 @@
 ---
 categoria: dicas-tecnicas
-titulo: 'Trairão e traíra na ração: o condicionamento alimentar'
+titulo: 'Traíra come ração? Como condicionar o trairão'
 descricao: Traíra e trairão são carnívoros e não aceitam ração de primeira. Um estudo mostrou que o condicionamento alimentar levou a sobrevivência dos alevinos de 27,5% para 96,7%.
 data: '2026-10-15'
 resposta: Traíra e trairão são predadores e, soltos com ração seca direto, a maioria dos alevinos não aceita e morre ou é comida pelos irmãos. No estudo de Luz e colegas (Revista Brasileira de Zootecnia, 2002), alevinos de trairão passados aos poucos de ração semiúmida para ração seca tiveram 96,7% de sobrevivência, contra 27,5% dos que receberam ração seca direto.

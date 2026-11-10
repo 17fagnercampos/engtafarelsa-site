@@ -1,5 +1,5 @@
 ---
-titulo: "Criação de tilápia em caixa d'água: quantas tilápias por 1000 L"
+titulo: "Quantas tilápias cabem numa caixa d'água de 1000 litros?"
 categoria: dicas-tecnicas
 titulo_pagina: "Criação de tilápia em caixa d'água: quantas tilápias cabem e o que não pode faltar"
 etiqueta: Guia prático
@@ -12,7 +12,7 @@ destaques:
     rotulo: é quando povoar no Sul, segundo a Embrapa
 barra_pergunta: Vai montar sua caixa?
 barra_texto: Mande as medidas e a foto
-descricao: "Quantas tilápias cabem numa caixa d'água de 1000 litros, o que precisa ter (filtro, bomba, oxigênio) e quando povoar no Sul. Com dados da Embrapa e de pesquisas."
+descricao: "Teste da Embrapa no RS: 33 alevinos por caixa de 1000 L, com filtro e bomba, chegaram a 146 g em 80 dias. Veja a conta para 500, 2000 e 5000 litros."
 data: 2026-10-26
 rascunho: false
 aviso_atualizacao: "**Este artigo é uma revisão bibliográfica:** reúne o que a Embrapa e as universidades já testaram em caixa d'água. Em breve vamos trazer os resultados dos nossos próprios testes, com caixas montadas e medidas por nós."
@@ -62,6 +62,23 @@ A pergunta mais buscada no Google tem uma resposta que pouca gente gosta de ouvi
 Repare no terceiro estudo. Com muito peixe, aquecimento e filtro, deu certo, mas na semana 9 a amônia tóxica passou do limite. Só baixou quando os pesquisadores colocaram mais uma etapa de filtragem. **Mais peixe exige mais filtro, sempre.**
 
 Para quem está começando, o conselho é ficar perto do que a Embrapa testou no Rio Grande do Sul e só aumentar depois de dominar a água.
+
+## E numa caixa de 500, 2000 ou 5000 litros?
+
+A referência da Embrapa é de **33 alevinos por 1000 litros**, ou seja, 33 por metro cúbico, com decantador, filtros e bomba. Mantendo a mesma proporção e a mesma filtragem, a conta fica assim:
+
+| Caixa | Volume | Alevinos (proporção do teste da Embrapa) |
+| --- | --- | --- |
+| 500 litros | 0,5 m³ | cerca de 16 |
+| 1000 litros | 1 m³ | 33 |
+| 2000 litros | 2 m³ | cerca de 66 |
+| 5000 litros | 5 m³ | cerca de 165 |
+
+A conta é minha, feita com a proporção do teste. Ela só vale se o filtro e a bomba crescerem junto com a caixa. Caixa maior com o mesmo filtro pequeno aguenta menos peixe, não mais.
+
+Na despesca do teste, com 146 g de média e sobrevivência perto de 78%, a carga ficou em torno de 3,7 kg de peixe por metro cúbico. Esse é o patamar que o sistema da Embrapa sustentou.
+
+Está começando do zero? Leia também o guia de [criação de tilápia para iniciantes](criacao-de-tilapia-para-iniciantes.html).
 
 ## O que não pode faltar no sistema
 

@@ -1,6 +1,6 @@
 ---
 categoria: dicas-tecnicas
-titulo: 'Manejo alimentar da tilápia: a regra dos 15 minutos e a conversão'
+titulo: 'Quanto a tilápia come por dia? Manejo alimentar e conversão'
 descricao: Quanto e quando dar ração para tilápia, a regra dos 15 minutos, como calcular a conversão alimentar e por que ração sobrando vira amônia.
 data: '2026-10-15'
 resposta: 'Ração é o maior custo da piscicultura, e ração sobrando vira amônia e lodo. Use a regra dos 15 minutos: ofereça o que o lote come nesse tempo e ajuste a quantidade pela sobra. Peixe pequeno se alimenta perto da saciedade; acima de 150 a 200 g, alimente de forma restrita, a 80 a 90% do consumo máximo, para melhorar a conversão. Não alimente de madrugada nem com a água ruim.'
@@ -49,6 +49,18 @@ Referência para tilápia em tanque-rede ou sistema intensivo (Kubitza, 2006)
 | --- | --- | --- | --- |
 | Recria | 32% de proteína, péletes de 3 a 4 mm | 5 a 3% do peso vivo | 3 a 2 |
 | Terminação | 32% de proteína, pélete conforme o tamanho do peixe | 3 a 2% do peso vivo | até 2 |
+
+### Quantos gramas uma tilápia come por dia
+
+Com a referência de Kubitza (2006), a conta é: peso do peixe × porcentagem do dia. Exemplos:
+
+| Peso do peixe | % do peso vivo por dia | Ração por peixe | Ração para 1.000 peixes |
+| --- | --- | --- | --- |
+| 100 g (recria) | 5 a 3% | 3 a 5 g | 3 a 5 kg |
+| 500 g (terminação) | 3 a 2% | 10 a 15 g | 10 a 15 kg |
+| 800 g (terminação) | 3 a 2% | 16 a 24 g | 16 a 24 kg |
+
+Os pesos de cada fase são exemplos meus para a conta. A tabela é o ponto de partida; quem fecha a quantidade é a regra dos 15 minutos e a temperatura da água.
 
 Kubitza também observa que trocar a ração de 32% por uma de 28% para economizar na terminação raramente compensa: a diferença de preço é pequena e o peixe cresce menos, converte pior e acumula mais gordura.
 

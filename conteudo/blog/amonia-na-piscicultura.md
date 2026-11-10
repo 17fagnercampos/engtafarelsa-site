@@ -40,6 +40,18 @@ O teste de amônia mede a **amônia total**, que é a soma de duas formas: o ío
 
 Na prática: leia a amônia sempre junto com o pH e a temperatura. Um viveiro com pH alto e água quente tem menos margem.
 
+### Amônia tóxica: quanto da amônia total vira NH3
+
+Porcentagem da amônia total que está na forma tóxica (NH3), calculada com a equação de Emerson e colegas (1975):
+
+| Temperatura | pH 7,0 | pH 7,5 | pH 8,0 | pH 8,5 | pH 9,0 |
+| --- | --- | --- | --- | --- | --- |
+| 20 °C | 0,4% | 1,2% | 3,8% | 11,1% | 28,4% |
+| 25 °C | 0,6% | 1,8% | 5,4% | 15,2% | 36,2% |
+| 30 °C | 0,8% | 2,5% | 7,4% | 20,2% | 44,5% |
+
+Exemplo: 1 mg/L de amônia total a 25 °C e pH 7,0 tem 0,006 mg/L de NH3. A mesma leitura a 30 °C e pH 9,0 tem 0,45 mg/L, **75 vezes mais amônia tóxica**. É por isso que a tarde de sol, quando o pH sobe, é o horário mais perigoso.
+
 ## Sinais no viveiro
 
 - Peixe comendo bem e mesmo assim sem crescer.

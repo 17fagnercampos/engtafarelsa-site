@@ -1,5 +1,5 @@
 ---
-titulo: "Aquaponia caseira: como montar e como funciona"
+titulo: "Aquaponia caseira: como montar um projeto passo a passo"
 categoria: dicas-tecnicas
 titulo_pagina: "Aquaponia caseira: como funciona e como montar sem cair no erro mais comum"
 etiqueta: Aquaponia
@@ -60,7 +60,7 @@ A receita mais comum na internet é colocar peixes numa caixa, ligar a outra cai
 
 O motivo: quem nutre a planta não é o resíduo sólido, são os nutrientes dissolvidos na água. A água sem decantar leva a sujeira para as raízes, que ficam cobertas e não absorvem os nutrientes. E um leito de brita que recebe água suja entope em cerca de um ou dois meses.
 
-## As peças do sistema, na ordem certa
+## Projeto de aquaponia caseiro: as peças, na ordem certa
 
 | Ordem | Componente | Para que serve |
 | --- | --- | --- |
@@ -71,6 +71,8 @@ O motivo: quem nutre a planta não é o resíduo sólido, são os nutrientes dis
 | 5 | Tanque de bombeamento | Recebe a água e devolve ao sistema |
 
 O manual da UFGD trata o filtro biológico como obrigatório, mesmo com plantas no sistema: ele é a segurança para a amônia não subir quando o número de plantas muda.
+
+Quer um projeto pronto para vender, e não só para casa? É o que eu ensino no [Método AquaHortis](../aquaponia-comercial.html).
 
 ## Um exemplo real: o sistema pequeno da UFGD
 

@@ -769,7 +769,7 @@ PASSOS_ESTUFA = [
 def estufas():
     return pagina_produto(
         slug="estufas",
-        titulo_seo="Estufas agrícolas Brasil Estufas | Representante Eng. Tafarel Sá",
+        titulo_seo="Brasil Estufas: estufas agrícolas e para piscicultura | Eng. Tafarel Sá",
         descricao="Estufas agrícolas Brasil Estufas para hortaliças, mudas, flores e aquaponia. Orçamento direto pelo WhatsApp com o representante Eng. Tafarel Sá.",
         h1="Estufas agrícolas Brasil Estufas",
         promessa="Estrutura de fábrica com 10 anos de garantia, para produzir o ano todo. Sou representante da Brasil Estufas e oriento a escolha do modelo como engenheiro.",
@@ -842,7 +842,7 @@ def tabela_tanques():
 def tanques():
     return pagina_produto(
         slug="tanques-de-geomembrana",
-        titulo_seo="Tanque de geomembrana para peixe: tamanhos e quantos peixes cabem",
+        titulo_seo="Tanque de geomembrana para peixe: de 10 a 200 mil litros",
         descricao="Tanque de geomembrana para piscicultura de 10 a 200 mil litros: quantos peixes cabem em cada tamanho, espessura da manta e instalação com equipe própria.",
         extra=tabela_tanques(),
         h1="Tanques de geomembrana",
@@ -1990,7 +1990,7 @@ def traira():
 """
     ld = [faq_ld(faq)]
     return pagina(slug="traira-e-trairao",
-                  titulo="Criação de traíra e trairão: condicionamento, berçário e manejo | Eng. Tafarel Sá",
+                  titulo="Criação de traíra e trairão para pesca esportiva e pesque-pague | Eng. Tafarel Sá",
                   descricao="Como criar traíra e trairão para pesca esportiva e pesque-pague: condicionamento alimentar, berçário, canibalismo e qualidade da água. Consultoria do Eng. Tafarel Sá.",
                   corpo=corpo, msg_zap=msg, ld=ld, ativo="piscicultura")
 
