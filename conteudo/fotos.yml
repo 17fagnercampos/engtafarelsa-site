@@ -12,15 +12,5 @@ piscicultura:
   descricao: Viveiros de piscicultura em produção
 aquaponia:
   descricao: Sistema de aquaponia comercial
-hidroponia:
-  descricao: Bancada de hidroponia
-hidroponia_galeria_1:
-  descricao: "Hidroponia: berçário"
-hidroponia_galeria_2:
-  descricao: "Hidroponia: crescimento"
-hidroponia_galeria_3:
-  descricao: "Hidroponia: bancada"
-hidroponia_galeria_4:
-  descricao: "Hidroponia: colheita"
 traira:
   descricao: Criação de traíra e trairão

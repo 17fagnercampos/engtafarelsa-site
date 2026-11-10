@@ -118,11 +118,6 @@ FOTO_SLOTS = [
     ("tanques", "Tanques · Foto do topo", "tanques-de-geomembrana", "Página Tanques de geomembrana, no topo", "Horizontal (deitada)"),
     ("piscicultura", "Piscicultura · Foto do topo", "piscicultura", "Página Consultoria em piscicultura, no topo", "Horizontal (deitada)"),
     ("aquaponia", "Aquaponia · Foto do topo", "aquaponia-comercial", "Página Aquaponia comercial, no topo", "Horizontal (deitada)"),
-    ("hidroponia", "Hidroponia · Foto do topo", "hidroponia", "Página Hidroponia, no topo", "Horizontal (deitada)"),
-    ("hidroponia_galeria_1", "Hidroponia · Galeria 1", "hidroponia", "Página Hidroponia, galeria, 1ª foto", "Horizontal (deitada)"),
-    ("hidroponia_galeria_2", "Hidroponia · Galeria 2", "hidroponia", "Página Hidroponia, galeria, 2ª foto", "Horizontal (deitada)"),
-    ("hidroponia_galeria_3", "Hidroponia · Galeria 3", "hidroponia", "Página Hidroponia, galeria, 3ª foto", "Horizontal (deitada)"),
-    ("hidroponia_galeria_4", "Hidroponia · Galeria 4", "hidroponia", "Página Hidroponia, galeria, 4ª foto", "Horizontal (deitada)"),
     ("traira", "Traíra e trairão · Foto do topo", "traira-e-trairao", "Página Traíra e trairão, no topo", "Horizontal (deitada)"),
 ]
 SLOT_NUM = {k: i + 1 for i, (k, *_r) in enumerate(FOTO_SLOTS)}
@@ -172,7 +167,6 @@ MENU = [
     ("biotecnal", "Biotecnal"),
     ("piscicultura", "Piscicultura"),
     ("aquaponia-comercial", "Aquaponia"),
-    ("hidroponia", "Hidroponia"),
     ("estufas", "Estufas"),
     ("loja-akso", "Loja AKSO"),
     ("sobre", "Sobre"),
@@ -274,7 +268,6 @@ GOTA_SVG = ('<svg class="marca-gota" viewBox="0 0 22 28" aria-hidden="true"><pat
 # Frase da barra de WhatsApp por página: (pergunta, complemento). False = sem barra.
 BARRAS = {
     "estufas": ("Quer um orçamento de estufa?", "Veja os modelos e fale com vendas"),
-    "hidroponia": ("Quer montar sua hidroponia?", "Fale com vendas no WhatsApp"),
     "calculadora": ("Quer o protocolo do seu viveiro?", "Mande os números da calculadora"),
     "qualidade-da-agua": ("Problema na água do viveiro?", "Mande suas medições"),
     "biotecnal": ("Qual produto Biotecnal usar?", "Mande suas medições"),
@@ -367,7 +360,6 @@ def pagina(*, slug, titulo, descricao, corpo, prof=0, msg_zap, ld=None, ativo=No
         <li><a href="{href('estufas', prof)}">Estufas Brasil Estufas</a></li>
         <li><a href="{href('piscicultura', prof)}">Consultoria em piscicultura</a></li>
         <li><a href="{href('aquaponia-comercial', prof)}">Consultoria em aquaponia</a></li>
-        <li><a href="{href('hidroponia', prof)}">Hidroponia</a></li>
         <li><a href="{href('qualidade-da-agua', prof)}">Qualidade da água</a></li>
         <li><a href="{href('biotecnal', prof)}">Linha Aqua Biotecnal</a></li>
         <li><a href="{href('calculadora', prof)}">Calculadora de manejo</a></li>
@@ -545,8 +537,6 @@ OFERTAS = [
      "Do dimensionamento dos viveiros ao manejo da água, para produzir mais peixe por metro quadrado."),
     ("aquaponia-comercial", "Consultoria em aquaponia",
      "Peixe e hortaliça no mesmo sistema, projetado para vender, não para hobby."),
-    ("hidroponia", "Hidroponia",
-     "Torre, mini bancada e bancadas para iniciantes, com orientação de engenheiro."),
     ("tanques-de-geomembrana", "Tanques de geomembrana",
      "Viveiros e reservatórios que não perdem água, com manta Geotop."),
     ("traira-e-trairao", "Traíra e trairão",
@@ -749,7 +739,7 @@ def home():
         faq_ld(FAQ_HOME),
     ]
     return pagina(slug="", titulo="Água Boa Dá Lucro | Qualidade da água na piscicultura",
-                  descricao="Qualidade da água na piscicultura: oxigênio, amônia, nitrito e lodo. Protocolo Biotecnal com o Eng. Tafarel Sá. Atendimento em todo o Brasil: consultoria, aquaponia, hidroponia e estufas.",
+                  descricao="Qualidade da água na piscicultura: oxigênio, amônia, nitrito e lodo. Protocolo Biotecnal com o Eng. Tafarel Sá. Atendimento em todo o Brasil: consultoria, aquaponia e estufas.",
                   corpo=corpo, msg_zap=msg, ld=ld)
 
 
@@ -974,101 +964,6 @@ def aquaponia():
             ("cursos", "Cursos", "Aprenda o sistema antes de investir.", "Ver cursos"),
         ]),
     )
-
-
-# Hidroponia: sistemas pequenos. Preço de referência quando houver
-# (loja Bruno Palma Hidroponia, 15/10/2026); o resto é orçamento no WhatsApp de vendas.
-HIDRO_SISTEMAS = [
-    ("Torre de cultivo", "12 plantas", "1,50 m de altura, base de 42 x 42 cm",
-     "Torre com base, 12 vasos, bomba submersa de 20 W, mangueira, timer bivolt e kit de nutrientes.", None),
-    ("Mini Bancada", "29 plantas", "1,20 x 0,80 m, 0,90 m de altura",
-     "3 perfis 80x40 mm, 1 perfil 60x30 mm, travessas, colunas, irrigação, bomba de 20 W, timer bivolt e kit de nutrientes.", None),
-    ("Bancada Mista 1,5 m", "70 plantas", "1,5 m, fase final e berçário na mesma bancada",
-     "6 perfis 80x40 mm, 2 perfis 60x30 mm, coletor, tampas de entrada e saída, injetores e cola. Cavaletes à parte (kit com 2 cavaletes 1,5 m: R$ 214,00).", "R$ 764,00"),
-    ("Bancada para Iniciantes 3 m", "cerca de 165 plantas", "1,70 x 3 m",
-     "9 perfis (7 de 80x40 mm e 2 de 60x30 mm), bomba, timer, coletores, colunas, presilhas, conexões, injetores e kit de nutrientes. Reservatório de 150 a 200 L e canos à parte.", None),
-    ("Bancada para Iniciantes 6 m", "cerca de 330 plantas", "1,70 x 6 m",
-     "9 perfis (7 de 80x40 mm e 2 de 60x30 mm), bomba, timer, coletores, colunas, presilhas, conexões, injetores e kit de nutrientes. Reservatório de 150 a 200 L e canos à parte.", None),
-]
-
-
-def hidroponia():
-    cards = ""
-    for nome, cap, med, inclui, preco in HIDRO_SISTEMAS:
-        valor = (f'<p class="preco">A partir de {preco}<small>preço de referência</small></p>' if preco
-                 else '<p class="preco preco-consulta">Preço no WhatsApp</p>')
-        msg_item = f"Olá! Vim pelo site do Eng. Tafarel e quero orçamento da {nome} de hidroponia. Minha cidade é __."
-        cards += f"""<article class="kit sistema">
-  <h3>{nome}</h3>
-  <p class="cap">{cap} · {med}</p>
-  <p>{inclui}</p>
-  {valor}
-  {botao_zap("Pedir este sistema", msg_item, numero=ZAP_ESTUFAS)}
-</article>"""
-    medidores = "".join(
-        f'<li><a href="{l}" target="_blank" rel="noopener sponsored">{n}</a><span>{pr}</span></li>'
-        for n, pr, l in AKSO_KITS[1][2])
-    extra = f"""
-<section class="secao" id="sistemas"><div class="wrap">
-  <h2>Sistemas pequenos de hidroponia</h2>
-  <p class="intro">Para começar em casa, no sítio ou testar antes de crescer. Perfis de PVC próprios para hidroponia.</p>
-  <div class="kits">{cards}</div>
-  <p class="nota-afiliado">Preço de referência de mercado em {AKSO_DATA}. O valor final, o frete e o prazo vêm no orçamento pelo WhatsApp.</p>
-</div></section>
-
-<section class="secao"><div class="wrap">
-  <h2>Do berçário à colheita</h2>
-  <div class="galeria">
-    {"".join(foto_slot(f"hidroponia_galeria_{i}", "Foto (substituir)", classe="foto-provisoria foto-larga") for i in range(1, 5))}
-  </div>
-</div></section>
-
-<section class="secao secao-branca"><div class="wrap">
-  <h2>Meça a solução nutritiva</h2>
-  <p class="intro">Na hidroponia, pH fora da faixa trava a absorção de nutrientes. O medidor de pH AKSO com as soluções de calibração resolve isso.</p>
-  <article class="kit"><h3>pH completo AKSO</h3><ul>{medidores}</ul></article>
-  <p class="nota-afiliado">Links de parceiro AKSO: a loja me paga uma comissão quando você compra por eles, sem custo a mais para você.</p>
-</div></section>"""
-    return pagina_produto(
-        slug="hidroponia",
-        titulo_seo="Hidroponia: torre, mini bancada e bancadas para iniciantes | Eng. Tafarel Sá",
-        descricao="Sistemas pequenos de hidroponia: torre de cultivo, mini bancada e bancadas de 1,5 m a 6 m, com orientação de engenheiro. Orçamento pelo WhatsApp.",
-        h1="Hidroponia",
-        promessa="Sistemas pequenos para produzir alface, temperos e folhosas sem terra. Estrutura em PVC próprio para hidroponia e orientação de engenheiro para montar.",
-        foto=foto_slot("hidroponia", "Foto de bancada de hidroponia<br>(substituir)"),
-        para_quem=[
-            "Quem quer produzir hortaliça em casa ou no sítio",
-            "Pequenos produtores testando a hidroponia antes de investir mais",
-            "Escolas e projetos sociais",
-            "Quem já tem aquaponia e quer ampliar a parte vegetal",
-        ],
-        inclui=[
-            "Estrutura em PVC próprio para hidroponia",
-            "Orientação para escolher o tamanho certo",
-            "Indicação do medidor de pH e da estufa, se precisar",
-        ],
-        faq=[
-            ("Qual sistema escolher para começar?",
-             "Para casa, a torre (12 plantas) ou a mini bancada (29 plantas). Para vender a produção, a bancada de 3 m (cerca de 165 plantas) é o primeiro passo."),
-            ("O sistema precisa de estufa?",
-             f"Ao ar livre funciona, mas a estufa protege da chuva e do sol forte. Veja as <a href=\"{href('estufas', 0)}\">estufas Brasil Estufas</a>."),
-            ("O que não vem no kit?",
-             "Nas bancadas para iniciantes, o reservatório de 150 a 200 L e os canos. Na bancada mista de 1,5 m, os cavaletes."),
-        ],
-        msg="Olá! Vim pelo site do Eng. Tafarel e quero orçamento de hidroponia. Quero produzir __ plantas, na cidade de __.",
-        chamada_titulo="Qual sistema cabe no seu espaço?",
-        chamada_texto="Mande o espaço disponível e a cidade. O orçamento sai pelo WhatsApp de vendas.",
-        botao="Pedir orçamento de hidroponia",
-        numero=ZAP_ESTUFAS,
-        passos=[
-            ("Você chama no WhatsApp de vendas", "Conta o espaço disponível, a cidade e o que quer produzir."),
-            ("Escolha do sistema", "Definimos juntos o tamanho certo para o seu espaço e a sua meta de produção."),
-            ("Orçamento por escrito", "Você recebe o sistema, o frete e o prazo de entrega."),
-            ("Entrega e montagem", "O sistema chega com as peças de encaixe. Eu oriento a montagem e a partida."),
-        ],
-        extra=extra,
-    )
-
 
 
 def loja_akso():
@@ -2084,10 +1979,6 @@ PROJETO_TIPOS = [
         ("cultura", "O que vai plantar?", "texto", "ex.: alface, morango, mudas"),
         ("ja_tem", "Já tem estufa?", "opcoes", ["Não, é a primeira", "Sim, quero ampliar", "Sim, quero trocar"]),
     ]),
-    ("hidroponia", "Hidroponia", "Da torre à bancada de 6 m.", "venda", [
-        ("plantas", "Quantas plantas quer produzir?", "opcoes", ["Até 30 (casa)", "30 a 200", "200 a 1.000", "Mais de 1.000"]),
-        ("objetivo", "Para quê?", "opcoes", ["Consumo próprio", "Vender a produção", "Escola ou projeto"]),
-    ]),
     ("tanque", "Tanque de geomembrana", "Viveiro, reservatório ou revestimento de tanque que perde água.", "consultoria", [
         ("medidas", "Medidas (comprimento x largura x profundidade)", "texto", "ex.: 20 x 10 x 1,5 m"),
         ("uso", "Uso", "opcoes", ["Peixe", "Reservatório de água", "Efluente/lagoa", "Outro"]),
@@ -2214,7 +2105,7 @@ def projeto():
 {PROJETO_JS}
 """
     return pagina(slug="projeto", titulo="Conte o seu projeto | Eng. Tafarel Sá",
-                  descricao="Conte em 1 minuto o que você quer fazer: estufa, hidroponia, água do viveiro, tanque, piscicultura, aquaponia ou curso. A mensagem chega pronta no WhatsApp.",
+                  descricao="Conte em 1 minuto o que você quer fazer: estufa, água do viveiro, tanque, piscicultura, aquaponia ou curso. A mensagem chega pronta no WhatsApp.",
                   corpo=corpo, msg_zap="Olá, Tafarel! Vim pelo site.", ativo="projeto")
 
 
@@ -2665,7 +2556,6 @@ def main():
         "biotecnal.html": biotecnal(),
         "qualidade-da-agua.html": qualidade_agua(),
         "calculadora.html": calculadora(),
-        "hidroponia.html": hidroponia(),
         "cursos.html": cursos(),
         "traira-e-trairao.html": traira(),
         "projeto.html": projeto(),
@@ -2720,7 +2610,7 @@ def main():
     linhas += ["", "## Produtos Biotecnal"]
     linhas += [f"- [{p['nome']}]({DOMINIO}/biotecnal-{p['slug']}): {p['tipo']}. {p['resumo']}" for p in BIO_PRODUTOS]
     linhas += ["", "## Contato", f"- Contar um projeto (formulário que gera a mensagem de WhatsApp): {DOMINIO}/projeto",
-               f"- WhatsApp do Tafarel (Biotecnal, Água Boa Dá Lucro, consultoria, tanques e cursos): +{ZAP}", f"- WhatsApp de vendas de estufas e hidroponia (Brasil Estufas): +{ZAP_ESTUFAS}", f"- YouTube: {YOUTUBE}", f"- Instagram: {INSTAGRAM}"]
+               f"- WhatsApp do Tafarel (Biotecnal, Água Boa Dá Lucro, consultoria, tanques e cursos): +{ZAP}", f"- WhatsApp de vendas de estufas (Brasil Estufas): +{ZAP_ESTUFAS}", f"- YouTube: {YOUTUBE}", f"- Instagram: {INSTAGRAM}"]
     (DIST / "llms.txt").write_text("\n".join(linhas) + "\n", encoding="utf-8")
 
     itens = "".join(
@@ -2761,7 +2651,7 @@ def main():
         "/fotos/*\n  Cache-Control: public, max-age=2592000\n"
         "/assets/og-capa.png\n  Cache-Control: public, max-age=2592000\n",
         encoding="utf-8")
-    (DIST / "_redirects").write_text("".join(f"{a} {b} 302\n" for a, b in curtos), encoding="utf-8")
+    (DIST / "_redirects").write_text("/hidroponia /aquaponia-comercial 301\n/hidroponia.html /aquaponia-comercial 301\n" + "".join(f"{a} {b} 302\n" for a, b in curtos), encoding="utf-8")
     (DIST / "robots.txt").write_text(
         "".join(f"User-agent: {b}\nAllow: /\n\n" for b in ["*", "GPTBot", "OAI-SearchBot", "ChatGPT-User", "ClaudeBot", "Claude-User", "PerplexityBot", "Google-Extended", "Bingbot"]) + f"Sitemap: {DOMINIO}/sitemap.xml\n", encoding="utf-8")
     print(f"{len(paginas)} páginas geradas em {DIST}")
