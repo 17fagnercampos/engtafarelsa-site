@@ -106,7 +106,10 @@ Neste tanque de 600 m³, 1 kg de bicarbonato de sódio sobe a alcalinidade em ce
 | --- | --- | --- | --- | --- |
 | 21/10 a 04/11 | 110 → 90 ppm | 54 kg | 74 ppm | 5,3 ppm |
 | 04/11 a 16/11 | 90 → 60 ppm | 15 kg | 45 ppm | 3,8 ppm |
+| 09/11 a 16/11, semana sem bicarbonato | 80 → 60 ppm | 5 kg (09/11) | 20 a 25 ppm | cerca de 3 a 3,6 ppm |
 | 13/11 a 16/11 | 80 → 60 ppm | nenhum | 20 ppm | cerca de 7 ppm |
+
+**Essa queda foi um teste.** O Diovani, da Piscicultura Colombo, ficou uma semana sem repor bicarbonato depois de 09/11, de propósito, para ver o que acontecia. Em 7 dias, a alcalinidade foi de 80 para 60 ppm. Contando os 5 kg de 09/11 (se entraram depois da análise daquele dia), o tanque consumiu de 20 a 25 ppm na semana.
 
 Em novembro, com menos peixe, o consumo médio caiu. Mas nos três últimos dias, com a água a 28 °C, ele voltou a subir para cerca de 7 ppm por dia. As bactérias que transformam a amônia trabalham mais no calor e consomem alcalinidade nesse processo. O kit mede de 10 em 10 ppm, então o número de três dias é aproximado.
 
@@ -122,7 +125,7 @@ Com a alcalinidade descendo, é o momento de não deixar o pH e o filtro biológ
 
 ## O que fazer com isso: 4 regras para entrar no verão
 
-1. **Bicarbonato em dia.** No calor, o consumo de alcalinidade acelera. Meça duas vezes por semana e reponha antes de cair, não depois.
+1. **Bicarbonato em dia.** O teste deste tanque mostrou: uma semana sem reposição levou a alcalinidade para 60 ppm. No calor, o consumo acelera. Meça duas vezes por semana e reponha antes de cair, não depois.
 2. **Olhe o oxigênio do fim da tarde.** Neste tanque, o pior horário é entre 17h e 21h. É a medição que mais importa no verão.
 3. **Refaça a conta do oxigênio a cada biometria.** Tirar peixe dá folga, mas o calor e o crescimento comem essa folga em poucos dias.
 4. **Controle o lodo.** Com a água quente, os sólidos do fundo consomem mais oxigênio.
