@@ -3,6 +3,7 @@ titulo: "Case Rolante/RS, parte 5: o que 549 horas de sonda revelam sobre a águ
 categoria: cases
 titulo_pagina: "Parte 5: o que 549 horas de sonda revelam"
 etiqueta: Case real · Rolante/RS
+aviso_atualizacao: "Atualização: em 05/11, 17 mil alevinos foram retirados do tanque. As projeções desta parte usam 40 mil peixes. <a href=\"case-rolante-parte-6-o-tanque-entra-no-verao.html\">Veja a parte 6, com a conta refeita</a>."
 destaques:
   - valor: 549 horas
     rotulo: de oxigênio e temperatura cruzados com ração, análises e insumos
@@ -15,8 +16,7 @@ barra_texto: Mande seus registros
 descricao: "Parte 5 do case Piscicultura Colombo: cruzamos 549 horas de sonda com
   ração, alcalinidade, bicarbonato, sólidos, biológicos e a tabela do Oxitrat. Sete relações que não
   aparecem olhando um número de cada vez."
-data: 2026-11-07
-rascunho: true
+data: 2026-11-17
 resposta: Cruzando 549 horas de sonda com as análises, a ração e os insumos do Tanque
   01, sete relações aparecem. O oxigênio caiu por consumo, e não por calor. Neste
   tanque, o pior horário é o fim da tarde e a noite, não a madrugada. Os biológicos
@@ -82,9 +82,6 @@ fontes:
   - texto: "KIM, Y.; JO, J.-Y. Effects of feeding frequency on oxygen consumption of
       Nile tilapia, Oreochromis niloticus, in a recirculating aquaculture system.
       Korean Journal of Fisheries and Aquatic Sciences, v. 32, n. 2, p. 144–148, 1999"
-  - texto: "ALY, T. E. Oxygen consumption of Nile tilapia (Oreochromis niloticus) juveniles
-      under different water temperatures and feeding frequencies. National Institute of
-      Oceanography and Fisheries, Egito [A CONFIRMAR revista e ano]"
   - texto: Tabela de arraçoamento de tilápia por peso e temperatura, POP 001, Eng. Tafarel
       Sá (2022)
 ---
@@ -136,7 +133,7 @@ O produtor trata 4 vezes, todas de manhã: às 7h, 8h30, 9h30 e 11h30, com 21 kg
 
 O calor da tarde explica só uma parte. Das 10h às 18h, o oxigênio caiu 0,56 mg/L. Se fosse só a temperatura, a queda seria de 0,11 mg/L. Os outros **0,45 mg/L (80%) são consumo**: peixe digerindo o trato e flocos trabalhando.
 
-A ciência ajuda a entender o intervalo. Kim e Jo, da Universidade Nacional de Pukyong, mediram tilápias de 400 g em recirculação (1999): o consumo de oxigênio atingiu o pico de 30 a 50 minutos depois de cada refeição, e o consumo médio do peixe alimentado foi cerca do dobro do peixe em jejum (de 80 a 99 contra 39 mg por kg por hora). Já Aly, no Egito, encontrou o pico de 4 a 5 horas depois da refeição em juvenis de 100 g. No Tanque 01, com 4 refeições seguidas, o efeito vai se somando e a queda mais forte aparece no início da tarde, justamente quando a água está mais quente.
+A ciência ajuda a entender o intervalo. Kim e Jo, da Universidade Nacional de Pukyong, mediram tilápias de 400 g em recirculação (1999): o consumo de oxigênio atingiu o pico de 30 a 50 minutos depois de cada refeição, e o consumo médio do peixe alimentado foi cerca do dobro do peixe em jejum (de 80 a 99 contra 39 mg por kg por hora). No Tanque 01, com 4 refeições seguidas, o efeito vai se somando e a queda mais forte aparece no início da tarde, justamente quando a água está mais quente.
 
 **O que isso muda no manejo:** neste tanque, a medição que mais importa é a do fim da tarde, entre 16h e 18h. E se faltar luz à noite, o tanque já começa no ponto mais baixo do dia. Se o trato aumentar, o reforço de aeração rende mais das 12h às 20h.
 

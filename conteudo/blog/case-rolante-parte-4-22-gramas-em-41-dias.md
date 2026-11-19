@@ -3,6 +3,7 @@ titulo: "Case Rolante/RS, parte 4: 22 g em 41 dias. E a conta da ração?"
 categoria: cases
 titulo_pagina: "Parte 4: 22 g em 41 dias. E a conta da ração?"
 etiqueta: Case real · Rolante/RS
+aviso_atualizacao: "Já saiu a parte 5: 549 horas de sonda cruzadas com ração, alcalinidade e biológicos. <a href=\"case-rolante-parte-5-o-que-a-sonda-revela.html\">Veja o que a sonda revelou</a>."
 destaques:
   - valor: 1,4 → 22,1 g
     rotulo: peso médio em 41 dias
